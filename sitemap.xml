@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://santosh2.com.np/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://santosh2.com.np/img/santosh-poudel.jpg</image:loc><image:title>Santosh Poudel profile photo</image:title></image:image>
+    <image:image><image:loc>https://santosh2.com.np/img/santoshPoudel.jpeg</image:loc><image:title>Santosh Poudel another profile image</image:title></image:image>
+    <image:image><image:loc>https://santosh2.com.np/img/Santoshpoudel.jpg</image:loc><image:title>Santosh Poudel portrait</image:title></image:image>
+    <image:image><image:loc>https://santosh2.com.np/img/Santosh.JPG</image:loc><image:title>Santosh Poudel portrait in natural light</image:title></image:image>
+    <image:image><image:loc>https://santosh2.com.np/img/santoshp.JPG</image:loc><image:title>Santosh Poudel close-up profile</image:title></image:image>
+  </url>
+</urlset>

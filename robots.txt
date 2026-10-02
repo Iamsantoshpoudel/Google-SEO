@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Let search and AI-search crawlers read the whole site
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://santosh2.com.np/sitemap.xml
