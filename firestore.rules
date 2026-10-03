@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // One document per day: { date, count, countries: { NP: 3, US: 1 }, updatedAt }
+    match /daily/{day} {
+      allow read: if true;
+      allow create: if day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.keys().hasOnly(['date', 'count', 'countries', 'updatedAt'])
+        && request.resource.data.date == day
+        && request.resource.data.count == 1
+        && request.resource.data.countries.size() == 1;
+      allow update: if request.resource.data.keys().hasOnly(['date', 'count', 'countries', 'updatedAt'])
+        && request.resource.data.date == day
+        && request.resource.data.count == resource.data.count + 1
+        && request.resource.data.countries.size() < 300;
+      allow delete: if false;
+    }
+
+    // All-time totals
+    match /meta/totals {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['count', 'countries', 'updatedAt'])
+        && request.resource.data.count == 1;
+      allow update: if request.resource.data.keys().hasOnly(['count', 'countries', 'updatedAt'])
+        && request.resource.data.count == resource.data.count + 1
+        && request.resource.data.countries.size() < 300;
+      allow delete: if false;
+    }
+  }
+}
