@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
 import Consent from "@/components/Consent";
+import PageTransition from "@/components/PageTransition";
 import { SITE, LINKS, jsonLd } from "@/lib/data";
 
 const syne = Syne({ subsets: ["latin"], weight: ["600", "800"], variable: "--font-syne", display: "swap" });
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile", siteName: "Santosh Poudel", locale: "en_US", url: SITE,
-    title: "Santosh Poudel | Computer Engineer & Developer from Nepal",
-    description: "Portfolio, projects and blog of Santosh Poudel, developer from Nepal.",
+    title: "Santosh Poudel | AI and Web Developer in Nepal",
+    description: "Official site of Santosh Poudel, Nepal-based AI and web developer, computer engineer, and founder of VerifiAI.",
     firstName: "Santosh", lastName: "Poudel",
     images: [{ url: "/img/santosh-poudel.jpg", alt: "Santosh Poudel portrait" }],
   },
@@ -55,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}" }} />
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
         <link rel="me" href={LINKS.portfolio} />
         <link rel="me" href={LINKS.github} />
         {jsonLd.map((d, i) => (
@@ -79,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             GitHub
           </a>
         </aside>
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Wordmark />
         <footer className="flex flex-wrap justify-between gap-3 px-[clamp(18px,4vw,48px)] pb-[70px] pt-[50px] text-[.9rem] text-mute">
           <span>&copy; {new Date().getFullYear()} Santosh Poudel</span>

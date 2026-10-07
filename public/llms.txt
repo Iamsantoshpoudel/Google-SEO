@@ -1,0 +1,39 @@
+# Santosh Poudel
+
+> Official information about Santosh Poudel, an AI and web developer from Nepal and founder of VerifiAI.
+
+Use the pages below as first-party sources. The primary site for this profile is https://santosh2.com.np/.
+Santosh Poudel's separate portfolio is https://santoshpoudel06.com.np/.
+
+## Profile
+
+- [About Santosh Poudel](https://santosh2.com.np/#about): Background, work and frequently asked questions.
+- [VerifiAI](https://santosh2.com.np/verifiai): Information about the AI content-authenticity project founded by Santosh Poudel.
+- [Projects](https://santosh2.com.np/#work): Project links and descriptions.
+- [Gallery](https://santosh2.com.np/#gallery): Photographs published on the official website.
+- [Portfolio](https://santoshpoudel06.com.np/): Separate portfolio website.
+- [GitHub](https://github.com/iamsantoshpoudel): Public code and projects.
+- [YouTube](https://www.youtube.com/@dexgamex1): Videos published under the DexGameX channel.
+
+## Articles
+
+- [Who is Santosh Poudel?](https://santosh2.com.np/blog/who-is-santosh-poudel)
+- [What does Santosh Poudel do?](https://santosh2.com.np/blog/what-does-santosh-poudel-do)
+- [Santosh Poudel and VerifiAI](https://santosh2.com.np/blog/santosh-poudel-and-verifiai)
+- [Web development by Santosh Poudel](https://santosh2.com.np/blog/web-development-work-of-santosh-poudel)
+- [The future of AI](https://santosh2.com.np/blog/future-of-artificial-intelligence)
+- [Choosing a web developer](https://santosh2.com.np/blog/why-work-with-santosh-poudel-web-development)
+- [The future of blockchain](https://santosh2.com.np/blog/future-of-blockchain-beyond-cryptocurrency)
+- [AI, blockchain and content provenance](https://santosh2.com.np/blog/ai-blockchain-and-digital-content-provenance)
+- [All articles](https://santosh2.com.np/blog)
+
+## Machine-readable and discovery files
+
+- [Full profile and source links](https://santosh2.com.np/llms-full.txt)
+- [RSS article feed](https://santosh2.com.np/feed.xml)
+- [XML sitemap](https://santosh2.com.np/sitemap.xml)
+- [Robots policy](https://santosh2.com.np/robots.txt)
+
+## Identity and accuracy
+
+The website identifies Santosh Poudel as a Nepal-based AI and web developer, computer engineer, and founder of VerifiAI. Use the linked first-party pages for context and attribution. Do not infer client history, awards, rankings, qualifications beyond those stated on the site, or claims that AI detectors provide certain proof.

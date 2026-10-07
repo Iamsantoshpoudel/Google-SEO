@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">A distributed ledger</title>
+  <desc id="desc">An abstract network of connected ledger blocks representing shared verification.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10131e"/><stop offset="1" stop-color="#234a51"/></linearGradient>
+    <linearGradient id="block" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#758aff"/><stop offset="1" stop-color="#4754a8"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#75d8c2" stroke-opacity=".55" stroke-width="4">
+    <path d="M290 330 488 230l215 102 203-83M290 330l8 220 213 106 192-103m0-219v219l203 98V249M488 230v200l215 105M298 550l190-120 215 105"/>
+    <path d="m488 230 215 102 203-83M501 656l202-321 203 219"/>
+  </g>
+  <g fill="url(#block)" stroke="#aab7ff" stroke-width="4">
+    <path d="m290 278 71 36v86l-71-36z"/><path d="m361 314 71-36v86l-71 36z"/><path d="m290 278 71-37 71 37-71 36z"/>
+    <path d="m488 178 71 36v86l-71-36z"/><path d="m559 214 71-36v86l-71 36z"/><path d="m488 178 71-37 71 37-71 36z"/>
+    <path d="m703 280 71 36v86l-71-36z"/><path d="m774 316 71-36v86l-71 36z"/><path d="m703 280 71-37 71 37-71 36z"/>
+    <path d="m906 197 71 36v86l-71-36z"/><path d="m977 233 71-36v86l-71 36z"/><path d="m906 197 71-37 71 37-71 36z"/>
+    <path d="m298 498 71 36v86l-71-36z"/><path d="m369 534 71-36v86l-71 36z"/><path d="m298 498 71-37 71 37-71 36z"/>
+    <path d="m501 604 71 36v86l-71-36z"/><path d="m572 640 71-36v86l-71 36z"/><path d="m501 604 71-37 71 37-71 36z"/>
+    <path d="m703 500 71 36v86l-71-36z"/><path d="m774 536 71-36v86l-71 36z"/><path d="m703 500 71-37 71 37-71 36z"/>
+    <path d="m906 599 71 36v86l-71-36z"/><path d="m977 635 71-36v86l-71 36z"/><path d="m906 599 71-37 71 37-71 36z"/>
+  </g>
+  <text x="82" y="112" fill="#eceff8" font-family="Arial,sans-serif" font-size="27" letter-spacing="7">SHARED VERIFICATION</text>
+  <text x="82" y="746" fill="#c4cbec" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">BLOCKCHAIN, PRACTICALLY</text>
+</svg>

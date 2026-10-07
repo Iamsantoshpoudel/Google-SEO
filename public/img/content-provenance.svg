@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Digital content provenance</title>
+  <desc id="desc">A signed media card connected to a chain of origin and edit records.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#151126"/><stop offset="1" stop-color="#4a315e"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7489ff"/><stop offset="1" stop-color="#ff7187"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <path d="M407 401h147m115 0h146m-354 0v-121m208 121v-121m-208 121v121m208-121v121" fill="none" stroke="#b9c4ff" stroke-opacity=".55" stroke-width="5" stroke-dasharray="10 12"/>
+  <rect x="115" y="260" width="292" height="282" rx="22" fill="#22213d" stroke="#a7b4ff" stroke-width="4"/>
+  <rect x="139" y="284" width="244" height="155" rx="13" fill="url(#card)"/>
+  <circle cx="208" cy="331" r="23" fill="#ffe1a9"/>
+  <path d="m149 420 74-61 47 39 35-28 69 50z" fill="#292d5c" fill-opacity=".83"/>
+  <path d="M155 476h206" stroke="#d4d9ff" stroke-width="9" stroke-linecap="round"/>
+  <path d="M155 504h142" stroke="#929bbd" stroke-width="7" stroke-linecap="round"/>
+  <g>
+    <rect x="554" y="201" width="230" height="104" rx="18" fill="#20203a" stroke="#7184fb" stroke-width="4"/>
+    <rect x="762" y="349" width="230" height="104" rx="18" fill="#20203a" stroke="#ff7187" stroke-width="4"/>
+    <rect x="554" y="497" width="230" height="104" rx="18" fill="#20203a" stroke="#75d8c2" stroke-width="4"/>
+    <g fill="#eceff8" font-family="Arial,sans-serif" font-size="19">
+      <text x="582" y="246">ORIGIN</text><text x="582" y="276" fill="#b9c4ff">signed creator record</text>
+      <text x="790" y="394">EDIT HISTORY</text><text x="790" y="424" fill="#ffc1cb">recorded changes</text>
+      <text x="582" y="542">VERIFICATION</text><text x="582" y="572" fill="#a7eadb">integrity check</text>
+    </g>
+  </g>
+  <circle cx="1032" cy="220" r="61" fill="#20203a" stroke="#75d8c2" stroke-width="4"/>
+  <path d="m1001 220 21 22 43-48" fill="none" stroke="#75d8c2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="82" y="112" fill="#eceff8" font-family="Arial,sans-serif" font-size="27" letter-spacing="7">ORIGIN · EDITS · EVIDENCE</text>
+  <text x="82" y="746" fill="#d1c4e4" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">CONTENT PROVENANCE</text>
+</svg>

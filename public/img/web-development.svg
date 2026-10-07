@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Thoughtful web development</title>
+  <desc id="desc">An editorial illustration of a responsive website design on desktop and mobile screens.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#11121c"/><stop offset="1" stop-color="#33436f"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef0f5"/><stop offset="1" stop-color="#cbd2e8"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <path d="M100 650h1000" stroke="#6f86ff" stroke-opacity=".34" stroke-width="2"/>
+  <rect x="160" y="185" width="710" height="438" rx="24" fill="#090b12" stroke="#8798ff" stroke-width="5"/>
+  <rect x="182" y="207" width="666" height="392" rx="10" fill="url(#screen)"/>
+  <path d="M182 266h666" stroke="#c3cadc" stroke-width="2"/>
+  <circle cx="211" cy="237" r="7" fill="#ff5c78"/><circle cx="238" cy="237" r="7" fill="#6679ef"/><circle cx="265" cy="237" r="7" fill="#97a3c2"/>
+  <rect x="223" y="306" width="315" height="18" rx="9" fill="#202643"/>
+  <rect x="223" y="342" width="251" height="10" rx="5" fill="#7b839e"/>
+  <rect x="223" y="364" width="279" height="10" rx="5" fill="#a3a9bb"/>
+  <rect x="223" y="405" width="140" height="42" rx="8" fill="#475ef0"/>
+  <rect x="565" y="302" width="231" height="222" rx="16" fill="#d7dcf0"/>
+  <circle cx="681" cy="378" r="49" fill="#7184fb"/>
+  <path d="M613 492c6-54 30-81 68-81s62 27 68 81" fill="#ff7187"/>
+  <rect x="754" y="347" width="250" height="356" rx="38" fill="#090b12" stroke="#ff7187" stroke-width="5"/>
+  <rect x="772" y="387" width="214" height="274" rx="20" fill="url(#screen)"/>
+  <rect x="797" y="416" width="164" height="14" rx="7" fill="#202643"/>
+  <rect x="797" y="444" width="133" height="9" rx="4" fill="#8b92a8"/>
+  <rect x="797" y="463" width="151" height="9" rx="4" fill="#aab0c1"/>
+  <rect x="797" y="497" width="164" height="118" rx="12" fill="#d7dcf0"/>
+  <circle cx="879" cy="542" r="27" fill="#7184fb"/>
+  <path d="M842 600c3-29 16-43 37-43s34 14 37 43" fill="#ff7187"/>
+  <text x="85" y="112" fill="#eceff8" font-family="Arial,sans-serif" font-size="27" letter-spacing="7">DESIGN WITH PURPOSE</text>
+  <text x="85" y="746" fill="#c4cbec" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">WEB DEVELOPMENT</text>
+</svg>

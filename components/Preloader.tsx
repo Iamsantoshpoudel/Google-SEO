@@ -1,12 +1,32 @@
 "use client";
 import { useEffect, useState } from "react";
 
+const STORAGE_KEY = "preloader-shown";
+let startedInThisDocument = false;
+
 export default function Preloader() {
   const [n, setN] = useState(0);
   const [gone, setGone] = useState(false);
   const [removed, setRemoved] = useState(false);
 
   useEffect(() => {
+    let alreadyShown = document.documentElement.classList.contains("preloader-seen");
+    try {
+      alreadyShown ||= localStorage.getItem(STORAGE_KEY) === "1";
+    } catch {}
+
+    if (alreadyShown && !startedInThisDocument) {
+      document.body.classList.add("ready");
+      setRemoved(true);
+      return;
+    }
+
+    startedInThisDocument = true;
+    document.documentElement.classList.add("preloader-seen");
+    try {
+      localStorage.setItem(STORAGE_KEY, "1");
+    } catch {}
+
     if (matchMedia("(prefers-reduced-motion:reduce)").matches) {
       document.body.classList.add("ready");
       setRemoved(true);

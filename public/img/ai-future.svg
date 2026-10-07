@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Human and AI collaboration</title>
+  <desc id="desc">An abstract editorial illustration of a person and an AI assistant connected through ideas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101428"/><stop offset="1" stop-color="#303d86"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ff5c78"/><stop offset="1" stop-color="#6f86ff"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="385" r="265" fill="none" stroke="#aab7ff" stroke-opacity=".14" stroke-width="2"/>
+  <circle cx="600" cy="385" r="205" fill="none" stroke="#aab7ff" stroke-opacity=".2" stroke-width="2" stroke-dasharray="7 14"/>
+  <path d="M160 615c112-162 213-163 325-38 93 104 174 86 258-54 84-141 190-174 297-53" fill="none" stroke="url(#glow)" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#eceff8"><circle cx="290" cy="472" r="48"/><path d="M205 681c5-104 41-157 85-157s80 53 85 157z"/></g>
+  <g transform="translate(745 260)">
+    <rect width="220" height="220" rx="54" fill="#171d3c" stroke="#9baaff" stroke-width="5"/>
+    <path d="M110-35v35M110 220v35M-35 110h35M220 110h35M13 13l24 24m126 126 24 24m0-174-24 24M37 183l-24 24" stroke="#9baaff" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="76" cy="93" r="12" fill="#ff7088"/><circle cx="144" cy="93" r="12" fill="#ff7088"/>
+    <path d="M68 145q42 35 84 0" fill="none" stroke="#eceff8" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="#aebaff"><circle cx="504" cy="267" r="9"/><circle cx="585" cy="541" r="7"/><circle cx="1010" cy="216" r="10"/><circle cx="140" cy="230" r="7"/></g>
+  <text x="82" y="112" fill="#eceff8" font-family="Arial,sans-serif" font-size="27" letter-spacing="7">PEOPLE × INTELLIGENCE</text>
+  <text x="82" y="746" fill="#c4cbec" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">THE FUTURE OF AI</text>
+</svg>
