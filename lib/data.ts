@@ -19,7 +19,7 @@ export const nav = [
 export const gallery = [
   { src: "/img/santosh-poudel.jpg", alt: "Santosh Poudel profile photo", cap: "Santosh Poudel profile photo" },
   { src: "/img/Santosh-poudelai.JPG", alt: "Santosh Poudel another profile image", cap: "Santosh Poudel" },
-  { src: "/img/Santoshpoudel.JPG", alt: "Santosh Poudel portrait", cap: "Portrait" },
+  { src: "/img/Santoshpoudel.jpg", alt: "Santosh Poudel portrait", cap: "Portrait" },
   { src: "/img/Santosh.JPG", alt: "Santosh Poudel portrait in natural light", cap: "Portrait in natural light" },
   { src: "/img/santoshp.JPG", alt: "Santosh Poudel close-up profile", cap: "Close-up" },
 ];
