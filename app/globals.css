@@ -111,19 +111,13 @@ body.ready .hero-i { animation-play-state: running; }
 
 /* marquee + wordmark */
 .mq-track { display: flex; width: max-content; will-change: transform; animation: mq 28s linear infinite; }
-.mq:hover .mq-track, .wm:hover .wm-track { animation-play-state: paused; }
+.mq:hover .mq-track { animation-play-state: paused; }
 .mq-link { font: 800 clamp(2rem, 6vw, 5rem) var(--font-display); text-decoration: none; margin-right: 2.5rem; color: transparent;
   -webkit-text-stroke: 1.5px var(--ink); text-transform: uppercase; transition: color .3s; }
 .mq-link:hover { color: var(--b); -webkit-text-stroke-color: var(--b); }
+.mq-link span { display: inline-block; transition: transform .45s cubic-bezier(.2, .8, .2, 1), color .3s, -webkit-text-stroke-color .3s; }
+.mq-link span:hover { transform: translateY(-.14em) rotate(-5deg); color: var(--b); -webkit-text-stroke-color: var(--b); }
 @keyframes mq { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-
-.wm { font: 800 clamp(2rem, 8vw, 8rem)/1 var(--font-display); text-transform: uppercase; white-space: nowrap; text-align: left;
-  padding: 50px 0 10px; overflow: hidden; color: transparent; -webkit-text-stroke: 1.5px var(--mute); user-select: none; }
-.wm-track { display: flex; width: max-content; will-change: transform; animation: wmq 32s linear infinite; }
-.wm b { display: flex; font-weight: inherit; margin-right: .7em; }
-.wm span { display: inline-block; transition: transform .45s cubic-bezier(.2, .8, .2, 1), color .3s, -webkit-text-stroke-color .3s; }
-.wm span:hover { transform: translateY(-.14em) rotate(-5deg); color: var(--b); -webkit-text-stroke-color: var(--b); }
-@keyframes wmq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* film grain */
 body::after { content: ""; position: fixed; inset: -60%; opacity: .07; pointer-events: none; z-index: 100; animation: grain .9s steps(5) infinite;
@@ -144,12 +138,12 @@ html.preloader-seen #pre { display: none; }
 #pre i { position: absolute; left: 0; bottom: 0; height: 6px; background: var(--b); }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
   .not-found-float, .not-found-orbit { animation: none !important; }
   .rv, .rv-c, .big-w { opacity: 1; transform: none; filter: none; }
   .hero-i { transform: none; }
   .mq-track { animation: mq 70s linear infinite !important; }
-  .wm-track { animation: wmq 80s linear infinite !important; }
   #pre, body::after { display: none; }
   .frame, .hero-line, .gal-fig { translate: none; }
 }

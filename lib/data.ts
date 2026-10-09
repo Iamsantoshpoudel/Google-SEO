@@ -1,4 +1,5 @@
 export const SITE = "https://santosh2.com.np";
+export const CONTACT_EMAIL = "hi@santoshpoudel06.com.np";
 
 export const LINKS = {
   portfolio: "https://santoshpoudel06.com.np",

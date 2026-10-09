@@ -5,7 +5,7 @@ import Gallery from "@/components/Gallery";
 import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
-import { BIG, LAB, SITE, S, faq, posts, projects, social } from "@/lib/data";
+import { BIG, LAB, SITE, S, CONTACT_EMAIL, LINK, faq, posts, projects, social } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Santosh Poudel | AI Developer and Web Developer in Nepal",
@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const marquee = [...social, ...social];
   const profileLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -53,6 +52,7 @@ export default function Home() {
       <section id="about" className={S}>
         <Scramble as="div" className={LAB}>About</Scramble>
         <BigText text="Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and AI content tools, and he is the founder of VerifiAI." />
+        <p className="mt-5"><a className={LINK} href="/about">Read the full profile</a></p>
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
           {faq.map((f) => (
             <div key={f.q} className="rv-c">
@@ -99,15 +99,17 @@ export default function Home() {
       </Reveal>
 
       <Reveal id="find" className={`${S} pb-[60px]!`}>
-        <Scramble as="div" className={LAB}>Find Santosh Poudel online</Scramble>
-      </Reveal>
-      <div className="mq overflow-hidden whitespace-nowrap border-y border-line py-[22px]" aria-label="Social profiles">
-        <div className="mq-track">
-          {marquee.map((s, i) => (
-            <a key={i} className="mq-link" href={s.href} target="_blank" rel="me noopener">{s.label}</a>
+        <Scramble as="h2" className={LAB}>Contact</Scramble>
+        <p className="max-w-[55ch] text-mute">For questions about my projects or potential collaborations, email me or connect through one of my public profiles.</p>
+        <a className={`${LINK} mt-5 inline-block`} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+          {social.map((item) => (
+            <li key={item.label}>
+              <a className={LINK} href={item.href} target="_blank" rel="me noopener noreferrer">{item.label}</a>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Reveal>
     </main>
   );
 }

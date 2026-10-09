@@ -8,7 +8,7 @@ import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
 import Consent from "@/components/Consent";
 import PageTransition from "@/components/PageTransition";
-import { SITE, LINKS, jsonLd } from "@/lib/data";
+import { SITE, LINKS, CONTACT_EMAIL, social, jsonLd } from "@/lib/data";
 
 const syne = Syne({ subsets: ["latin"], weight: ["600", "800"], variable: "--font-syne", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-manrope", display: "swap" });
@@ -81,28 +81,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </a>
         </aside>
         <PageTransition>{children}</PageTransition>
-        <Wordmark />
-        <footer className="flex flex-wrap justify-between gap-3 px-[clamp(18px,4vw,48px)] pb-[70px] pt-[50px] text-[.9rem] text-mute">
-          <span>&copy; {new Date().getFullYear()} Santosh Poudel</span>
-          <span>Made With ❤️</span>
+        <footer className="flex flex-col gap-6 px-[clamp(18px,4vw,48px)] pb-[70px] pt-[30px] text-[.9rem] text-mute">
+          <div className="mq overflow-hidden whitespace-nowrap border-y border-line py-[18px]" aria-label="Social profiles">
+            <nav className="mq-track" aria-label="Social profile links">
+              {[...social, ...social].map((item, index) => {
+                const duplicate = index >= social.length;
+                return (
+                  <a key={`${item.label}-${index}`} className="mq-link"
+                    href={item.href} target="_blank" rel="me noopener noreferrer"
+                    aria-hidden={duplicate || undefined} tabIndex={duplicate ? -1 : undefined}>
+                    {[...item.label].map((character, characterIndex) => (
+                      <span key={characterIndex}>{character}</span>
+                    ))}
+                  </a>
+                );
+              })}
+            </nav>
+          </div>
+          <div className="flex flex-wrap justify-between gap-3">
+            <span>&copy; {new Date().getFullYear()} Santosh Poudel</span>
+            <span>Made With ❤️</span>
+          </div>
         </footer>
       </body>
     </html>
-  );
-}
-
-function Wordmark() {
-  return (
-    <div className="wm" aria-hidden="true">
-      <div className="wm-track">
-        {[0, 1, 2, 3].map((k) => (
-          <b key={k}>
-            {[..."Santosh Poudel"].map((c, i) => (
-              <span key={i}>{c === " " ? "\u00a0" : c}</span>
-            ))}
-          </b>
-        ))}
-      </div>
-    </div>
   );
 }
