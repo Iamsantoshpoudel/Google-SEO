@@ -6,24 +6,21 @@ import Effects from "@/components/Effects";
 import Header from "@/components/Header";
 import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
-import Consent from "@/components/Consent";
 import PageTransition from "@/components/PageTransition";
-import { SITE, LINKS, CONTACT_EMAIL, social, jsonLd } from "@/lib/data";
+import { SITE, LINKS, CONTACT_EMAIL, social } from "@/lib/data";
 
 const syne = Syne({ subsets: ["latin"], weight: ["600", "800"], variable: "--font-syne", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-manrope", display: "swap" });
 
-const title = "Santosh Poudel (santoshpoudel) | AI Developer & VerifiAI Founder, Nepal";
+const title = "Santosh Poudel | AI Developer & Web Developer in Nepal";
 const description =
-  "Santosh Poudel is an AI developer from Nepal and the founder of VerifiAI, building AI detection tools and content verification for creators, businesses and educators.";
+  "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title,
   description,
   authors: [{ name: "Santosh Poudel" }],
-  keywords: ["Santosh Poudel", "santoshpoudel", "Santosh Poudel Nepal", "VerifiAI", "AI developer Nepal", "AI content detector"],
-  alternates: { canonical: "/", languages: { en: "/", "x-default": "/" } },
   robots: { index: true, follow: true, "max-image-preview": "large" },
   manifest: "/site.webmanifest",
   icons: {
@@ -31,15 +28,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile", siteName: "Santosh Poudel", locale: "en_US", url: SITE,
-    title: "Santosh Poudel | AI and Web Developer in Nepal",
-    description: "Official site of Santosh Poudel, Nepal-based AI and web developer, computer engineer, and founder of VerifiAI.",
+    title,
+    description,
     firstName: "Santosh", lastName: "Poudel",
-    images: [{ url: "/img/santosh-poudel.jpg", alt: "Santosh Poudel portrait" }],
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image", title,
     description: "Portfolio, projects and blog of Santosh Poudel, AI developer from Nepal.",
-    images: ["/img/santosh-poudel.jpg"],
+    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
   other: { "geo.region": "NP", "geo.placename": "Nepal" },
 };
@@ -57,25 +54,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${syne.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
-        <link rel="me" href={LINKS.portfolio} />
         <link rel="me" href={LINKS.github} />
-        {jsonLd.map((d, i) => (
-          <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }} />
-        ))}
+        <link rel="me" href={LINKS.youtube} />
+        <link rel="me" href={LINKS.facebook} />
       </head>
       <body suppressHydrationWarning>
         <Preloader />
         <Effects />
         <VisitTracker />
         <ServiceWorker />
-        <Consent />
         <Header />
         <aside aria-label="Quick links" className="fixed right-0 top-1/2 z-[85] flex -translate-y-1/2 flex-col gap-0.5">
-          <a href={LINKS.portfolio} target="_blank" rel="me noopener"
+          <a href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer"
             className="clip-tab bg-ink px-2.5 py-[18px] text-[.85rem] font-semibold text-bg no-underline transition-all [writing-mode:vertical-rl] hover:bg-hot hover:pr-[18px] hover:text-white">
-            Visit Portfolio
+            Visit VerifiAI
           </a>
-          <a href={LINKS.github} target="_blank" rel="me noopener"
+          <a href={LINKS.github} target="_blank" rel="me noopener noreferrer"
             className="clip-tab bg-acc px-2.5 py-[18px] text-[.85rem] font-semibold text-white no-underline transition-all [writing-mode:vertical-rl] hover:bg-hot hover:pr-[18px]">
             GitHub
           </a>

@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   };
   return (
     <button onClick={toggle} aria-label="Toggle light and dark theme"
-      className="grid size-9 place-items-center rounded-full border border-line text-[1rem] transition-colors hover:border-hot hover:text-hot">
+      className="grid size-10 place-items-center rounded-full border border-line text-[1rem] transition-colors hover:border-hot hover:text-hot">
       &#9680;
     </button>
   );

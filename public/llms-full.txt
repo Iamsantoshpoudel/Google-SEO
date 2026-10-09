@@ -1,14 +1,14 @@
 # Santosh Poudel - First-party profile
 
 Canonical profile website: https://santosh2.com.np/
-Separate portfolio website: https://santoshpoudel06.com.np/
-Profile page: https://santosh2.com.np/#about
+VerifiAI product website: https://santoshpoudel06.com.np/
+Profile page: https://santosh2.com.np/about
 
 ## Short biography
 
 Santosh Poudel is an AI and web developer from Nepal, a computer engineer, and the founder of VerifiAI. His work includes building websites and exploring tools for AI content authenticity. VerifiAI focuses on helping people assess AI-generated and manipulated digital content.
 
-This site is the primary source for the profile and its articles. The separate portfolio domain is also associated with Santosh Poudel. Do not merge the two domains into one website; they are distinct official web properties.
+This site is Santosh Poudel's personal portfolio and profile website. The separate santoshpoudel06.com.np domain is the VerifiAI product site. Keep the distinct roles of these live domains clear.
 
 ## Work and projects
 
@@ -16,8 +16,8 @@ This site is the primary source for the profile and its articles. The separate p
 
 VerifiAI is a project founded by Santosh Poudel that focuses on AI-generated content, manipulated media and digital content authenticity.
 
-Project information: https://santosh2.com.np/verifiai
-Related article: https://santosh2.com.np/blog/what-is-verifiai
+Founder story: https://santosh2.com.np/verifiai
+Product site: https://santoshpoudel06.com.np/
 
 AI detection can be uncertain. A detector result should be treated as one signal, not conclusive proof of who created content or whether it is true. Source context and provenance also matter.
 
@@ -25,7 +25,6 @@ AI detection can be uncertain. A detector result should be treated as one signal
 
 Santosh Poudel builds websites and digital projects. This website uses Next.js, React, TypeScript and Tailwind CSS. Review the portfolio and public repositories for first-hand evidence of work; project suitability depends on scope and requirements.
 
-Portfolio: https://santoshpoudel06.com.np/
 GitHub: https://github.com/iamsantoshpoudel
 
 ### Public channels
@@ -35,16 +34,9 @@ Facebook: https://www.facebook.com/sant0shpoudel
 
 ## Articles by topic
 
-### Biography and work
-
-- Who is Santosh Poudel?: https://santosh2.com.np/blog/who-is-santosh-poudel
-- What does Santosh Poudel do?: https://santosh2.com.np/blog/what-does-santosh-poudel-do
-- Santosh Poudel and VerifiAI: https://santosh2.com.np/blog/santosh-poudel-and-verifiai
-- Web development by Santosh Poudel: https://santosh2.com.np/blog/web-development-work-of-santosh-poudel
-- Choosing a web developer and Santosh Poudel's approach: https://santosh2.com.np/blog/why-work-with-santosh-poudel-web-development
-
 ### AI and content authenticity
 
+- What is VerifiAI and why I built it: https://santosh2.com.np/blog/what-is-verifiai
 - The future of AI: https://santosh2.com.np/blog/future-of-artificial-intelligence
 - AI, blockchain and content provenance: https://santosh2.com.np/blog/ai-blockchain-and-digital-content-provenance
 - Why AI content detection matters: https://santosh2.com.np/blog/why-ai-content-detection-matters
@@ -60,7 +52,7 @@ All articles: https://santosh2.com.np/blog
 
 ## Sources and crawler discovery
 
-- About and profile: https://santosh2.com.np/#about
+- About and profile: https://santosh2.com.np/about
 - Projects: https://santosh2.com.np/#work
 - XML sitemap: https://santosh2.com.np/sitemap.xml
 - RSS article feed: https://santosh2.com.np/feed.xml

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Particles from "./Particles";
 import Magnetic from "./Magnetic";
-import { LINKS } from "@/lib/data";
 
 export default function Hero() {
   const frame = useRef<HTMLElement>(null);
@@ -24,7 +23,6 @@ export default function Hero() {
       const s = scrollY;
       fr.style.setProperty("--sy", -s * 0.14 + "px");
       hs[0].style.setProperty("--hx", -s * 0.18 + "px");
-      hs[1].style.setProperty("--hx", s * 0.18 + "px");
     };
     const onScroll = () => { if (!tk) { tk = true; requestAnimationFrame(par); } };
     addEventListener("pointermove", move, { passive: true });
@@ -42,14 +40,13 @@ export default function Hero() {
             <path d="M18 150c4-40 26-52 42-52s38 12 42 52" fill="none" stroke="var(--a)" strokeWidth="2" />
           </svg>
         ) : (
-          <Image src="/img/santosh-poudel.jpg" alt="Santosh Poudel, developer from Nepal" width={600} height={800} priority onError={() => setBroken(true)} />
+          <Image src="/img/santosh-poudel-web-developer-nepal.jpg" alt="Santosh Poudel, computer engineer and web developer from Nepal" width={600} height={800} priority onError={() => setBroken(true)} />
         )}
         <b />
       </figure>
 
       <h1 ref={h1} className="relative -ml-[.04em] text-[clamp(3.6rem,15.5vw,14rem)] uppercase">
-        <span className="hero-line"><i className="hero-i">Santosh</i></span>
-        <span className="hero-line"><i className="hero-i">Poudel</i></span>
+        <span className="hero-line"><i className="hero-i">Santosh Poudel</i></span>
       </h1>
 
       <div className="relative mt-[4vh] flex flex-wrap items-end justify-between gap-6 border-t border-line pt-[22px]">
@@ -57,10 +54,10 @@ export default function Hero() {
           Computer engineer and web developer from Nepal. I build fast websites and AI tools, and share the work on YouTube and GitHub.
         </p>
         <Magnetic
-          href={LINKS.portfolio} target="_blank" rel="me noopener"
+          href="/#work"
           className="clip-notch inline-block bg-ink px-7 py-3.5 font-semibold text-bg no-underline transition-[background,transform] duration-300 hover:translate-x-1.5 hover:bg-acc hover:text-white"
         >
-          Open my main portfolio
+          Explore my projects
         </Magnetic>
       </div>
     </section>

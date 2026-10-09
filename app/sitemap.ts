@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { posts, SITE } from "@/lib/data";
+import { gallery, posts, SITE } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestPostDate = posts.reduce(
@@ -9,7 +9,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const verifiaiDate = posts.find((post) => post.slug === "what-is-verifiai")?.date ?? latestPostDate;
 
   return [
-    { url: `${SITE}/`, lastModified: new Date(latestPostDate), changeFrequency: "weekly", priority: 1 },
+    {
+      url: `${SITE}/`,
+      lastModified: new Date(latestPostDate),
+      changeFrequency: "weekly",
+      priority: 1,
+      images: [
+        `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
+        ...gallery.map((image) => `${SITE}${image.src}`),
+      ],
+    },
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/verifiai`, lastModified: new Date(verifiaiDate), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/blog`, lastModified: new Date(latestPostDate), changeFrequency: "weekly", priority: 0.8 },

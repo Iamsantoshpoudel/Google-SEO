@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { doc, increment, serverTimestamp, writeBatch } from "firebase/firestore";
 import { getDb, utcDay } from "@/lib/firebase";
-import { getConsent } from "@/lib/consent";
 
 const KEY = "visit-counted-on";
 let sending = false; // guards against React strict-mode double effects
@@ -17,7 +16,6 @@ export default function VisitTracker() {
 
   useEffect(() => {
     if (pathname.startsWith("/dashboard") || sending) return;
-    if (getConsent() === "off") return;
     const db = getDb();
     if (!db) return;
     const today = utcDay();

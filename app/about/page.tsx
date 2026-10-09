@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, LINK, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
 
-const title = "About Santosh Poudel | AI and Web Developer";
-const description = "Learn about Santosh Poudel, a Nepal-based AI and web developer, his computer engineering background, projects, technical interests and public profiles.";
+const title = "About Santosh Poudel: Developer and VerifiAI Founder";
+const description = "Meet Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. Read about his background, work and VerifiAI.";
 
 export const metadata: Metadata = {
   title,
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
     url: `${SITE}/about`,
     title,
     description,
-    images: [{ url: "/img/santosh-poudel.jpg", alt: "Santosh Poudel" }],
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/img/santosh-poudel.jpg"],
+    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
 };
 
@@ -35,15 +36,46 @@ export default function About() {
   };
 
   return (
-    <PageShell title="About" crumbs={[{ name: "About", path: "/about" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileLd) }} />
-      <p>Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and works on VerifiAI, a project focused on helping people assess AI-generated content and manipulated media.</p>
-      <h2>Technical work and interests</h2>
-      <p>This portfolio is built with Next.js, React, TypeScript and Tailwind CSS. Its projects and writing reflect interests in web development, artificial intelligence and content authenticity. Read about <a className={LINK} href="/verifiai">VerifiAI</a>, browse the <a className={LINK} href="/#work">projects</a>, or explore the <a className={LINK} href="/blog">blog</a>.</p>
-      <h2>Background</h2>
-      <p>His computer engineering studies provide the foundation for his development work. The portfolio and blog document selected projects, technical interests and ongoing learning.</p>
-      <h2>Contact</h2>
-      <p>Email <a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, or use the public social profiles linked on the <a className={LINK} href="/#find">contact section</a>.</p>
+    <PageShell title="About Santosh Poudel" crumbs={[{ name: "About", path: "/about" }]}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([personLd, verifiaiOrganizationLd, profileLd]) }} />
+      <section className="grid items-start gap-7 sm:grid-cols-[minmax(180px,280px)_1fr]">
+        <Image
+          src="/img/santosh-poudel-web-developer-nepal.jpg"
+          alt="Santosh Poudel, computer engineer and web developer from Nepal"
+          width={600}
+          height={800}
+          sizes="(max-width: 640px) 100vw, 280px"
+          className="w-full object-cover"
+        />
+        <p className="text-ink">Santosh Poudel is a computer engineer, AI developer and web developer from Nepal and the founder of VerifiAI.</p>
+      </section>
+
+      <section>
+        <h2>Background</h2>
+        <p>I completed a diploma in computer engineering. This site documents my continuing interests in web development, artificial intelligence and practical digital tools.</p>
+      </section>
+
+      <section>
+        <h2>Work</h2>
+        <p>My work includes building websites and exploring ways software can help people assess digital content. This site is built with Next.js, React, TypeScript and Tailwind CSS. I share code and project work through my <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a> and videos on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>.</p>
+      </section>
+
+      <section>
+        <h2>VerifiAI</h2>
+        <p>I started VerifiAI to work on content-authenticity tools. The product has its own site at <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>; this portfolio remains the home for my biography, projects and writing.</p>
+        <p>Read <a className={LINK} href="/verifiai">why I built VerifiAI</a> or browse the <a className={LINK} href="/blog">blog</a>.</p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul className="list-disc pl-5">
+          <li><a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">Santosh Poudel on GitHub</a></li>
+          <li><a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">Santosh Poudel on YouTube</a></li>
+          <li><a className={LINK} href={LINKS.facebook} target="_blank" rel="me noopener noreferrer">Santosh Poudel on Facebook</a></li>
+          <li><a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a></li>
+          <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+        </ul>
+      </section>
     </PageShell>
   );
 }

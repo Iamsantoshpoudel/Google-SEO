@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     url: `${SITE}/blog`,
     title: "Articles on AI, Web Development and VerifiAI | Santosh Poudel",
     description: "Perspectives on AI, content authenticity, blockchain and web development from Santosh Poudel.",
-    images: [{ url: "/img/santosh-poudel.jpg", alt: "Santosh Poudel, author of the blog" }],
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, author of the blog" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Articles on AI, Web Development and VerifiAI | Santosh Poudel",
     description: "Articles about AI, VerifiAI, blockchain and web development.",
-    images: ["/img/santosh-poudel.jpg"],
+    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
 };
 

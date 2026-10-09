@@ -80,7 +80,7 @@ export default function InfiniteBlogReader({
             alt={post.imageAlt}
             width={1200}
             height={900}
-            priority={index === 0}
+            loading="lazy"
             sizes="(max-width: 900px) 100vw, 900px"
             className="my-5 aspect-[4/3] w-full object-cover"
           />
@@ -102,6 +102,22 @@ export default function InfiniteBlogReader({
                 {post.references.map((reference) => (
                   <li key={reference.url}>
                     <a className={LINK} href={reference.url} target="_blank" rel="noopener noreferrer">{reference.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+          {post.related && (
+            <section aria-label="Related articles" className="mt-6 border-t border-line pt-5">
+              <h2 className="text-[1.2rem] text-ink">Related articles</h2>
+              <ul className="mt-3 grid list-disc gap-2 pl-5">
+                {post.related.map((related) => (
+                  <li key={related.url}>
+                    {related.url.startsWith("https://") ? (
+                      <a className={LINK} href={related.url} target="_blank" rel="noopener noreferrer">{related.label}</a>
+                    ) : (
+                      <a className={LINK} href={related.url}>{related.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -5,24 +5,24 @@ import Gallery from "@/components/Gallery";
 import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
-import { BIG, LAB, SITE, S, CONTACT_EMAIL, LINK, faq, posts, projects, social } from "@/lib/data";
+import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Santosh Poudel | AI Developer and Web Developer in Nepal",
-  description: "Official website of Santosh Poudel, a Nepal-based AI developer, web developer and computer engineer. Explore his work, VerifiAI, projects and articles.",
+  title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
+  description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "profile",
     url: SITE,
-    title: "Santosh Poudel | AI Developer and Web Developer in Nepal",
-    description: "Official website of Santosh Poudel, a Nepal-based AI developer, web developer and computer engineer. Explore his work, VerifiAI, projects and articles.",
-    images: [{ url: "/img/santosh-poudel.jpg", alt: "Santosh Poudel, AI and web developer from Nepal" }],
+    title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
+    description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.",
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Santosh Poudel | AI Developer and Web Developer in Nepal",
-    description: "Explore Santosh Poudel's work in web development, AI and VerifiAI.",
-    images: ["/img/santosh-poudel.jpg"],
+    title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
+    description: "Projects, web development and AI work by Santosh Poudel, a computer engineer from Nepal.",
+    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
 };
 
@@ -46,11 +46,11 @@ export default function Home() {
   };
   return (
     <main id="top">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([profileLd, faqLd]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteLd, personLd, verifiaiOrganizationLd, profileLd, faqLd]) }} />
       <Hero />
 
       <section id="about" className={S}>
-        <Scramble as="div" className={LAB}>About</Scramble>
+        <Scramble as="h2" className={LAB}>About</Scramble>
         <BigText text="Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and AI content tools, and he is the founder of VerifiAI." />
         <p className="mt-5"><a className={LINK} href="/about">Read the full profile</a></p>
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
@@ -64,26 +64,26 @@ export default function Home() {
       </section>
 
       <Reveal id="verifiai" className={S}>
-        <Scramble as="div" className={LAB}>Santosh Poudel and VerifiAI</Scramble>
+        <Scramble as="h2" className={LAB}>VerifiAI</Scramble>
         <p className={`${BIG} max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
         <div className="mt-[34px] max-w-[62ch] text-mute [&>p+p]:mt-3.5">
-          <p className="rv-c">Santosh Poudel works at the meeting point of technology, content authenticity and user safety. Through VerifiAI he builds tools that help people detect AI-generated text, images and other synthetic content.</p>
-          <p className="rv-c">VerifiAI was created for the growing need for trustworthy AI detection and media verification. The goal is practical tools that show whether content is human-made or AI-generated, especially as AI media becomes more common.</p>
+          <p className="rv-c">I founded VerifiAI to explore ways of checking digital content as AI-generated media becomes more common. I am developing the project with a focus on making these checks practical and clear about their limits.</p>
+          <p className="rv-c">Visit <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>, the separate product site, or read <a className={LINK} href="/verifiai">why I started building it</a>.</p>
         </div>
       </Reveal>
 
       <Reveal id="gallery" className={S}>
-        <Scramble as="div" className={LAB}>Gallery</Scramble>
+        <Scramble as="h2" className={LAB}>Gallery</Scramble>
         <Gallery />
       </Reveal>
 
       <Reveal id="work" className={S}>
-        <Scramble as="div" className={LAB}>Projects</Scramble>
+        <Scramble as="h2" className={LAB}>Projects</Scramble>
         {projects.map((p) => <ProjectRow key={p.title} {...p} />)}
       </Reveal>
 
       <Reveal id="blog" className={S}>
-        <Scramble as="div" className={LAB}>Blog</Scramble>
+        <Scramble as="h2" className={LAB}>Blog</Scramble>
         {posts.map((p) => (
           <details key={p.slug} className="group rv-c relative block border-b border-line py-[30px]">
             <summary className="grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-5 after:justify-self-end after:text-[1.8rem] after:transition-transform after:content-['+'] group-open:after:rotate-45 group-open:after:text-hot max-md:after:col-start-2 max-md:after:row-span-2 max-md:after:row-start-1 md:grid-cols-[90px_1fr_40px] [&::-webkit-details-marker]:hidden">

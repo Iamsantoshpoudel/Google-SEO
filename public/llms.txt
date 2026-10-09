@@ -2,29 +2,29 @@
 
 > Official information about Santosh Poudel, an AI and web developer from Nepal and founder of VerifiAI.
 
-Use the pages below as first-party sources. The primary site for this profile is https://santosh2.com.np/.
-Santosh Poudel's separate portfolio is https://santoshpoudel06.com.np/.
+Use the pages below as first-party sources. The personal portfolio and profile site is https://santosh2.com.np/.
+VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
 
 ## Profile
 
-- [About Santosh Poudel](https://santosh2.com.np/#about): Background, work and frequently asked questions.
-- [VerifiAI](https://santosh2.com.np/verifiai): Information about the AI content-authenticity project founded by Santosh Poudel.
+- [About Santosh Poudel](https://santosh2.com.np/about): Background, work and links.
+- [VerifiAI founder story](https://santosh2.com.np/verifiai): Why Santosh Poudel started the project.
+- [VerifiAI product site](https://santoshpoudel06.com.np/): Separate product website.
 - [Projects](https://santosh2.com.np/#work): Project links and descriptions.
 - [Gallery](https://santosh2.com.np/#gallery): Photographs published on the official website.
-- [Portfolio](https://santoshpoudel06.com.np/): Separate portfolio website.
 - [GitHub](https://github.com/iamsantoshpoudel): Public code and projects.
 - [YouTube](https://www.youtube.com/@dexgamex1): Videos published under the DexGameX channel.
 
 ## Articles
 
-- [Who is Santosh Poudel?](https://santosh2.com.np/blog/who-is-santosh-poudel)
-- [What does Santosh Poudel do?](https://santosh2.com.np/blog/what-does-santosh-poudel-do)
-- [Santosh Poudel and VerifiAI](https://santosh2.com.np/blog/santosh-poudel-and-verifiai)
-- [Web development by Santosh Poudel](https://santosh2.com.np/blog/web-development-work-of-santosh-poudel)
+- [What is VerifiAI and why I built it](https://santosh2.com.np/blog/what-is-verifiai)
 - [The future of AI](https://santosh2.com.np/blog/future-of-artificial-intelligence)
-- [Choosing a web developer](https://santosh2.com.np/blog/why-work-with-santosh-poudel-web-development)
+- [Why AI content detection matters](https://santosh2.com.np/blog/why-ai-content-detection-matters)
+- [How to check if text or an image is AI-generated](https://santosh2.com.np/blog/how-to-check-if-text-or-image-is-ai-generated)
 - [The future of blockchain](https://santosh2.com.np/blog/future-of-blockchain-beyond-cryptocurrency)
 - [AI, blockchain and content provenance](https://santosh2.com.np/blog/ai-blockchain-and-digital-content-provenance)
+- [Web design tips for beginners in Nepal](https://santosh2.com.np/blog/web-design-tips-for-beginners-in-nepal)
+- [Starting with a computer engineering diploma](https://santosh2.com.np/blog/starting-with-a-computer-engineering-diploma)
 - [All articles](https://santosh2.com.np/blog)
 
 ## Machine-readable and discovery files
