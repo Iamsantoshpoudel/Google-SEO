@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Page not found | Santosh Poudel",
   description: "This page wandered off. Head back to the homepage or explore the blog.",
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function NotFound() {

@@ -8,7 +8,7 @@ import { LINKS, nav } from "@/lib/data";
 
 const icons: Record<string, ReactNode> = {
   About: <><circle cx="12" cy="8" r="4" /><path d="M5 21a7 7 0 0 1 14 0" /></>,
-  VerifiAI: <><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-2-5.8L4 11l6-2.2L12 3Z" /><path d="m19 14 1.1 2.9L23 18l-2.9 1.1L19 22l-1.1-2.9L15 18l2.9-1.1L19 14Z" /></>,
+  Me: <><rect x="3" y="5" width="18" height="14" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M5.8 16c.7-1.6 1.8-2.4 3.2-2.4s2.5.8 3.2 2.4M15 10h3M15 14h3" /></>,
   Gallery: <><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="8.5" cy="9" r="1.5" /><path d="m21 15-5-5L5 20" /></>,
   Projects: <><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></>,
   Blog: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 2v6h6M8 13h8M8 17h8" /></>,
@@ -45,7 +45,6 @@ export default function Header() {
 
     const sections = nav
       .map((item) => {
-        if (item.label === "VerifiAI") return "verifiai";
         if (item.label === "Blog") return "blog";
         return item.href.match(/^\/#(.+)$/)?.[1];
       })

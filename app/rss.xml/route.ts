@@ -10,10 +10,10 @@ function escapeXml(value: string) {
 }
 
 export function GET() {
-  const items = posts.map((post) => {
-    const description = [post.body.join(" "), ...(post.sections ?? []).flatMap((section) => section.paragraphs)]
-      .join(" ");
-    return `    <item>
+  const items = posts
+    .map((post) => {
+      const description = [post.body.join(" "), ...(post.sections ?? []).flatMap((section) => section.paragraphs)].join(" ");
+      return `    <item>
       <title>${escapeXml(post.title)}</title>
       <link>${SITE}/blog/${post.slug}</link>
       <guid isPermaLink="true">${SITE}/blog/${post.slug}</guid>
@@ -21,16 +21,17 @@ export function GET() {
       <description>${escapeXml(description)}</description>
       <dc:creator>Santosh Poudel</dc:creator>
     </item>`;
-  }).join("\n");
+    })
+    .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Santosh Poudel | AI, Web Development and VerifiAI</title>
     <link>${SITE}/blog</link>
-    <description>Articles by Santosh Poudel, AI and web developer from Nepal, about AI, VerifiAI, blockchain and web development.</description>
+    <description>Articles by Santosh Poudel, AI and web developer from Nepal, covering AI, VerifiAI, content authenticity, and web development.</description>
     <language>en</language>
-    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom" />
+    <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom" />
 ${items}
   </channel>
 </rss>`;

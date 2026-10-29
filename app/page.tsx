@@ -52,7 +52,7 @@ export default function Home() {
       <section id="about" className={S}>
         <Scramble as="h2" className={LAB}>About</Scramble>
         <BigText text="Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and AI content tools, and he is the founder of VerifiAI." />
-        <p className="mt-5"><a className={LINK} href="/about">Read the full profile</a></p>
+        <p className="mt-5"><a className={LINK} href="/me">Read my personal profile</a></p>
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
           {faq.map((f) => (
             <div key={f.q} className="rv-c">
@@ -68,7 +68,7 @@ export default function Home() {
         <p className={`${BIG} max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
         <div className="mt-[34px] max-w-[62ch] text-mute [&>p+p]:mt-3.5">
           <p className="rv-c">I founded VerifiAI to explore ways of checking digital content as AI-generated media becomes more common. I am developing the project with a focus on making these checks practical and clear about their limits.</p>
-          <p className="rv-c">Visit <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>, the separate product site, or read <a className={LINK} href="/verifiai">why I started building it</a>.</p>
+          <p className="rv-c">Visit <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>, the separate product site, or explore <a className={LINK} href="/me">my profile and projects</a>.</p>
         </div>
       </Reveal>
 

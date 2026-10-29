@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Read articles by Santosh Poudel, AI and web developer in Nepal, about artificial intelligence, VerifiAI, blockchain, content authenticity and web development.",
   alternates: {
     canonical: "/blog",
-    types: { "application/rss+xml": `${SITE}/feed.xml` },
+    types: { "application/rss+xml": `${SITE}/rss.xml` },
   },
   openGraph: {
     type: "website",

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Manrope } from "next/font/google";
+import type { ReactNode } from "react";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 import Effects from "@/components/Effects";
@@ -7,35 +7,42 @@ import Header from "@/components/Header";
 import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
 import PageTransition from "@/components/PageTransition";
-import { SITE, LINKS, CONTACT_EMAIL, social } from "@/lib/data";
-
-const syne = Syne({ subsets: ["latin"], weight: ["600", "800"], variable: "--font-syne", display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-manrope", display: "swap" });
-
-const title = "Santosh Poudel | AI Developer & Web Developer in Nepal";
-const description =
-  "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.";
+import { SITE, LINKS, social } from "@/lib/data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title,
-  description,
+  title: {
+    default: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
+    template: "%s | Santosh Poudel",
+  },
+  description:
+    "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
+  applicationName: "Santosh Poudel Portfolio",
   authors: [{ name: "Santosh Poudel" }],
   robots: { index: true, follow: true, "max-image-preview": "large" },
   manifest: "/site.webmanifest",
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308090d'/%3E%3Cpath d='M12 12h40v12H24v6h28v22H12V40h28v-6H12z' fill='%233d5afe'/%3E%3C/svg%3E",
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+    shortcut: "/icon.png",
   },
+  alternates: { canonical: "/", types: { "application/rss+xml": `${SITE}/rss.xml` } },
   openGraph: {
-    type: "profile", siteName: "Santosh Poudel", locale: "en_US", url: SITE,
-    title,
-    description,
-    firstName: "Santosh", lastName: "Poudel",
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    type: "profile",
+    siteName: "Santosh Poudel",
+    locale: "en_US",
+    url: SITE,
+    title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
+    description:
+      "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
+    firstName: "Santosh",
+    lastName: "Poudel",
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
   },
   twitter: {
-    card: "summary_large_image", title,
-    description: "Portfolio, projects and blog of Santosh Poudel, AI developer from Nepal.",
+    card: "summary_large_image",
+    title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
+    description: "Portfolio, projects and blog of Santosh Poudel, an AI developer from Nepal.",
     images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
   other: { "geo.region": "NP", "geo.placename": "Nepal" },
@@ -49,9 +56,9 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${manrope.variable}`} suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
         <link rel="me" href={LINKS.github} />

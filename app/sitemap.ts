@@ -6,8 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (latest, post) => post.date > latest ? post.date : latest,
     posts[0]?.date ?? new Date().toISOString().slice(0, 10),
   );
-  const verifiaiDate = posts.find((post) => post.slug === "what-is-verifiai")?.date ?? latestPostDate;
-
   return [
     {
       url: `${SITE}/`,
@@ -20,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ],
     },
     { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/verifiai`, lastModified: new Date(verifiaiDate), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/me`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/blog`, lastModified: new Date(latestPostDate), changeFrequency: "weekly", priority: 0.8 },
     ...posts.map((post) => ({
       url: `${SITE}/blog/${post.slug}`,

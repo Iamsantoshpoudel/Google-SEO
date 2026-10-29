@@ -4,6 +4,7 @@ export const CONTACT_EMAIL = "hi@santoshpoudel06.com.np";
 
 export const LINKS = {
   verifiai: "https://santoshpoudel06.com.np",
+  dexbotx: "https://dexbotx.vercel.app",
   github: "https://github.com/iamsantoshpoudel",
   facebook: "https://www.facebook.com/sant0shpoudel",
   youtube: "https://www.youtube.com/@dexgamex1",
@@ -11,9 +12,9 @@ export const LINKS = {
 
 export const nav = [
   { href: "/#about", label: "About" },
-  { href: "/verifiai", label: "VerifiAI" },
+  { href: "/me", label: "Me" },
   { href: "/#gallery", label: "Gallery" },
-  { href: "/#work", label: "Projects" },
+  { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -24,9 +25,65 @@ export const gallery = [
 ];
 
 export const projects = [
-  { n: "VerifiAI", title: "VerifiAI: AI content detector", desc: "I’m building VerifiAI to explore practical ways to assess AI-generated and manipulated content.", href: LINKS.verifiai },
-  { n: "Code", title: "GitHub projects", desc: "Web experiments and open source work under @iamsantoshpoudel.", href: LINKS.github },
-  { n: "Video", title: "YouTube channel", desc: "Videos and tutorials on the @dexgamex1 channel.", href: LINKS.youtube },
+  { n: "01", title: "VerifiAI", desc: "AI content verification tooling and research for spotting synthetic media and assessing source context.", href: "/projects/verifai" },
+  { n: "02", title: "DexBotX Discord Bot", desc: "A modular Discord automation bot with moderation, auto-role, AI chat, and social notifications.", href: "/projects/dexbotx" },
+  { n: "03", title: "GitHub projects", desc: "Open-source experiments and code samples built with Next.js, TypeScript, and AI-focused tooling.", href: LINKS.github },
+];
+
+export const featuredProjects = [
+  {
+    slug: "verifai",
+    title: "VerifiAI",
+    kicker: "AI detection and trust tooling",
+    description: "VerifiAI explores how people can assess AI-generated content more responsibly by combining source review, provenance context, and careful product design.",
+    url: LINKS.verifiai,
+    image: "/img/santosh-poudel-ai-developer-verifiai-founder.jpg",
+    alt: "Santosh Poudel, founder of VerifiAI, in a portrait for the project",
+    tech: ["Next.js", "AI workflows", "Content verification", "Web tooling"],
+    highlights: [
+      "Practical AI content review workflow",
+      "Focus on transparency and limitations",
+      "Built for creators, educators, and teams evaluating digital trust",
+    ],
+  },
+  {
+    slug: "dexbotx",
+    title: "DexBotX Discord Bot",
+    kicker: "Discord automation and moderation",
+    description: "DexBotX is a Discord bot project that brings moderation, welcome flows, role automation, AI chat, and social notifications together with an admin dashboard for managing server tools.",
+    url: LINKS.dexbotx,
+    image: "/img/dexbotx-discord-automation.svg",
+    alt: "Illustrated dashboard view of the DexBotX Discord automation bot",
+    tech: ["Discord bot", "Automation", "Moderation", "Web dashboard"],
+    highlights: [
+      "Anti-spam and role automation",
+      "YouTube and Kick notifications",
+      "AI chat and admin web dashboard",
+    ],
+    sections: [
+      {
+        heading: "One bot for everyday server operations",
+        paragraphs: [
+          "DexBotX brings common community tasks into one Discord bot: moderation tools for keeping conversations manageable, welcome flows for new members, and role automation for routine server setup. The goal is to reduce repetitive admin work while keeping the main community experience inside Discord.",
+          "Its feature set also includes AI chat and notifications for YouTube and Kick activity, so server owners can combine community interaction with updates about creators their members follow.",
+        ],
+      },
+      {
+        heading: "A dashboard for configuration",
+        paragraphs: [
+          "The web dashboard provides an administrative surface for managing the bot, alongside its Discord-facing workflows. Keeping configuration in a dedicated interface makes the project more approachable than relying on chat commands for every setting.",
+          "The project is organized around practical server needs: moderation, member onboarding, roles, AI chat, and social notifications. Each capability has a distinct job, while the bot brings them together in one place.",
+        ],
+      },
+      {
+        heading: "Built around useful automation",
+        paragraphs: [
+          "Automation is most valuable when it handles predictable tasks without taking control away from server administrators. DexBotX focuses on that balance: automate routine actions, keep moderation tools available to admins, and make community updates easier to follow.",
+          "Visit DexBotX to explore the current project and its available features. The accompanying article shares more about the product goals and the decisions behind bringing these workflows together.",
+        ],
+      },
+    ],
+  },
 ];
 
 type BlogSection = { heading: string; paragraphs: string[] };
@@ -379,10 +436,43 @@ export const posts: BlogPost[] = [
     { label: "Web design tips for beginners in Nepal", url: "/blog/web-design-tips-for-beginners-in-nepal" },
     { label: "What is VerifiAI and why I built it", url: "/blog/what-is-verifiai" },
   ] },
+  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", image: "/img/dexbotx-discord-automation.svg", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
+    "DexBotX is a Discord bot project built around a practical idea: community teams should be able to handle common server tasks without juggling a separate tool for every job. It brings moderation, welcome flows, role automation, AI chat and creator notifications together with an admin dashboard.",
+  ], sections: [
+    { heading: "Start with the work community admins repeat", paragraphs: [
+      "Running a Discord community involves a steady stream of small tasks. Administrators welcome new people, keep conversations healthy, assign roles and help members find the right information. When those jobs are handled through separate tools or repeated manually, routine maintenance can take attention away from the community itself.",
+      "DexBotX brings several of these workflows into one bot. The aim is not to automate every decision, but to make recurring tasks easier to manage while leaving community rules and important moderation choices in the hands of the people responsible for the server.",
+    ] },
+    { heading: "Moderation and onboarding", paragraphs: [
+      "Moderation tools and anti-spam support help administrators respond to unwanted activity. Welcome flows give new members a more consistent introduction, while role automation can reduce repetitive setup for people joining or participating in a server.",
+      "These features work best when they support clear community rules. Automation can handle predictable cases, but admins still need visibility and control when context matters. A bot should help a team maintain its space, not make every community decision on its behalf.",
+    ] },
+    { heading: "Keep the community connected to creator updates", paragraphs: [
+      "DexBotX includes notifications for YouTube and Kick activity. That gives a server a way to surface updates from creators its members care about without requiring everyone to monitor each platform separately.",
+      "Notifications are most useful when they are relevant and configured for the community. The broader product goal is to bring these updates into the space where members already talk, while keeping them distinct from moderation and member-management tools.",
+    ] },
+    { heading: "AI chat as one feature, not the whole product", paragraphs: [
+      "AI chat is part of DexBotX, but the project is not just a chatbot. It combines that interaction with server administration features such as moderation, onboarding and role automation, plus social notifications.",
+      "Keeping AI chat alongside these workflows makes it one optional capability within a wider community tool. As with any AI feature, responses should be treated as generated assistance rather than guaranteed facts, and server owners should decide how it fits their community.",
+    ] },
+    { heading: "A dashboard for the people running the server", paragraphs: [
+      "The admin web dashboard gives server owners a place to manage the bot beyond the Discord conversation itself. A dedicated configuration surface can make settings easier to find and helps separate administration from the messages members see every day.",
+      "This division reflects a simple product principle: member-facing interactions and administrative controls serve different audiences. The bot handles community workflows in Discord, while the dashboard supports the people configuring those workflows.",
+    ] },
+    { heading: "What I learned from bringing the pieces together", paragraphs: [
+      "A multi-purpose bot needs a clear structure so each capability remains understandable. Moderation, onboarding, notifications and AI chat solve different problems; grouping them under one product is useful only when people can still find the right tool and understand what it does.",
+      "DexBotX is an ongoing product project, and its feature set can evolve. You can visit the project site to see its current state, or read more about my other work on the projects page.",
+    ] },
+  ], related: [
+    { label: "Explore the DexBotX project", url: "/projects/dexbotx" },
+    { label: "Browse all projects", url: "/projects" },
+    { label: "The future of AI", url: "/blog/future-of-artificial-intelligence" },
+  ] },
 ];
 
 export const social = [
   { label: "VerifiAI", href: LINKS.verifiai },
+  { label: "DexbotX", href: LINKS.dexbotx },
   { label: "GitHub", href: LINKS.github },
   { label: "Facebook", href: LINKS.facebook },
   { label: "YouTube", href: LINKS.youtube },
@@ -409,10 +499,11 @@ export const personLd = {
   "@type": "Person",
   "@id": `${SITE}/#person`,
   name: "Santosh Poudel",
-  url: `${SITE}/`,
+  url: `${SITE}/me`,
   image: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
   jobTitle: "Computer Engineer, AI Developer and Web Developer",
   description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal and the founder of VerifiAI.",
+  knowsAbout: ["Web development", "Artificial intelligence", "AI content tools", "Content authenticity", "Discord bot development", "Software product development"],
   address: { "@type": "PostalAddress", addressCountry: "NP" },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",

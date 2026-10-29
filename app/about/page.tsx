@@ -63,7 +63,7 @@ export default function About() {
       <section>
         <h2>VerifiAI</h2>
         <p>I started VerifiAI to work on content-authenticity tools. The product has its own site at <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>; this portfolio remains the home for my biography, projects and writing.</p>
-        <p>Read <a className={LINK} href="/verifiai">why I built VerifiAI</a> or browse the <a className={LINK} href="/blog">blog</a>.</p>
+        <p>Explore <a className={LINK} href="/me">my personal profile and projects</a> or browse the <a className={LINK} href="/blog">blog</a>.</p>
       </section>
 
       <section>

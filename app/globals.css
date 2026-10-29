@@ -24,8 +24,8 @@
   --color-acc: var(--a);
   --color-hot: var(--b);
   --color-pan: var(--pan);
-  --font-display: var(--font-syne), "Arial Black", Impact, sans-serif;
-  --font-sans: var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+  --font-display: "Arial Black", Impact, "Segoe UI", sans-serif;
+  --font-sans: "Segoe UI", system-ui, sans-serif;
 }
 
 @utility clip-notch { clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); }
@@ -237,7 +237,7 @@
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 70px; background: var(--bg); }
   body {
-    color: var(--ink); font: 400 17px/1.7 var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+    color: var(--ink); font: 400 17px/1.7 "Segoe UI", system-ui, sans-serif;
     overflow-x: hidden; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
   }
   h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.03em; line-height: .95; }

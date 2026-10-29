@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#101824"/>
+  <path d="M0 690 1200 350v550H0V690Z" fill="#162535"/>
+  <circle cx="1010" cy="150" r="190" fill="#3D3DFF" fill-opacity=".16"/>
+  <circle cx="165" cy="785" r="210" fill="#FF3D5E" fill-opacity=".12"/>
+  <rect x="110" y="105" width="980" height="690" rx="24" fill="#F3F5F8"/>
+  <path d="M110 129c0-13.255 10.745-24 24-24h932c13.255 0 24 10.745 24 24v54H110v-54Z" fill="#202D3B"/>
+  <circle cx="147" cy="143" r="7" fill="#FF687B"/>
+  <circle cx="172" cy="143" r="7" fill="#FFD166"/>
+  <circle cx="197" cy="143" r="7" fill="#5DD6A0"/>
+  <rect x="137" y="211" width="245" height="546" rx="14" fill="#E7EBF0"/>
+  <rect x="165" y="246" width="145" height="16" rx="8" fill="#263647"/>
+  <rect x="165" y="296" width="188" height="42" rx="9" fill="#3D3DFF"/>
+  <rect x="180" y="311" width="105" height="12" rx="6" fill="#FFFFFF"/>
+  <rect x="165" y="357" width="188" height="42" rx="9" fill="#F7F8FA"/>
+  <rect x="180" y="372" width="105" height="12" rx="6" fill="#647184"/>
+  <rect x="165" y="418" width="188" height="42" rx="9" fill="#F7F8FA"/>
+  <rect x="180" y="433" width="105" height="12" rx="6" fill="#647184"/>
+  <rect x="165" y="479" width="188" height="42" rx="9" fill="#F7F8FA"/>
+  <rect x="180" y="494" width="105" height="12" rx="6" fill="#647184"/>
+  <rect x="165" y="567" width="120" height="11" rx="5.5" fill="#9AA5B2"/>
+  <rect x="165" y="593" width="155" height="11" rx="5.5" fill="#C0C7D0"/>
+  <text x="426" y="255" fill="#202D3B" font-family="Arial, sans-serif" font-size="34" font-weight="700">DexBotX</text>
+  <text x="426" y="291" fill="#647184" font-family="Arial, sans-serif" font-size="17">Community tools, in one place</text>
+  <rect x="426" y="326" width="292" height="155" rx="14" fill="#FFFFFF" stroke="#D9DEE5" stroke-width="2"/>
+  <circle cx="466" cy="367" r="17" fill="#3D3DFF" fill-opacity=".14"/>
+  <path d="m458 367 6 6 11-13" stroke="#3D3DFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <text x="496" y="373" fill="#263647" font-family="Arial, sans-serif" font-size="18" font-weight="700">Moderation</text>
+  <text x="456" y="420" fill="#647184" font-family="Arial, sans-serif" font-size="15">Anti-spam support</text>
+  <text x="456" y="447" fill="#647184" font-family="Arial, sans-serif" font-size="15">Admin-controlled tools</text>
+  <rect x="740" y="326" width="292" height="155" rx="14" fill="#FFFFFF" stroke="#D9DEE5" stroke-width="2"/>
+  <circle cx="780" cy="367" r="17" fill="#FF3D5E" fill-opacity=".14"/>
+  <path d="M780 357v20m-10-10h20" stroke="#FF3D5E" stroke-linecap="round" stroke-width="3"/>
+  <text x="810" y="373" fill="#263647" font-family="Arial, sans-serif" font-size="18" font-weight="700">Welcome &amp; roles</text>
+  <text x="770" y="420" fill="#647184" font-family="Arial, sans-serif" font-size="15">Member onboarding</text>
+  <text x="770" y="447" fill="#647184" font-family="Arial, sans-serif" font-size="15">Routine role automation</text>
+  <rect x="426" y="501" width="292" height="155" rx="14" fill="#FFFFFF" stroke="#D9DEE5" stroke-width="2"/>
+  <circle cx="466" cy="542" r="17" fill="#19A6A1" fill-opacity=".15"/>
+  <path d="M458 542h16m-8-8 8 8-8 8" stroke="#168D89" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <text x="496" y="548" fill="#263647" font-family="Arial, sans-serif" font-size="18" font-weight="700">Creator updates</text>
+  <text x="456" y="595" fill="#647184" font-family="Arial, sans-serif" font-size="15">YouTube and Kick alerts</text>
+  <text x="456" y="622" fill="#647184" font-family="Arial, sans-serif" font-size="15">Shared with your community</text>
+  <rect x="740" y="501" width="292" height="155" rx="14" fill="#FFFFFF" stroke="#D9DEE5" stroke-width="2"/>
+  <circle cx="780" cy="542" r="17" fill="#FFB547" fill-opacity=".2"/>
+  <path d="M773 536h14v12h-8l-5 4v-16Z" stroke="#B8750D" stroke-linejoin="round" stroke-width="2.5"/>
+  <text x="810" y="548" fill="#263647" font-family="Arial, sans-serif" font-size="18" font-weight="700">AI chat</text>
+  <text x="770" y="595" fill="#647184" font-family="Arial, sans-serif" font-size="15">An optional community tool</text>
+  <text x="770" y="622" fill="#647184" font-family="Arial, sans-serif" font-size="15">Alongside core server features</text>
+  <text x="426" y="713" fill="#647184" font-family="Arial, sans-serif" font-size="15">Moderation  /  Automation  /  Notifications</text>
+</svg>
