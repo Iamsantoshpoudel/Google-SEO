@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE } from "@/lib/data";
 
 const title = "Santosh Poudel | AI Developer and Web Developer in Nepal";
 const description = "Personal profile of Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. Explore his background, web development work, AI projects, Discord automation and articles.";
@@ -175,6 +175,21 @@ export default function MePage() {
           <li><a className={LINK} href={LINKS.dexbotx} target="_blank" rel="noopener noreferrer">DexBotX</a></li>
           <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
         </ul>
+        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4" aria-label="Photo gallery of Santosh Poudel">
+          {profileGallery.map((image) => (
+            <figure key={image.src} className="overflow-hidden border border-line">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={600}
+                height={750}
+                sizes="(max-width: 639px) calc((100vw - 48px) / 2), (max-width: 900px) calc((100vw - 7vw - 24px) / 3), 260px"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <figcaption className="px-3 py-2 text-sm text-mute">{image.cap}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section id="writing">

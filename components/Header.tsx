@@ -95,6 +95,7 @@ export default function Header() {
             alt="Santosh Poudel"
             width={36}
             height={36}
+            sizes="(max-width: 767px) 24px, 36px"
           />
         </a>
         <div className="nav-links">

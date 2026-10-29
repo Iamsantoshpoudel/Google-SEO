@@ -39,6 +39,7 @@ export default function Gallery() {
           }}
         >
           <Image src={g.src} alt={g.alt} width={600} height={750}
+            sizes="(max-width: 541px) calc(100vw - 36px), (max-width: 821px) calc((100vw - 54px) / 2), (max-width: 1400px) 30vw, 423px"
             className="size-full scale-[1.04] object-cover transition-[filter,transform] duration-[800ms] ease-[cubic-bezier(.2,.8,.2,1)] group-hover:scale-[1.12]" />
           <figcaption className="sr-only">{g.cap}</figcaption>
         </figure>

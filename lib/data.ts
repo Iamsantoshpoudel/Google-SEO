@@ -24,6 +24,14 @@ export const gallery = [
   { src: "/img/santosh-poudel-close-up.jpg", alt: "Close-up portrait of web developer Santosh Poudel", cap: "Close-up" },
 ];
 
+export const profileGallery = [
+  ...gallery,
+  { src: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, web developer from Nepal", cap: "Web developer portrait" },
+  { src: "/img/santosh-poudel-developer.jpg", alt: "Santosh Poudel in a computer engineering college uniform", cap: "Engineering student" },
+  { src: "/img/santosh-poudel-ai-developer-verifiai-founder.jpg", alt: "Santosh Poudel outdoors, AI developer and VerifiAI founder", cap: "VerifiAI founder" },
+  { src: "/img/santosh-poudel-close-up.png", alt: "Stylized digital illustration of Santosh Poudel", cap: "Illustrated portrait" },
+];
+
 export const projects = [
   { n: "01", title: "VerifiAI", desc: "AI content verification tooling and research for spotting synthetic media and assessing source context.", href: "/projects/verifai" },
   { n: "02", title: "DexBotX Discord Bot", desc: "A modular Discord automation bot with moderation, auto-role, AI chat, and social notifications.", href: "/projects/dexbotx" },
