@@ -2,26 +2,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageShell from "@/components/PageShell";
 import { CONTACT_EMAIL, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
+import { serializeJsonLd } from "@/lib/seo";
 
-const title = "About Santosh Poudel: Developer and VerifiAI Founder";
+const pageTitle = "About: Developer and VerifiAI Founder";
+const title = `${pageTitle} | Santosh Poudel`;
 const description = "Meet Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. Read about his background, work and VerifiAI.";
 
 export const metadata: Metadata = {
-  title,
+  title: pageTitle,
   description,
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
+    siteName: "Santosh Poudel Portfolio",
     url: `${SITE}/about`,
     title,
     description,
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
@@ -37,7 +40,7 @@ export default function About() {
 
   return (
     <PageShell title="About Santosh Poudel" crumbs={[{ name: "About", path: "/about" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([personLd, verifiaiOrganizationLd, profileLd]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([personLd, verifiaiOrganizationLd, profileLd]) }} />
       <section className="grid items-start gap-7 sm:grid-cols-[minmax(180px,280px)_1fr]">
         <Image
           src="/img/santosh-poudel-web-developer-nepal.jpg"
@@ -45,6 +48,7 @@ export default function About() {
           width={600}
           height={800}
           sizes="(max-width: 640px) 100vw, 280px"
+          priority
           className="w-full object-cover"
         />
         <p className="text-ink">Santosh Poudel is a computer engineer, AI developer and web developer from Nepal and the founder of VerifiAI.</p>

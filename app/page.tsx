@@ -6,23 +6,25 @@ import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
 import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
+import { serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
-  description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.",
-  alternates: { canonical: "/" },
+  title: { absolute: "Santosh Poudel | AI & Web Developer in Nepal" },
+  description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
+  alternates: { canonical: `${SITE}/` },
   openGraph: {
-    type: "profile",
+    type: "website",
+    siteName: "Santosh Poudel Portfolio",
     url: SITE,
-    title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
-    description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his projects, work on VerifiAI and writing.",
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    title: "Santosh Poudel | AI & Web Developer in Nepal",
+    description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
+    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Santosh Poudel | AI Developer & Web Developer in Nepal",
-    description: "Projects, web development and AI work by Santosh Poudel, a computer engineer from Nepal.",
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    title: "Santosh Poudel | AI & Web Developer in Nepal",
+    description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -46,11 +48,13 @@ export default function Home() {
   };
   return (
     <main id="top">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteLd, personLd, verifiaiOrganizationLd, profileLd, faqLd]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([websiteLd, personLd, verifiaiOrganizationLd, profileLd, faqLd]) }} />
       <Hero />
 
       <section id="about" className={S}>
-        <Scramble as="h2" className={LAB}>About</Scramble>
+        <a href="/about" className="no-underline text-inherit">
+          <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
+        </a>
         <BigText text="Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and AI content tools, and he is the founder of VerifiAI." />
         <p className="mt-5"><a className={LINK} href="/me">Read my personal profile</a></p>
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">

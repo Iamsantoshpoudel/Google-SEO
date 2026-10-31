@@ -1,9 +1,9 @@
-const V = "v1";
+const V = "v2";
 const PAGES = `pages-${V}`;
 const ASSETS = `assets-${V}`;
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(PAGES).then((c) => c.addAll(["/", "/offline"])).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(PAGES).then((c) => c.add("/offline")).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (e) => {
@@ -20,15 +20,13 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   if (url.origin !== location.origin) return; // never touch Firebase / country lookups
 
-  // Pages: network first, fall back to cache, then the offline page
+  if (/^\/(?:robots\.txt|sitemap\.xml|favicon\.ico|favicon\.svg|apple-touch-icon\.png|apple-icon\.png|icon(?:-\d+)?\.png)$/.test(url.pathname)) return;
+
+  // Pages: network first; only the offline fallback is cached.
   if (req.mode === "navigate") {
     e.respondWith(
       fetch(req)
-        .then((res) => {
-          if (res.ok) { const copy = res.clone(); caches.open(PAGES).then((c) => c.put(req, copy)); }
-          return res;
-        })
-        .catch(() => caches.match(req).then((m) => m || caches.match("/offline"))),
+        .catch(() => caches.match("/offline")),
     );
     return;
   }

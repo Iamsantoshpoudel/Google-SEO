@@ -80,7 +80,7 @@ export default function InfiniteBlogReader({
             alt={post.imageAlt}
             width={1200}
             height={900}
-            loading="lazy"
+            priority={index === 0}
             sizes="(max-width: 900px) 100vw, 900px"
             className="my-5 aspect-[4/3] w-full object-cover"
           />

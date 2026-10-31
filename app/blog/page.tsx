@@ -3,26 +3,32 @@ import Image from "next/image";
 import PageShell from "@/components/PageShell";
 import SessionRecommendations from "@/components/SessionRecommendations";
 import { posts, SITE } from "@/lib/data";
+import { fitMetaDescription, serializeJsonLd } from "@/lib/seo";
+
+const pageTitle = "Articles on AI, Web Development and VerifiAI";
+const title = `${pageTitle} | Santosh Poudel`;
+const description = fitMetaDescription("Read articles by Santosh Poudel, AI and web developer in Nepal, about artificial intelligence, VerifiAI, blockchain, content authenticity and web development.");
 
 export const metadata: Metadata = {
-  title: "Articles on AI, Web Development and VerifiAI | Santosh Poudel",
-  description: "Read articles by Santosh Poudel, AI and web developer in Nepal, about artificial intelligence, VerifiAI, blockchain, content authenticity and web development.",
+  title: pageTitle,
+  description,
   alternates: {
     canonical: "/blog",
     types: { "application/rss+xml": `${SITE}/rss.xml` },
   },
   openGraph: {
     type: "website",
+    siteName: "Santosh Poudel Portfolio",
     url: `${SITE}/blog`,
-    title: "Articles on AI, Web Development and VerifiAI | Santosh Poudel",
-    description: "Perspectives on AI, content authenticity, blockchain and web development from Santosh Poudel.",
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, author of the blog" }],
+    title,
+    description,
+    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, author of the blog" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Articles on AI, Web Development and VerifiAI | Santosh Poudel",
-    description: "Articles about AI, VerifiAI, blockchain and web development.",
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
 };
 
@@ -43,13 +49,13 @@ export default function Blog() {
   };
   return (
     <PageShell title="Blog" crumbs={[{ name: "Blog", path: "/blog" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(blogLd) }} />
       <SessionRecommendations posts={posts} />
       <ul className="grid gap-6">
         {posts.map((p, index) => (
           <li key={p.slug} className="grid gap-5 border-b border-line pb-6 sm:grid-cols-[180px_1fr]">
             <a href={`/blog/${p.slug}`} className="block aspect-[4/3] overflow-hidden" aria-label={`Read ${p.title}`}>
-              <Image src={p.image} alt={p.imageAlt} width={600} height={450} sizes="(max-width: 640px) 100vw, 180px" loading={index === 0 ? "eager" : "lazy"} className="size-full object-cover transition-transform duration-500 hover:scale-105" />
+              <Image src={p.image} alt={p.imageAlt} width={600} height={450} sizes="(max-width: 640px) 100vw, 180px" priority={index === 0} className="size-full object-cover transition-transform duration-500 hover:scale-105" />
             </a>
             <div>
               <time dateTime={p.date} className="text-[.9rem]">{p.label} {p.date.slice(0, 4)}</time>

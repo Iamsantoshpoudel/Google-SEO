@@ -496,10 +496,12 @@ export const faq = [
 export const websiteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": `${SITE}/#site`,
+  "@id": `${SITE}/#website`,
   url: `${SITE}/`,
-  name: "Santosh Poudel",
+  name: "Santosh Poudel Portfolio",
+  alternateName: ["Santosh Poudel"],
   inLanguage: "en",
+  publisher: { "@id": `${SITE}/#person` },
 };
 
 export const personLd = {

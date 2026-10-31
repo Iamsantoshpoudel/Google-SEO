@@ -255,10 +255,7 @@
 
 /* hero */
 .hero-line { translate: var(--hx, 0px) 0; display: block; overflow: hidden; }
-.hero-i { display: block; font-style: normal; transform: translateY(105%);
-  animation: up 1.1s cubic-bezier(.2, .9, .2, 1) forwards; animation-play-state: paused; }
-body.ready .hero-i { animation-play-state: running; }
-@keyframes up { to { transform: none; } }
+.hero-i { display: block; font-style: normal; }
 
 .route-transition { animation: route-enter .45s cubic-bezier(.2, .8, .2, 1) both; }
 @keyframes route-enter {
