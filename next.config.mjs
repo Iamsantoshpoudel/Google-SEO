@@ -28,8 +28,8 @@ const nextConfig = {
       { source: "/blog/santosh-poudel-and-verifiai", destination: "/about", statusCode: 301 },
       { source: "/blog/web-development-work-of-santosh-poudel", destination: "/about", statusCode: 301 },
       { source: "/blog/why-work-with-santosh-poudel-web-development", destination: "/about", statusCode: 301 },
-      { source: "/verifiai", destination: "/me", permanent: true },
-      { source: "/verifyai", destination: "/me", permanent: true },
+      { source: "/verifiai", destination: "/projects/verifai", permanent: true },
+      { source: "/verifyai", destination: "/projects/verifai", permanent: true },
     ];
   },
   async headers() {

@@ -2,23 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import { featuredProjects, SITE } from "@/lib/data";
+import { serializeJsonLd } from "@/lib/seo";
+
+const pageTitle = "AI Projects";
+const title = `${pageTitle} | Santosh Poudel`;
+const description = "Explore Santosh Poudel's featured projects, including VerifiAI and DexBotX, built for AI workflows and web products.";
 
 export const metadata: Metadata = {
-  title: "Projects | Santosh Poudel",
-  description: "Explore Santosh Poudel's featured projects, including VerifiAI and DexBotX, built for AI workflows and web products.",
+  title: pageTitle,
+  description,
   alternates: { canonical: "/projects" },
   openGraph: {
     type: "website",
+    siteName: "Santosh Poudel Portfolio",
     url: `${SITE}/projects`,
-    title: "Projects | Santosh Poudel",
-    description: "Featured projects from Santosh Poudel, including AI tools, developer experiments, and a Discord automation product.",
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
+    title,
+    description,
+    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects | Santosh Poudel",
-    description: "Featured portfolio projects from Santosh Poudel, AI developer from Nepal.",
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
 };
 
@@ -44,7 +50,7 @@ export default function ProjectsPage() {
 
   return (
     <PageShell title="Projects" crumbs={[{ name: "Projects", path: "/projects" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }} />
       <p className="max-w-[60ch] text-mute">
         These are the projects I am actively building or documenting as part of my work in AI tools, automation, and practical web products.
       </p>

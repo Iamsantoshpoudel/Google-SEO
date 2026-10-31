@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Page not found | Santosh Poudel",
+  title: "Page not found",
   description: "This page wandered off. Head back to the homepage or explore the blog.",
   robots: { index: false, follow: false },
 };

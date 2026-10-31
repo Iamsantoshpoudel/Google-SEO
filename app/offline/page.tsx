@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Offline | Santosh Poudel",
+  title: "Offline",
+  description: "This page could not load without a connection. Pages you have already opened still work.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/offline" },
 };

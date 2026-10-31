@@ -1,30 +1,38 @@
+import { statSync } from "node:fs";
+import { join } from "node:path";
 import type { MetadataRoute } from "next";
-import { gallery, posts, SITE } from "@/lib/data";
+import { featuredProjects, gallery, posts, SITE } from "@/lib/data";
+
+const sourceDates = {
+  home: statSync(join(process.cwd(), "app", "page.tsx")).mtime,
+  about: statSync(join(process.cwd(), "app", "about", "page.tsx")).mtime,
+  profile: statSync(join(process.cwd(), "app", "me", "page.tsx")).mtime,
+  projects: statSync(join(process.cwd(), "app", "projects", "page.tsx")).mtime,
+  blog: statSync(join(process.cwd(), "app", "blog", "page.tsx")).mtime,
+  content: statSync(join(process.cwd(), "lib", "data.ts")).mtime,
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const latestPostDate = posts.reduce(
-    (latest, post) => post.date > latest ? post.date : latest,
-    posts[0]?.date ?? new Date().toISOString().slice(0, 10),
-  );
   return [
     {
       url: `${SITE}/`,
-      lastModified: new Date(latestPostDate),
-      changeFrequency: "weekly",
-      priority: 1,
+      lastModified: sourceDates.home,
       images: [
         `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
         ...gallery.map((image) => `${SITE}${image.src}`),
       ],
     },
-    { url: `${SITE}/about`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/me`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE}/blog`, lastModified: new Date(latestPostDate), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE}/about`, lastModified: sourceDates.about },
+    { url: `${SITE}/me`, lastModified: sourceDates.profile },
+    { url: `${SITE}/projects`, lastModified: sourceDates.projects },
+    ...featuredProjects.map((project) => ({
+      url: `${SITE}/projects/${project.slug}`,
+      lastModified: sourceDates.content,
+    })),
+    { url: `${SITE}/blog`, lastModified: sourceDates.blog },
     ...posts.map((post) => ({
       url: `${SITE}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      lastModified: sourceDates.content,
     })),
   ];
 }

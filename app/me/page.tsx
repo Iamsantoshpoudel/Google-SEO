@@ -3,26 +3,29 @@ import Image from "next/image";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE } from "@/lib/data";
+import { serializeJsonLd } from "@/lib/seo";
 
-const title = "Santosh Poudel | AI Developer and Web Developer in Nepal";
-const description = "Personal profile of Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. Explore his background, web development work, AI projects, Discord automation and articles.";
+const pageTitle = "AI Developer and Web Developer in Nepal";
+const title = `${pageTitle} | Santosh Poudel`;
+const description = "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal. Explore his background, AI projects, Discord automation and articles.";
 
 export const metadata: Metadata = {
-  title: "Personal Profile",
+  title: pageTitle,
   description,
   alternates: { canonical: "/me" },
   openGraph: {
     type: "profile",
+    siteName: "Santosh Poudel Portfolio",
     url: `${SITE}/me`,
     title,
     description,
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
@@ -37,26 +40,7 @@ export default function MePage() {
     "@id": `${SITE}/me#profile`,
     url: `${SITE}/me`,
     name: "Santosh Poudel's personal profile",
-    mainEntity: {
-      "@type": "Person",
-      "@id": `${SITE}/#person`,
-      name: personLd.name,
-      url: `${SITE}/me`,
-      image: personLd.image,
-      jobTitle: personLd.jobTitle,
-      description: personLd.description,
-      address: personLd.address,
-      hasCredential: personLd.hasCredential,
-      sameAs: personLd.sameAs,
-      knowsAbout: personLd.knowsAbout,
-      subjectOf: featuredPosts.map((post) => ({
-        "@type": "BlogPosting",
-        headline: post.title,
-        url: `${SITE}/blog/${post.slug}`,
-        datePublished: post.date,
-        image: `${SITE}${post.image}`,
-      })),
-    },
+    mainEntity: { "@id": `${SITE}/#person` },
   };
   const projectsLd = {
     "@context": "https://schema.org",
@@ -76,10 +60,20 @@ export default function MePage() {
       },
     })),
   };
+  const personArticlesLd = {
+    ...personLd,
+    subjectOf: featuredPosts.map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        url: `${SITE}/blog/${post.slug}`,
+        datePublished: post.date,
+        image: `${SITE}${post.image}`,
+      })),
+  };
 
   return (
     <PageShell title="Santosh Poudel" crumbs={[{ name: "Me", path: "/me" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([profileLd, projectsLd]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([personArticlesLd, profileLd, projectsLd]) }} />
 
       <section className="grid items-center gap-8 sm:grid-cols-[minmax(190px,300px)_1fr]">
         <Image
@@ -184,6 +178,7 @@ export default function MePage() {
                 width={600}
                 height={750}
                 sizes="(max-width: 639px) calc((100vw - 48px) / 2), (max-width: 900px) calc((100vw - 7vw - 24px) / 3), 260px"
+                loading="lazy"
                 className="aspect-[4/5] w-full object-cover"
               />
               <figcaption className="px-3 py-2 text-sm text-mute">{image.cap}</figcaption>

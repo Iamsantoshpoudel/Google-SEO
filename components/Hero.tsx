@@ -1,16 +1,22 @@
 "use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import Particles from "./Particles";
 import Magnetic from "./Magnetic";
+
+const Particles = dynamic(() => import("./Particles"), { ssr: false });
 
 export default function Hero() {
   const frame = useRef<HTMLElement>(null);
   const h1 = useRef<HTMLHeadingElement>(null);
   const [broken, setBroken] = useState(false);
+  const [particlesReady, setParticlesReady] = useState(false);
 
   useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+    const particleFrame = requestAnimationFrame(() => setParticlesReady(true));
+    if (matchMedia("(prefers-reduced-motion:reduce)").matches) {
+      return () => cancelAnimationFrame(particleFrame);
+    }
     const fr = frame.current!;
     const hs = h1.current!.querySelectorAll<HTMLElement>(".hero-line");
     let tk = false;
@@ -27,12 +33,16 @@ export default function Hero() {
     const onScroll = () => { if (!tk) { tk = true; requestAnimationFrame(par); } };
     addEventListener("pointermove", move, { passive: true });
     addEventListener("scroll", onScroll, { passive: true });
-    return () => { removeEventListener("pointermove", move); removeEventListener("scroll", onScroll); };
+    return () => {
+      cancelAnimationFrame(particleFrame);
+      removeEventListener("pointermove", move);
+      removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <section className="relative grid min-h-svh content-end overflow-hidden px-[clamp(18px,4vw,48px)] pb-[7vh]">
-      <Particles />
+      {particlesReady && <Particles />}
       <figure ref={frame} className="frame absolute right-[clamp(18px,4vw,48px)] top-[13vh] z-[2] aspect-[3/4] w-[34vw] md:top-[16vh] md:w-[min(26vw,300px)]">
         {broken ? (
           <svg viewBox="0 0 120 160" role="img" aria-label="Abstract portrait placeholder">
@@ -40,7 +50,7 @@ export default function Hero() {
             <path d="M18 150c4-40 26-52 42-52s38 12 42 52" fill="none" stroke="var(--a)" strokeWidth="2" />
           </svg>
         ) : (
-          <Image src="/img/santosh-poudel-web-developer-nepal.jpg" alt="Santosh Poudel, computer engineer and web developer from Nepal" width={600} height={800} sizes="(max-width: 767px) 34vw, (max-width: 1153px) 26vw, 300px" loading="eager" onError={() => setBroken(true)} />
+          <Image src="/img/santosh-poudel-web-developer-nepal.jpg" alt="Santosh Poudel, computer engineer and web developer from Nepal" width={600} height={800} sizes="(max-width: 767px) 34vw, (max-width: 1153px) 26vw, 300px" loading="eager" fetchPriority="high" priority onError={() => setBroken(true)} />
         )}
         <b />
       </figure>
