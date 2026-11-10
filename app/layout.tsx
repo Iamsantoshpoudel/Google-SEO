@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
-import DeferredEffects from "@/components/DeferredEffects";
+import Preloader from "@/components/Preloader";
+import Effects from "@/components/Effects";
 import Header from "@/components/Header";
 import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
@@ -9,44 +10,40 @@ import PageTransition from "@/components/PageTransition";
 import { SITE, LINKS, social } from "@/lib/data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://santosh2.com.np"),
+  metadataBase: new URL(SITE),
   title: {
-    default: "Santosh Poudel | AI & Web Developer in Nepal",
+    default: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
     template: "%s | Santosh Poudel",
   },
   description:
-    "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
+    "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
   applicationName: "Santosh Poudel Portfolio",
   authors: [{ name: "Santosh Poudel" }],
   robots: { index: true, follow: true, "max-image-preview": "large" },
   manifest: "/site.webmanifest",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }, "/icon.png"],
+    apple: "/apple-icon.png",
     shortcut: "/favicon.ico",
   },
   alternates: { canonical: "/", types: { "application/rss+xml": `${SITE}/rss.xml` } },
   openGraph: {
     type: "profile",
-    siteName: "Santosh Poudel Portfolio",
+    siteName: "Santosh Poudel",
     locale: "en_US",
     url: SITE,
-    title: "Santosh Poudel | AI & Web Developer in Nepal",
+    title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
     description:
-      "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
+      "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
     firstName: "Santosh",
     lastName: "Poudel",
-    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Santosh Poudel | AI & Web Developer in Nepal",
-    description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
-    images: ["/opengraph-image"],
+    title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
+    description: "Portfolio, projects and blog of Santosh Poudel, an AI developer from Nepal.",
+    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
   },
   other: { "geo.region": "NP", "geo.placename": "Nepal" },
 };
@@ -63,13 +60,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-            <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}" }} />
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
         <link rel="me" href={LINKS.github} />
         <link rel="me" href={LINKS.youtube} />
         <link rel="me" href={LINKS.facebook} />
       </head>
       <body suppressHydrationWarning>
-        <DeferredEffects />
+        <Preloader />
+        <Effects />
         <VisitTracker />
         <ServiceWorker />
         <Header />
