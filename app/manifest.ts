@@ -4,8 +4,9 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Santosh Poudel",
     short_name: "Santosh",
-    description: "AI developer and full stack developer from Nepal building practical software, products, and blog content.",
+    description: "Santosh Poudel is a Nepal-based full-stack web and AI developer building SaaS products, web applications, Discord bots, and AI tools while learning blockchain development.",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#0b0f19",
     theme_color: "#0b0f19",

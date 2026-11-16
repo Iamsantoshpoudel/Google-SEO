@@ -48,6 +48,7 @@ export default async function Post({ params }: Params) {
 
   const ld = {
     "@context": "https://schema.org", "@type": "BlogPosting",
+    "@id": `${SITE}/blog/${post.slug}#article`,
     headline: post.title,
     description: fitMetaDescription(post.body[0]),
     datePublished: post.date,

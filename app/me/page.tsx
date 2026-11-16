@@ -42,6 +42,7 @@ export default function MePage() {
     url: `${SITE}/me`,
     name: "Santosh Poudel's personal profile",
     mainEntity: { "@id": `${SITE}/#person` },
+    primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
   };
   const projectsLd = {
     "@context": "https://schema.org",
@@ -52,6 +53,7 @@ export default function MePage() {
       position: index + 1,
       item: {
         "@type": "SoftwareApplication",
+        "@id": `${SITE}/#project-${project.slug}`,
         name: project.title,
         description: project.description,
         applicationCategory: "DeveloperApplication",

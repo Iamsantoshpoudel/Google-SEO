@@ -12,24 +12,12 @@ Cookie banner to accept or decline visit counting
 SEO: metadata, Open Graph, JSON-LD (Person, ProfilePage, FAQ), sitemap.xml, robots.txt
 Tech stack
 
-Next.js 15, React 19, TypeScript, Tailwind CSS 4, Firebase (Firestore), next/font (Syne, Manrope) 
-```
-app/
-  layout.tsx          Metadata, fonts, JSON-LD, global components
-  page.tsx            Home page
-  dashboard/          Public visitor dashboard
-  offline/            Offline fallback page
-  sitemap.ts          /sitemap.xml
-  robots.ts           /robots.txt
-  globals.css         Tailwind theme tokens and custom effects
-components/           Hero, Particles, Gallery, Dashboard, VisitTracker, ...
-lib/
-  data.ts             All site content, links, blog posts, JSON-LD
-  firebase.ts         Firebase init
-  consent.ts          Cookie consent helpers
-public/
-  sw.js               Service worker
-  site.webmanifest    PWA manifest
-  icon-192.png, icon-512.png
-firestore.rules       Firestore security rules
-```
+Next.js 16.4.6 (App Router), React 19, TypeScript 5.6, Tailwind CSS 4, Firebase 12 (Firestore), next/font (Syne, Manrope)
+
+## GitHub Actions 
+
+`.github/workflows/ci.yml` runs `npm ci`, lint, and a production build on pull requests targeting `main` and pushes to `main`, using Node.js 26.x.
+
+Hosting provider handles preview and production deployments through its Git integration. Connect this GitHub repository in the Hosting provider project settings and set `main` as the production branch. With that integration enabled, pull requests receive preview deployments and pushes to `main` trigger production deployments; this workflow does not create duplicate Hosting provider deployments or require Hosting provider secrets in GitHub.
+
+To prevent merging code that fails CI, configure GitHub branch protection for `main` and require the **Lint and build** status check.

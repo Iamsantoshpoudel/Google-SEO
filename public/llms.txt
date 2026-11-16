@@ -18,6 +18,8 @@ VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
 
 ## Articles
 
+- [Learning Ethereum, Sui and Solana as a developer from Nepal](https://santosh2.com.np/blog/learning-ethereum-sui-solana-from-nepal)
+- [How VerifiAI approaches AI-generated content detection](https://santosh2.com.np/blog/how-verifiai-approaches-ai-content-detection)
 - [Building a SaaS as a developer in Nepal](https://santosh2.com.np/blog/building-a-saas-as-a-developer-in-nepal)
 - [Building DexBotX: a Discord bot for server automation](https://santosh2.com.np/blog/building-dexbotx-discord-bot)
 - [What is VerifiAI and why I built it](https://santosh2.com.np/blog/what-is-verifiai)

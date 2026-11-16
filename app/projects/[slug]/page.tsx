@@ -49,6 +49,7 @@ export default async function ProjectDetailPage({ params }: Params) {
   const projectLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": `${SITE}/#project-${project.slug}`,
     name: project.title,
     description: project.description,
     applicationCategory: project.slug === "verifai" ? "UtilitiesApplication" : "DeveloperApplication",
@@ -61,10 +62,19 @@ export default async function ProjectDetailPage({ params }: Params) {
     keywords: project.tech,
     featureList: project.highlights,
   };
+  const projectFaqLd = project.faqs && {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: project.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
 
   return (
     <PageShell title={project.title} crumbs={[{ name: "Projects", path: "/projects" }, { name: project.title, path: `/projects/${project.slug}` }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(project.slug === "verifai" ? [projectLd, verifiaiOrganizationLd] : projectLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([projectLd, ...(project.slug === "verifai" ? [verifiaiOrganizationLd] : []), ...(projectFaqLd ? [projectFaqLd] : [])]) }} />
       <p className="max-w-[65ch] text-mute">{project.description}</p>
       <div className="mt-6 flex flex-wrap gap-3">
         <Link href={project.url} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-hot px-5 py-2.5 font-semibold text-white no-underline">Visit project</Link>
@@ -81,6 +91,7 @@ export default async function ProjectDetailPage({ params }: Params) {
           className="object-contain p-3"
         />
       </div>
+      {project.slug === "dexbotx" && <h2>Santosh&apos;s DexBotX Discord bot</h2>}
       <section>
         <h2>About the project</h2>
         {project.sections?.map((section) => (
@@ -101,7 +112,7 @@ export default async function ProjectDetailPage({ params }: Params) {
         </ul>
       </section>
       <section>
-        <h2>Tech stack</h2>
+        <h2>{project.slug === "dexbotx" ? "Project capabilities" : "Tech stack and project areas"}</h2>
         <ul className="flex flex-wrap gap-2">
           {project.tech.map((item) => (
             <li key={item} className="rounded-full border border-line px-2.5 py-1 text-[0.75rem] text-mute">{item}</li>
@@ -112,6 +123,19 @@ export default async function ProjectDetailPage({ params }: Params) {
         <p className="text-mute">
           Read <Link href="/blog/what-is-verifiai" className="text-hot underline underline-offset-4">why I built VerifiAI</Link> and <Link href="/blog/ai-blockchain-and-digital-content-provenance" className="text-hot underline underline-offset-4">how provenance relates to AI content</Link>.
         </p>
+      )}
+      {project.faqs && (
+        <section>
+          <h2>Frequently asked questions</h2>
+          <div className="grid gap-5">
+            {project.faqs.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="text-lg text-ink">{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       )}
     </PageShell>
   );

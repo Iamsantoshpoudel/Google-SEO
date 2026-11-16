@@ -1,12 +1,13 @@
 {
   "name": "Santosh Poudel",
   "short_name": "Santosh",
-  "description": "Portfolio of Santosh Poudel, AI developer and founder of VerifiAI.",
+  "description": "Santosh Poudel is a Nepal-based full-stack web and AI developer building SaaS products, web applications, Discord bots, and AI tools while learning blockchain development.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#08090d",
-  "theme_color": "#08090d",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "lang": "en",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },

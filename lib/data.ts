@@ -1,6 +1,8 @@
 export const SITE = "https://santosh2.com.np";
 // TODO: move this contact address to the santosh2.com.np domain when one is available.
 export const CONTACT_EMAIL = "hi@santoshpoudel06.com.np";
+export const BIO_SHORT = "Santosh Poudel (Santosh) is a Nepal-based full-stack web and AI developer building SaaS products, web applications, Discord bots, and AI tools while learning blockchain development.";
+export const BIO_LONG = "Santosh Poudel (Santosh) is a full-stack web developer and AI developer from Nepal. He builds SaaS products and web applications, and creates Discord bots such as DexBotX, a self-managing moderation bot. He founded VerifiAI, an AI content-detection project, and is learning Ethereum, Sui, and Solana. He shares his work on GitHub, YouTube, and other public social profiles.";
 
 export const LINKS = {
   verifiai: "https://santoshpoudel06.com.np",
@@ -53,6 +55,20 @@ export const featuredProjects = [
       "Focus on transparency and limitations",
       "Built for creators, educators, and teams evaluating digital trust",
     ],
+    faqs: [
+      {
+        question: "What is VerifiAI?",
+        answer: "VerifiAI is a project founded by Santosh Poudel that explores assessing AI-generated and manipulated digital content using source review and provenance context.",
+      },
+      {
+        question: "Can a VerifiAI result prove who created content?",
+        answer: "No. AI detection can be uncertain, and a detector result is one signal rather than conclusive proof of authorship, authenticity, or truth.",
+      },
+      {
+        question: "Does this page explain VerifiAI's detection implementation?",
+        answer: "No. This portfolio page does not document the detector's model, training data, thresholds, or evaluation results, so those details are not inferred here.",
+      },
+    ],
     sections: [
       {
         heading: "Review content with context",
@@ -77,12 +93,26 @@ export const featuredProjects = [
     description: "DexBotX is a Discord bot project that brings moderation, welcome flows, role automation, AI chat, and social notifications together with an admin dashboard for managing server tools.",
     url: LINKS.dexbotx,
     image: "/img/dexbotx-discord-automation.png",
-    alt: "Illustrated dashboard view of the DexBotX Discord automation bot",
+    alt: "Screenshot of the DexBotX Discord dashboard showing server controls and welcome-message setup",
     tech: ["Discord bot", "Automation", "Moderation", "Web dashboard"],
     highlights: [
       "Anti-spam and role automation",
       "YouTube and Kick notifications",
       "AI chat and admin web dashboard",
+    ],
+    faqs: [
+      {
+        question: "What is DexBotX?",
+        answer: "DexBotX is a Discord bot project for self-managing moderation, welcome flows, role automation, AI chat, creator notifications, and server administration.",
+      },
+      {
+        question: "Does DexBotX replace server administrators?",
+        answer: "No. DexBotX automates recurring tasks, while community rules and important moderation decisions remain with the people responsible for the server.",
+      },
+      {
+        question: "What programming stack does DexBotX use?",
+        answer: "The public project details in this portfolio do not list DexBotX's programming languages or framework, so no specific stack is claimed here.",
+      },
     ],
     sections: [
       {
@@ -129,6 +159,58 @@ export type BlogPost = {
 };
 
 export const posts: BlogPost[] = [
+  { date: "2026-11-16", label: "16 Nov", slug: "learning-ethereum-sui-solana-from-nepal", title: "Learning Ethereum, Sui and Solana as a developer from Nepal", metaTitle: "Learning Ethereum, Sui & Solana in Nepal", image: "/img/blockchain-future.svg", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "Ethereum", "Sui", "Solana", "Nepal"], body: [
+    "I am learning about Ethereum, Sui, and Solana as part of my wider interest in software development. This is a learning journey, not a claim of professional blockchain experience or a list of completed deployments. I want to understand what each ecosystem is designed to do before deciding whether a blockchain is the right tool for a particular problem.",
+  ], sections: [
+    { heading: "Start with the fundamentals", paragraphs: [
+      "I am approaching blockchain by learning the basic ideas behind wallets, transactions, smart contracts, networks, and on-chain data. Understanding what users sign, what a transaction changes, and what information becomes public is more useful than starting with a list of tools.",
+      "A distributed ledger is not automatically the best place to store data. Public visibility, transaction fees, latency, and irreversible actions all affect how a product should be designed. I want to understand those trade-offs before choosing an implementation.",
+    ] },
+    { heading: "Compare ecosystems without assuming they are interchangeable", paragraphs: [
+      "Ethereum, Sui, and Solana are separate ecosystems with different designs and developer experiences. I am learning how their documentation, programming models, tools, and networks differ rather than treating one tutorial as transferable to all three.",
+      "The comparison should start with a concrete requirement: what needs to be shared, who needs to verify it, and why an ordinary database or signed record would not be enough. A blockchain is only useful when its properties address a real need.",
+    ] },
+    { heading: "Build small experiments and record what I learn", paragraphs: [
+      "My next step is to follow official beginner materials and make small, clearly labeled learning exercises. Before describing any exercise as complete, I will be able to link to its code and explain what it does, what network it uses, and what it does not demonstrate.",
+      "I am not presenting this article as a tutorial with tested deployment steps. It records my current learning direction; as I gain hands-on experience, I can publish separate guides with reproducible code and precise setup details.",
+    ] },
+    { heading: "When blockchain may not be the right choice", paragraphs: [
+      "A shared ledger can make sense when independent participants need to consult a common record and no single operator should control the only copy. It may add unnecessary complexity when a conventional database already meets the trust, privacy, and performance requirements.",
+      "For content authenticity, a timestamp or provenance record does not prove that a claim is true or that a creator is trustworthy. My related writing on digital content provenance explains why records and evidence should be interpreted carefully.",
+    ] },
+    { heading: "A learning journey, not a credential claim", paragraphs: [
+      "I am learning Ethereum, Sui, and Solana; I do not claim expertise or professional blockchain work. I will update this page when I have verified projects or practical lessons to share.",
+      "For my existing work, see the VerifiAI and DexBotX project pages, or follow my code and learning on GitHub.",
+    ] },
+  ], related: [
+    { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
+    { label: "View projects by Santosh Poudel", url: "/projects" },
+    { label: "Santosh Poudel on GitHub", url: LINKS.github },
+  ] },
+  { date: "2026-11-16", label: "16 Nov", slug: "how-verifiai-approaches-ai-content-detection", title: "How VerifiAI approaches AI-generated content detection", metaTitle: "How VerifiAI Approaches AI Content Detection", image: "/img/content-provenance.svg", imageAlt: "Original illustration showing a media file with a verifiable provenance trail", topics: ["VerifiAI", "AI detection", "content authenticity"], body: [
+    "VerifiAI is a project I founded to explore tools for assessing AI-generated and manipulated digital content. Its public project description focuses on source review and provenance context. This article describes that stated approach; it does not claim a particular model, dataset, scoring method, or detector accuracy that has not been published.",
+  ], sections: [
+    { heading: "Treat detection as one signal, not a verdict", paragraphs: [
+      "AI content detectors can be uncertain. A result should be treated as one signal to consider, not conclusive proof of who created a piece of content or whether a statement is true. Context, original sources, and the circumstances in which a file was created can all matter.",
+      "A responsible review should avoid turning a score into an accusation. False positives and false negatives are possible, and a cautious conclusion is more useful than overstating what a tool can establish.",
+    ] },
+    { heading: "Look at source context and provenance", paragraphs: [
+      "VerifiAI's stated project direction combines content review with source context and provenance. When trustworthy provenance information is available, it can help explain where a file came from or how it was handled. It still cannot prove that the content itself is accurate.",
+      "The absence of provenance is not proof of manipulation. Social platforms and ordinary editing workflows can remove metadata, and many authentic files have no attached credentials. Reviewers should avoid treating missing information as evidence of wrongdoing.",
+    ] },
+    { heading: "Separate what is documented from what is not", paragraphs: [
+      "The public portfolio describes VerifiAI as an AI content verification project and summarizes its focus on synthetic media, source review, and provenance context. It does not document the detector's implementation, training data, thresholds, or evaluation results, so I will not invent those details here.",
+      "For the product's current capabilities, visit the separate VerifiAI product site. The portfolio's VerifiAI project page explains the goals and limitations, and the article on digital content provenance discusses what records can and cannot establish.",
+    ] },
+    { heading: "Use a careful review process", paragraphs: [
+      "A careful review starts with the original source when it can be found, checks whether context or provenance records are available, and treats automated results as fallible. It records uncertainty and avoids claiming that a single signal proves authorship or truth.",
+      "This is the principle behind how I describe VerifiAI: make content review more informed while being clear about its limits. As the project evolves, descriptions should be updated only when its public features and evidence support them.",
+    ] },
+  ], related: [
+    { label: "Explore the VerifiAI project", url: "/projects/verifai" },
+    { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
+    { label: "How to check if text or an image is AI-generated", url: "/blog/how-to-check-if-text-or-image-is-ai-generated" },
+  ] },
   { date: "2026-11-16", label: "16 Nov", slug: "building-a-saas-as-a-developer-in-nepal", title: "Building a SaaS as a developer in Nepal", image: "/img/santosh-poudel-web-developer-nepal.jpg", imageAlt: "Santosh Poudel, full-stack and AI developer from Nepal", topics: ["SaaS", "web development", "Nepal"], body: [
     "Building a SaaS product means more than putting a website online. It means shaping a useful service around a real problem, making its main workflow understandable, and continuing to improve it as the product grows. As a developer from Nepal who builds complete SaaS products, I think about those fundamentals before choosing features or adding complexity.",
   ], sections: [
@@ -491,7 +573,7 @@ export const posts: BlogPost[] = [
     { label: "Web design tips for beginners in Nepal", url: "/blog/web-design-tips-for-beginners-in-nepal" },
     { label: "What is VerifiAI and why I built it", url: "/blog/what-is-verifiai" },
   ] },
-  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", metaTitle: "Building DexBotX: Discord Automation", image: "/img/dexbotx-discord-automation.png", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
+  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", metaTitle: "Building DexBotX: Discord Automation", image: "/img/dexbotx-discord-automation.png", imageAlt: "Screenshot of the DexBotX Discord dashboard with welcome-message settings and a live preview", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
     "DexBotX is a Discord bot project built around a practical idea: community teams should be able to handle common server tasks without juggling a separate tool for every job. It brings moderation, welcome flows, role automation, AI chat and creator notifications together with an admin dashboard.",
   ], sections: [
     { heading: "Start with the work community admins repeat", paragraphs: [
@@ -552,7 +634,7 @@ export const websiteLd = {
   "@id": `${SITE}/#website`,
   url: SITE,
   name: "Santosh Poudel",
-  alternateName: ["Santosh Poudel Portfolio", "santosh2.com.np"],
+  alternateName: ["Santosh Poudel Portfolio", "Santosh", "santosh2.com.np"],
   inLanguage: "en",
   publisher: { "@id": `${SITE}/#person` },
 };
@@ -562,11 +644,13 @@ export const personLd = {
   "@type": "Person",
   "@id": `${SITE}/#person`,
   name: "Santosh Poudel",
+  givenName: "Santosh",
+  familyName: "Poudel",
   url: SITE,
   image: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
-  alternateName: "Santosh",
+  alternateName: ["Santosh", "Santosh Poudel", "santoshpoudel", "सन्तोष पौडेल"],
   jobTitle: "Full-stack Web Developer and AI Developer",
-  description: "Santosh Poudel is a full-stack web and AI developer from Nepal who builds SaaS products, AI tools, and Discord bots, including VerifiAI and DexBotX.",
+  description: BIO_LONG,
   nationality: { "@type": "Country", name: "Nepal" },
   knowsAbout: ["Web development", "Full-stack development", "SaaS development", "Artificial intelligence", "AI tools", "Discord bots", "Blockchain development", "Ethereum", "Sui", "Solana", "Next.js", "React"],
   address: { "@type": "PostalAddress", addressCountry: "NP" },

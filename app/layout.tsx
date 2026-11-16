@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   applicationName: "Santosh Poudel Portfolio",
   authors: [{ name: "Santosh Poudel" }],
   robots: { index: true, follow: true, "max-image-preview": "large" },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },

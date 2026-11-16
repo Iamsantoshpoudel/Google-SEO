@@ -39,6 +39,7 @@ export default function ProjectsPage() {
       position: index + 1,
       item: {
         "@type": "SoftwareApplication",
+        "@id": `${SITE}/#project-${project.slug}`,
         name: project.title,
         applicationCategory: "DeveloperApplication",
         operatingSystem: "Web",
@@ -52,7 +53,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <PageShell title="Projects" crumbs={[{ name: "Projects", path: "/projects" }]}>
+    <PageShell title="Projects by Santosh Poudel" crumbs={[{ name: "Projects", path: "/projects" }]}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }} />
       <p className="max-w-[60ch] text-mute">
         These are the projects I am actively building or documenting as part of my work in AI tools, automation, and practical web products.

@@ -5,7 +5,7 @@ import Gallery from "@/components/Gallery";
 import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
-import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
+import { BIO_LONG, BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -39,6 +39,7 @@ export default function Home() {
     url: SITE,
     name: "Santosh Poudel",
     mainEntity: { "@id": `${SITE}/#person` },
+    primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
   };
   const faqLd = {
     "@context": "https://schema.org",
@@ -53,6 +54,16 @@ export default function Home() {
     <main id="top">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([websiteLd, personLd, verifiaiOrganizationLd, profileLd, faqLd]) }} />
       <Hero />
+
+      <section aria-labelledby="santosh-profile" className={`${S} pt-0!`}>
+        <h2 id="santosh-profile">Who is Santosh Poudel?</h2>
+        <p className="max-w-[70ch] text-mute">{BIO_LONG}</p>
+        <h3 className="mt-7 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh, the developer from Nepal?</h3>
+        <p className="mt-3 max-w-[70ch] text-mute">
+          Santosh is Santosh Poudel, a Nepal-based full-stack web developer and AI developer. He builds SaaS products, web applications, and Discord bots, including DexBotX. He founded VerifiAI and is learning Ethereum, Sui, and Solana. His public portfolio includes his projects and writing, and his code is available through <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>.
+        </p>
+        <p className="mt-3 max-w-[70ch] text-mute">This profile is about Santosh Poudel, the Nepal-based developer described here, not other people who share the first name Santosh.</p>
+      </section>
 
       <section id="about" className={S}>
         <a href="/about" className="no-underline text-inherit">

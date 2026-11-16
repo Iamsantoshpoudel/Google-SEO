@@ -37,15 +37,21 @@ export default function Blog() {
   const blogLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
+    "@id": `${SITE}/blog#blog`,
     name: "Santosh Poudel's Blog",
     url: `${SITE}/blog`,
     author: { "@id": `${SITE}/#person` },
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
+      "@id": `${SITE}/blog/${post.slug}#article`,
       headline: post.title,
       url: `${SITE}/blog/${post.slug}`,
       image: `${SITE}${post.image}`,
       datePublished: post.date,
+      ...(post.modified ? { dateModified: post.modified } : {}),
+      author: { "@id": `${SITE}/#person` },
+      publisher: { "@id": `${SITE}/#person` },
+      mainEntityOfPage: `${SITE}/blog/${post.slug}`,
     })),
   };
   return (

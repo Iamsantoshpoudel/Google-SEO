@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, faq, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
+import { BIO_LONG, BIO_SHORT, CONTACT_EMAIL, faq, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "About: Developer and VerifiAI Founder";
@@ -37,6 +37,7 @@ export default function About() {
     url: `${SITE}/about`,
     name: "About Santosh Poudel",
     mainEntity: { "@id": `${SITE}/#person` },
+    primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
   };
 
   return (
@@ -54,6 +55,16 @@ export default function About() {
           className="w-full object-cover"
         />
         <p className="text-ink">Santosh Poudel is a full-stack web and AI developer from Nepal. He builds complete SaaS products, AI tools, and Discord applications such as DexBotX, and founded VerifiAI.</p>
+      </section>
+
+      <section>
+        <h2>Developer from Nepal</h2>
+        <p>Hi, I&apos;m Santosh, a full-stack and AI developer from Nepal.</p>
+        <p>{BIO_SHORT}</p>
+        <p>{BIO_LONG}</p>
+        <p>This profile is about Santosh Poudel, the Nepal-based full-stack web and AI developer, not other people who share the first name Santosh.</p>
+        <h3 className="mt-5 text-lg text-ink">Who is Santosh, the developer from Nepal?</h3>
+        <p>Santosh is Santosh Poudel, a Nepal-based full-stack web developer and AI developer. He builds SaaS products, web applications, and Discord bots, including DexBotX. He founded VerifiAI and is learning Ethereum, Sui, and Solana. His public portfolio includes his projects and writing, and his code is available through <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>.</p>
       </section>
 
       <section>

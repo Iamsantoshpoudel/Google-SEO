@@ -31,6 +31,7 @@ const nextConfig = {
       { source: "/verifiai", destination: "/projects/verifai", permanent: true },
       { source: "/verifyai", destination: "/projects/verifai", permanent: true },
       { source: "/feed.xml", destination: "/rss.xml", statusCode: 301 },
+      { source: "/site.webmanifest", destination: "/manifest.webmanifest", statusCode: 301 },
     ];
   },
   async headers() {

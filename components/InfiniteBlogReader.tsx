@@ -77,7 +77,8 @@ export default function InfiniteBlogReader({
               </h2>
             )}
             <p className="text-[.9rem]">
-              By Santosh Poudel &middot; <time dateTime={post.date}>{post.label} {post.date.slice(0, 4)}</time>
+              By <a href="/about">Santosh Poudel</a> &middot; Published <time dateTime={post.date}>{post.label} {post.date.slice(0, 4)}</time>
+              {post.modified && <> &middot; Updated <time dateTime={post.modified}>{post.modified}</time></>}
             </p>
             <Image
               src={post.image}

@@ -66,6 +66,7 @@ export default function Hero() {
         <p className="max-w-[46ch] text-mute">
           Computer engineer and web developer from Nepal. I build fast websites and AI tools, and share the work on YouTube and GitHub.
         </p>
+        <p className="max-w-[46ch] text-mute">Hi, I&apos;m Santosh, a full-stack and AI developer from Nepal.</p>
         <Magnetic
           href="/#work"
           className="clip-notch inline-block bg-ink px-7 py-3.5 font-semibold text-bg no-underline transition-[background,transform] duration-300 hover:translate-x-1.5 hover:bg-acc hover:text-white"
