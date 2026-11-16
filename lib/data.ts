@@ -13,7 +13,6 @@ export const LINKS = {
 };
 
 export const nav = [
-  { href: "/about", label: "About" },
   { href: "/me", label: "Me" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/projects", label: "Projects" },
@@ -23,7 +22,7 @@ export const nav = [
 export const gallery = [
   { src: "/img/santosh-poudel-portrait.jpg", alt: "Portrait of Santosh Poudel, computer engineer from Nepal", cap: "Portrait" },
   { src: "/img/santosh-poudel-natural-light.jpg", alt: "Santosh Poudel photographed in natural light", cap: "Natural light" },
-  { src: "/img/santosh-poudel-close-up.jpg", alt: "Close-up portrait of web developer Santosh Poudel", cap: "Close-up" },
+  { src: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Close-up portrait of web developer Santosh Poudel", cap: "Close-up" },
 ];
 
 export const profileGallery = [
@@ -32,6 +31,7 @@ export const profileGallery = [
   { src: "/img/santosh-poudel-developer.jpg", alt: "Santosh Poudel in a computer engineering college uniform", cap: "Engineering student" },
   { src: "/img/santosh-poudel-ai-developer-verifiai-founder.jpg", alt: "Santosh Poudel outdoors, AI developer and VerifiAI founder", cap: "VerifiAI founder" },
   { src: "/img/santosh-poudel-close-up.png", alt: "Stylized digital illustration of Santosh Poudel", cap: "Illustrated portrait" },
+  { src: "/img/santosh-poudel-og.jpg", alt: "Santosh Poudel, full-stack and AI developer from Nepal", cap: "Open Graph image" },
 ];
 
 export const projects = [

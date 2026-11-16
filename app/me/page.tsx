@@ -68,12 +68,12 @@ export default function MePage() {
   const personArticlesLd = {
     ...personLd,
     subjectOf: featuredPosts.map((post) => ({
-        "@type": "BlogPosting",
-        headline: post.title,
-        url: `${SITE}/blog/${post.slug}`,
-        datePublished: post.date,
-        image: `${SITE}${post.image}`,
-      })),
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: `${SITE}/blog/${post.slug}`,
+      datePublished: post.date,
+      image: `${SITE}${post.image}`,
+    })),
   };
 
   return (
@@ -105,7 +105,7 @@ export default function MePage() {
 
       <section>
         <h2>What I do</h2>
-        <div className="grid gap-x-8 gap-y-6 sm:grid-cols-3">
+        <div className="grid gap-x-8 gap-y-6 md:grid-cols-3">
           <div>
             <h3 className="text-lg text-ink">Web development</h3>
             <p className="mt-2">I create responsive websites and web applications, from clear page structure to interactive product experiences.</p>
@@ -121,11 +121,7 @@ export default function MePage() {
         </div>
       </section>
 
-      <section id="projects">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2>Selected projects</h2>
-          <Link href="/projects" className={LINK}>All projects</Link>
-        </div>
+      <section id="projects" className="p-5">
         <div className="grid gap-5 md:grid-cols-2">
           {featuredProjects.map((project) => {
             const isDexBotx = project.slug === "dexbotx";
@@ -182,7 +178,7 @@ export default function MePage() {
         </ul>
         <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4" aria-label="Photo gallery of Santosh Poudel">
           {profileGallery.map((image) => (
-            <figure key={image.src} className="overflow-hidden border border-line">
+            <figure key={`${image.src}-${image.cap}`} className="overflow-hidden border border-line">
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -192,7 +188,7 @@ export default function MePage() {
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover"
               />
-              <figcaption className="px-3 py-2 text-sm text-mute">{image.cap}</figcaption>
+
             </figure>
           ))}
         </div>

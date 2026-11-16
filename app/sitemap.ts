@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     { url: `${SITE}/about`, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
     { url: `${SITE}/me`, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
+    { url: `${SITE}/privacy-policy` },
     { url: `${SITE}/projects` },
     ...featuredProjects.map((project) => ({
       url: `${SITE}/projects/${project.slug}`,

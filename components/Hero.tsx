@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import Magnetic from "./Magnetic";
 
 const Particles = dynamic(() => import("./Particles"), { ssr: false });
 
@@ -41,7 +40,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative grid min-h-svh content-end overflow-hidden px-[clamp(18px,4vw,48px)] pb-[7vh]">
+    <section className="hero-section relative grid min-h-[65svh] content-end overflow-hidden px-[clamp(18px,4vw,48px)] pb-[7svh] md:min-h-svh">
       {particlesReady && <Particles />}
       <figure ref={frame} className="frame absolute right-[clamp(18px,4vw,48px)] top-[13vh] z-[2] aspect-[3/4] w-[34vw] md:top-[16vh] md:w-[min(26vw,300px)]">
         {broken ? (
@@ -55,25 +54,12 @@ export default function Hero() {
         <b />
       </figure>
 
-      <h1 ref={h1} className="relative -ml-[.04em] text-[clamp(3.6rem,15.5vw,14rem)] uppercase">
+      <h1 ref={h1} className="relative -ml-[.04em] text-[clamp(3.6rem,15.5vw,14rem)] uppercase md:max-w-[68%] md:text-[clamp(3.6rem,12vw,12rem)]">
         <span className="hero-line"><i className="hero-i">Santosh Poudel</i></span>
         <span className="mt-4 block text-[clamp(1rem,3vw,2rem)] font-semibold normal-case tracking-normal text-mute">
           Full-stack &amp; AI developer from Nepal
         </span>
       </h1>
-
-      <div className="relative mt-[4vh] flex flex-wrap items-end justify-between gap-6 border-t border-line pt-[22px]">
-        <p className="max-w-[46ch] text-mute">
-          Computer engineer and web developer from Nepal. I build fast websites and AI tools, and share the work on YouTube and GitHub.
-        </p>
-        <p className="max-w-[46ch] text-mute">Hi, I&apos;m Santosh, a full-stack and AI developer from Nepal.</p>
-        <Magnetic
-          href="/#work"
-          className="clip-notch inline-block bg-ink px-7 py-3.5 font-semibold text-bg no-underline transition-[background,transform] duration-300 hover:translate-x-1.5 hover:bg-acc hover:text-white"
-        >
-          Explore my projects
-        </Magnetic>
-      </div>
     </section>
   );
 }

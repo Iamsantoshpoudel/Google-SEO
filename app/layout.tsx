@@ -106,6 +106,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <a href="/projects" className="hover:text-hot">Projects</a>
             <a href="/blog" className="hover:text-hot">Blog</a>
             <a href="/#find" className="hover:text-hot">Contact</a>
+            <a href="/privacy-policy" className="hover:text-hot">Privacy Policy</a>
           </nav>
           <div className="flex flex-wrap justify-between gap-3">
             <span>&copy; {new Date().getFullYear()} Santosh Poudel</span>

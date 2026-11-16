@@ -55,16 +55,6 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([websiteLd, personLd, verifiaiOrganizationLd, profileLd, faqLd]) }} />
       <Hero />
 
-      <section aria-labelledby="santosh-profile" className={`${S} pt-0!`}>
-        <h2 id="santosh-profile">Who is Santosh Poudel?</h2>
-        <p className="max-w-[70ch] text-mute">{BIO_LONG}</p>
-        <h3 className="mt-7 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh, the developer from Nepal?</h3>
-        <p className="mt-3 max-w-[70ch] text-mute">
-          Santosh is Santosh Poudel, a Nepal-based full-stack web developer and AI developer. He builds SaaS products, web applications, and Discord bots, including DexBotX. He founded VerifiAI and is learning Ethereum, Sui, and Solana. His public portfolio includes his projects and writing, and his code is available through <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>.
-        </p>
-        <p className="mt-3 max-w-[70ch] text-mute">This profile is about Santosh Poudel, the Nepal-based developer described here, not other people who share the first name Santosh.</p>
-      </section>
-
       <section id="about" className={S}>
         <a href="/about" className="no-underline text-inherit">
           <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
@@ -133,6 +123,22 @@ export default function Home() {
           ))}
         </ul>
       </Reveal>
+
+      <section aria-labelledby="santosh-profile" className={`${S} pt-0!`}>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <article className=" p-5 md:p-7">
+            <h3 className="text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh Poudel?</h3>
+            <p className="mt-4 max-w-[70ch] text-mute">{BIO_LONG}</p>
+          </article>
+          <article className=" p-5 md:p-7">
+            <h3 className="text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh, the developer from Nepal?</h3>
+            <p className="mt-4 max-w-[70ch] text-mute">
+              Santosh is Santosh Poudel, a Nepal-based full-stack web developer and AI developer. He builds SaaS products, web applications, and Discord bots, including DexBotX. He founded VerifiAI and is learning Ethereum, Sui, and Solana. His public portfolio includes his projects and writing, and his code is available through <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>.
+            </p>
+            <p className="mt-3 max-w-[70ch] text-mute">This profile is about Santosh Poudel, the Nepal-based developer described here, not other people who share the first name Santosh.</p>
+          </article>
+        </div>
+      </section>
     </main>
   );
 }
