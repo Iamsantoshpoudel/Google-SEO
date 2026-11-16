@@ -15,17 +15,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/me" },
   openGraph: {
     type: "profile",
-    siteName: "Santosh Poudel Portfolio",
+    siteName: "Santosh Poudel",
+    locale: "en_US",
     url: `${SITE}/me`,
     title,
     description,
-    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image"],
+    images: ["/img/santosh-poudel-og.jpg"],
   },
 };
 
@@ -55,6 +56,8 @@ export default function MePage() {
         description: project.description,
         applicationCategory: "DeveloperApplication",
         operatingSystem: "Web",
+        author: { "@id": `${SITE}/#person` },
+        creator: { "@id": `${SITE}/#person` },
         url: `${SITE}/projects/${project.slug}`,
         image: `${SITE}${project.image}`,
       },
@@ -83,6 +86,7 @@ export default function MePage() {
           height={800}
           sizes="(max-width: 640px) 100vw, 300px"
           className="aspect-[3/4] w-full object-cover"
+          loading="eager"
           priority
         />
         <div>
@@ -121,29 +125,34 @@ export default function MePage() {
           <Link href="/projects" className={LINK}>All projects</Link>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
-          {featuredProjects.map((project) => (
-            <article key={project.slug} className="overflow-hidden border border-line">
-              <Image
-                src={project.image}
-                alt={project.alt}
-                width={900}
-                height={560}
-                sizes="(max-width: 768px) 100vw, 420px"
-                className="aspect-[16/10] w-full object-cover"
-              />
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase text-hot">{project.kicker}</p>
-                <h3 className="mt-2 text-2xl leading-tight text-ink">{project.title}</h3>
-                <p className="mt-3">{project.description}</p>
-                <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.title} areas`}>
-                  {project.tech.map((item) => (
-                    <li key={item} className="border border-line px-2 py-1 text-xs">{item}</li>
-                  ))}
-                </ul>
-                <Link href={`/projects/${project.slug}`} className={`${LINK} mt-5 inline-block`}>Project details</Link>
-              </div>
-            </article>
-          ))}
+          {featuredProjects.map((project) => {
+            const isDexBotx = project.slug === "dexbotx";
+            const isPortraitImage = project.image.startsWith("/img/santosh-");
+
+            return (
+              <article key={project.slug} className="overflow-hidden border border-line">
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  width={isDexBotx ? 1885 : 900}
+                  height={isDexBotx ? 1078 : 560}
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  className={`w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[16/10] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+                />
+                <div className="p-5">
+                  <p className="text-xs font-semibold uppercase text-hot">{project.kicker}</p>
+                  <h3 className="mt-2 text-2xl leading-tight text-ink">{project.title}</h3>
+                  <p className="mt-3">{project.description}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.title} areas`}>
+                    {project.tech.map((item) => (
+                      <li key={item} className="border border-line px-2 py-1 text-xs">{item}</li>
+                    ))}
+                  </ul>
+                  <Link href={`/projects/${project.slug}`} className={`${LINK} mt-5 inline-block`}>Project details</Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -194,27 +203,32 @@ export default function MePage() {
         </div>
         <p className="max-w-[68ch]">I write as Santosh Poudel about building software, AI, content authenticity and the lessons behind my projects. These recent articles are a starting point.</p>
         <ul className="mt-2 grid gap-6">
-          {featuredPosts.map((post) => (
-            <li key={post.slug} className="grid gap-5 border-b border-line pb-6 sm:grid-cols-[180px_1fr]">
-              <Link href={`/blog/${post.slug}`} className="block aspect-[4/3] overflow-hidden" aria-label={`Read ${post.title}`}>
-                <Image
-                  src={post.image}
-                  alt={post.imageAlt}
-                  width={600}
-                  height={450}
-                  sizes="(max-width: 640px) 100vw, 180px"
-                  className="size-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </Link>
-              <div>
-                <time dateTime={post.date} className="text-[.9rem]">{post.label} {post.date.slice(0, 4)}</time>
-                <h3 className="mt-1 text-[1.4rem] leading-tight text-ink">
-                  <Link href={`/blog/${post.slug}`} className="no-underline hover:text-hot">{post.title}</Link>
-                </h3>
-                <p className="mt-2">{post.body[0]}</p>
-              </div>
-            </li>
-          ))}
+          {featuredPosts.map((post) => {
+            const isDexBotx = post.slug === "building-dexbotx-discord-bot";
+            const isPortraitImage = post.image.startsWith("/img/santosh-");
+
+            return (
+              <li key={post.slug} className="grid gap-5 border-b border-line pb-6 sm:grid-cols-[180px_1fr]">
+                <Link href={`/blog/${post.slug}`} className={`block ${isDexBotx ? "aspect-[1885/1078]" : "aspect-[4/3]"} overflow-hidden`} aria-label={`Read ${post.title}`}>
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    width={isDexBotx ? 1885 : 600}
+                    height={isDexBotx ? 1078 : 450}
+                    sizes="(max-width: 640px) 100vw, 180px"
+                    className={`size-full transition-transform duration-500 hover:scale-105 ${isDexBotx ? "bg-[#1c1c1c] object-contain" : "object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+                  />
+                </Link>
+                <div>
+                  <time dateTime={post.date} className="text-[.9rem]">{post.label} {post.date.slice(0, 4)}</time>
+                  <h3 className="mt-1 text-[1.4rem] leading-tight text-ink">
+                    <Link href={`/blog/${post.slug}`} className="no-underline hover:text-hot">{post.title}</Link>
+                  </h3>
+                  <p className="mt-2">{post.body[0]}</p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </PageShell>

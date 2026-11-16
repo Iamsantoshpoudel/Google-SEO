@@ -59,72 +59,77 @@ export default function InfiniteBlogReader({
 
   return (
     <div ref={reader} className="mt-6">
-      {feedPosts.slice(0, visibleCount).map((post, index) => (
-        <article
-          key={post.slug}
-          id={`article-${post.slug}`}
-          aria-label={post.title}
-          data-post-slug={post.slug}
-          className={index === 0 ? "" : "mt-20 border-t border-line pt-12"}
-        >
-          {index > 0 && (
-            <h2 id={`heading-${post.slug}`} className="mb-5 text-[clamp(1.8rem,5vw,3.5rem)] leading-tight text-ink">
-              <a className="no-underline hover:text-hot" href={`/blog/${post.slug}`}>{post.title}</a>
-            </h2>
-          )}
-          <p className="text-[.9rem]">
-            By Santosh Poudel &middot; <time dateTime={post.date}>{post.label} {post.date.slice(0, 4)}</time>
-          </p>
-          <Image
-            src={post.image}
-            alt={post.imageAlt}
-            width={1200}
-            height={900}
-            priority={index === 0}
-            sizes="(max-width: 900px) 100vw, 900px"
-            className="my-5 aspect-[4/3] w-full object-cover"
-          />
-          <div className="grid gap-5">
-            {post.body.map((paragraph, paragraphIndex) => <p key={`intro-${paragraphIndex}`}>{paragraph}</p>)}
-            {post.sections?.map((section) => (
-              <section key={section.heading} className="grid gap-4">
-                <h2 className="mt-5 text-[clamp(1.4rem,2.8vw,2rem)] text-ink">{section.heading}</h2>
-                {section.paragraphs.map((paragraph, paragraphIndex) => (
-                  <p key={`${section.heading}-${paragraphIndex}`}>{paragraph}</p>
-                ))}
+      {feedPosts.slice(0, visibleCount).map((post, index) => {
+        const isDexBotx = post.slug === "building-dexbotx-discord-bot";
+        const isPortraitImage = post.image.startsWith("/img/santosh-");
+
+        return (
+          <article
+            key={post.slug}
+            id={`article-${post.slug}`}
+            aria-label={post.title}
+            data-post-slug={post.slug}
+            className={index === 0 ? "" : "mt-20 border-t border-line pt-12"}
+          >
+            {index > 0 && (
+              <h2 id={`heading-${post.slug}`} className="mb-5 text-[clamp(1.8rem,5vw,3.5rem)] leading-tight text-ink">
+                <a className="no-underline hover:text-hot" href={`/blog/${post.slug}`}>{post.title}</a>
+              </h2>
+            )}
+            <p className="text-[.9rem]">
+              By Santosh Poudel &middot; <time dateTime={post.date}>{post.label} {post.date.slice(0, 4)}</time>
+            </p>
+            <Image
+              src={post.image}
+              alt={post.imageAlt}
+              width={isDexBotx ? 1885 : 1200}
+              height={isDexBotx ? 1078 : 900}
+              priority={index === 0}
+              sizes="(max-width: 900px) 100vw, 900px"
+              className={`my-5 w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[4/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+            />
+            <div className="grid gap-5">
+              {post.body.map((paragraph, paragraphIndex) => <p key={`intro-${paragraphIndex}`}>{paragraph}</p>)}
+              {post.sections?.map((section) => (
+                <section key={section.heading} className="grid gap-4">
+                  <h2 className="mt-5 text-[clamp(1.4rem,2.8vw,2rem)] text-ink">{section.heading}</h2>
+                  {section.paragraphs.map((paragraph, paragraphIndex) => (
+                    <p key={`${section.heading}-${paragraphIndex}`}>{paragraph}</p>
+                  ))}
+                </section>
+              ))}
+            </div>
+            {post.references && (
+              <section aria-label="References and further reading" className="mt-6 border-t border-line pt-5">
+                <h2 className="text-[1.2rem] text-ink">References and further reading</h2>
+                <ul className="mt-3 grid list-disc gap-2 pl-5">
+                  {post.references.map((reference) => (
+                    <li key={reference.url}>
+                      <a className={LINK} href={reference.url} target="_blank" rel="noopener noreferrer">{reference.label}</a>
+                    </li>
+                  ))}
+                </ul>
               </section>
-            ))}
-          </div>
-          {post.references && (
-            <section aria-label="References and further reading" className="mt-6 border-t border-line pt-5">
-              <h2 className="text-[1.2rem] text-ink">References and further reading</h2>
-              <ul className="mt-3 grid list-disc gap-2 pl-5">
-                {post.references.map((reference) => (
-                  <li key={reference.url}>
-                    <a className={LINK} href={reference.url} target="_blank" rel="noopener noreferrer">{reference.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-          {post.related && (
-            <section aria-label="Related articles" className="mt-6 border-t border-line pt-5">
-              <h2 className="text-[1.2rem] text-ink">Related articles</h2>
-              <ul className="mt-3 grid list-disc gap-2 pl-5">
-                {post.related.map((related) => (
-                  <li key={related.url}>
-                    {related.url.startsWith("https://") ? (
-                      <a className={LINK} href={related.url} target="_blank" rel="noopener noreferrer">{related.label}</a>
-                    ) : (
-                      <a className={LINK} href={related.url}>{related.label}</a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </article>
-      ))}
+            )}
+            {post.related && (
+              <section aria-label="Related articles" className="mt-6 border-t border-line pt-5">
+                <h2 className="text-[1.2rem] text-ink">Related articles</h2>
+                <ul className="mt-3 grid list-disc gap-2 pl-5">
+                  {post.related.map((related) => (
+                    <li key={related.url}>
+                      {related.url.startsWith("https://") ? (
+                        <a className={LINK} href={related.url} target="_blank" rel="noopener noreferrer">{related.label}</a>
+                      ) : (
+                        <a className={LINK} href={related.url}>{related.label}</a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </article>
+        );
+      })}
 
       {hasMore ? (
         <div ref={sentinel} className="mt-10 flex justify-center py-4">

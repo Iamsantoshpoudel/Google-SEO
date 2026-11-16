@@ -9,22 +9,25 @@ import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, so
 import { serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: { absolute: "Santosh Poudel | AI & Web Developer in Nepal" },
-  description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
-  alternates: { canonical: `${SITE}/` },
+  title: { absolute: "Santosh Poudel | Full Stack & AI Developer from Nepal" },
+  description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
+  alternates: { canonical: SITE },
   openGraph: {
-    type: "website",
-    siteName: "Santosh Poudel Portfolio",
+    type: "profile",
+    siteName: "Santosh Poudel",
+    locale: "en_US",
+    firstName: "Santosh",
+    lastName: "Poudel",
     url: SITE,
-    title: "Santosh Poudel | AI & Web Developer in Nepal",
-    description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
-    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    title: "Santosh Poudel | Full Stack & AI Developer from Nepal",
+    description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
+    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Santosh Poudel | AI & Web Developer in Nepal",
-    description: "Official portfolio of Santosh Poudel, a computer engineer and AI and web developer from Nepal. Explore projects, work with VerifiAI, and writing.",
-    images: ["/opengraph-image"],
+    title: "Santosh Poudel | Full Stack & AI Developer from Nepal",
+    description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
+    images: ["/img/santosh-poudel-og.jpg"],
   },
 };
 
@@ -33,7 +36,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${SITE}/#profile`,
-    url: `${SITE}/`,
+    url: SITE,
     name: "Santosh Poudel",
     mainEntity: { "@id": `${SITE}/#person` },
   };
@@ -55,13 +58,18 @@ export default function Home() {
         <a href="/about" className="no-underline text-inherit">
           <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
         </a>
-        <BigText text="Santosh Poudel is an AI developer and web developer from Nepal with a diploma in computer engineering. He builds websites and AI content tools, and he is the founder of VerifiAI." />
+        <BigText text="Santosh Poudel is a full-stack web and AI developer from Nepal. He builds complete SaaS products, AI tools, and Discord applications including DexBotX, and founded VerifiAI." />
+        <p className="mt-5 max-w-[68ch] text-mute">
+          He is learning blockchain development with Ethereum, Sui, and Solana. Find his projects and code on <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>, watch his work on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>, or use the social links and contact details below.
+        </p>
         <p className="mt-5"><a className={LINK} href="/me">Read my personal profile</a></p>
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
           {faq.map((f) => (
             <div key={f.q} className="rv-c">
               <h3 className="mb-3.5 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">{f.q}</h3>
-              <p className="text-mute">{f.a}</p>
+              <p className="text-mute">
+                {f.a} {f.href && <a className={LINK} href={f.href}>{f.linkText}</a>}
+              </p>
             </div>
           ))}
         </Reveal>

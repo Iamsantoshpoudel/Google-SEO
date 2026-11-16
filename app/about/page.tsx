@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, faq, LINKS, LINK, personLd, verifiaiOrganizationLd, SITE } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "About: Developer and VerifiAI Founder";
@@ -14,17 +14,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
-    siteName: "Santosh Poudel Portfolio",
+    siteName: "Santosh Poudel",
+    locale: "en_US",
     url: `${SITE}/about`,
     title,
     description,
-    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, computer engineer and developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image"],
+    images: ["/img/santosh-poudel-og.jpg"],
   },
 };
 
@@ -48,10 +49,11 @@ export default function About() {
           width={600}
           height={800}
           sizes="(max-width: 640px) 100vw, 280px"
+          loading="eager"
           priority
           className="w-full object-cover"
         />
-        <p className="text-ink">Santosh Poudel is a computer engineer, AI developer and web developer from Nepal and the founder of VerifiAI.</p>
+        <p className="text-ink">Santosh Poudel is a full-stack web and AI developer from Nepal. He builds complete SaaS products, AI tools, and Discord applications such as DexBotX, and founded VerifiAI.</p>
       </section>
 
       <section>
@@ -61,7 +63,7 @@ export default function About() {
 
       <section>
         <h2>Work</h2>
-        <p>My work includes building websites and exploring ways software can help people assess digital content. This site is built with Next.js, React, TypeScript and Tailwind CSS. I share code and project work through my <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a> and videos on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>.</p>
+        <p>My work includes full-stack websites, SaaS products, AI tools, and Discord bots. I am learning blockchain development with Ethereum, Sui, and Solana. This site is built with Next.js, React, TypeScript and Tailwind CSS. I share code and project work through my <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a> and videos on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>.</p>
       </section>
 
       <section>
@@ -76,9 +78,22 @@ export default function About() {
           <li><a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">Santosh Poudel on GitHub</a></li>
           <li><a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">Santosh Poudel on YouTube</a></li>
           <li><a className={LINK} href={LINKS.facebook} target="_blank" rel="me noopener noreferrer">Santosh Poudel on Facebook</a></li>
+          <li><a className={LINK} href={LINKS.dexbotx} target="_blank" rel="me noopener noreferrer">DexBotX</a></li>
           <li><a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a></li>
           <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
         </ul>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+        <div className="grid gap-5">
+          {faq.map((item) => (
+            <div key={item.q}>
+              <h3 className="text-lg text-ink">{item.q}</h3>
+              <p>{item.a} {item.href && <a className={LINK} href={item.href}>{item.linkText}</a>}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </PageShell>
   );

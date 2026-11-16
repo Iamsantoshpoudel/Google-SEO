@@ -96,6 +96,7 @@ export default function Header() {
             width={36}
             height={36}
             sizes="(max-width: 767px) 24px, 36px"
+            loading="eager"
           />
         </a>
         <div className="nav-links">

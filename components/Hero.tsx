@@ -57,6 +57,9 @@ export default function Hero() {
 
       <h1 ref={h1} className="relative -ml-[.04em] text-[clamp(3.6rem,15.5vw,14rem)] uppercase">
         <span className="hero-line"><i className="hero-i">Santosh Poudel</i></span>
+        <span className="mt-4 block text-[clamp(1rem,3vw,2rem)] font-semibold normal-case tracking-normal text-mute">
+          Full-stack &amp; AI developer from Nepal
+        </span>
       </h1>
 
       <div className="relative mt-[4vh] flex flex-wrap items-end justify-between gap-6 border-t border-line pt-[22px]">

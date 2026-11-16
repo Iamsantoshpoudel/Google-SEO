@@ -20,12 +20,23 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: post.title,
     description,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { type: "article", siteName: "Santosh Poudel Portfolio", title, description, publishedTime: post.date, authors: ["Santosh Poudel"], url: `/blog/${post.slug}`, images: [{ url: `/blog/${post.slug}/opengraph-image`, alt: post.imageAlt }] },
+    openGraph: {
+      type: "article",
+      siteName: "Santosh Poudel",
+      locale: "en_US",
+      title,
+      description,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: ["Santosh Poudel"],
+      url: `${SITE}/blog/${post.slug}`,
+      images: [{ url: `/blog/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.imageAlt }],
+    },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/blog/${post.slug}/opengraph-image`],
+      images: [{ url: `/blog/${post.slug}/opengraph-image`, alt: post.imageAlt }],
     },
   };
 }

@@ -11,7 +11,7 @@ export const LINKS = {
 };
 
 export const nav = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/me", label: "Me" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/projects", label: "Projects" },
@@ -60,7 +60,7 @@ export const featuredProjects = [
     kicker: "Discord automation and moderation",
     description: "DexBotX is a Discord bot project that brings moderation, welcome flows, role automation, AI chat, and social notifications together with an admin dashboard for managing server tools.",
     url: LINKS.dexbotx,
-    image: "/img/dexbotx-discord-automation.svg",
+    image: "/img/dexbotx-discord-automation.png",
     alt: "Illustrated dashboard view of the DexBotX Discord automation bot",
     tech: ["Discord bot", "Automation", "Moderation", "Web dashboard"],
     highlights: [
@@ -111,6 +111,35 @@ export type BlogPost = {
 };
 
 export const posts: BlogPost[] = [
+  { date: "2026-11-16", label: "16 Nov", slug: "building-a-saas-as-a-developer-in-nepal", title: "Building a SaaS as a developer in Nepal", image: "/img/santosh-poudel-web-developer-nepal.jpg", imageAlt: "Santosh Poudel, full-stack and AI developer from Nepal", topics: ["SaaS", "web development", "Nepal"], body: [
+    "Building a SaaS product means more than putting a website online. It means shaping a useful service around a real problem, making its main workflow understandable, and continuing to improve it as the product grows. As a developer from Nepal who builds complete SaaS products, I think about those fundamentals before choosing features or adding complexity.",
+  ], sections: [
+    { heading: "Start with the problem and the person using the product", paragraphs: [
+      "A product idea becomes easier to evaluate when it is described as a task someone needs to complete. Who is the user, what are they trying to do, and what currently makes that task difficult? Clear answers help keep the first version focused and make it possible to explain the product in plain language.",
+      "This does not require guessing at a large market or making claims about demand. It is a practical way to decide what a first useful workflow should do and what can wait until there is evidence that users need it.",
+    ] },
+    { heading: "Build a small, complete first workflow", paragraphs: [
+      "A narrow feature that works from beginning to end is more useful than a long list of unfinished capabilities. A person should be able to understand where to start, complete the main task, and see a clear result. The interface, application logic and stored information all need to support that same path.",
+      "For a web product, this means paying attention to form states, validation, loading and error messages as well as the successful path. These details help people understand what the service is doing and what they can do next.",
+    ] },
+    { heading: "Treat reliability and clarity as product features", paragraphs: [
+      "People need to know what a service does with their information, what its results mean and where its limitations are. Clear labels, helpful feedback and consistent behaviour build more confidence than an impressive feature list. When a system uses AI, it is especially important to describe generated results as assistance rather than certainty.",
+      "Security and privacy also belong in the product design from the start. Keep access limited to what a feature needs, protect credentials, and avoid collecting information that does not serve the product's purpose.",
+    ] },
+    { heading: "Choose technology to support the product", paragraphs: [
+      "Frameworks and services can make development faster, but a technology choice should solve a concrete need. I build across full-stack web development and AI tools, and I try to keep the implementation understandable enough to maintain as the product changes.",
+      "A straightforward architecture is a useful starting point. Add infrastructure or automation when the product's real requirements call for it, rather than assuming that a larger stack will make the service more valuable.",
+    ] },
+    { heading: "Learn through shipping and iteration", paragraphs: [
+      "A SaaS product is not finished when its first version is published. Fixing confusing steps, addressing errors and improving the most important workflow are part of building the service. Keeping notes about decisions and limitations helps make those improvements deliberate.",
+      "I share my work and learning through GitHub and YouTube. You can also explore my projects, including DexBotX, or read about my background on the about page.",
+    ] },
+  ], related: [
+    { label: "Building DexBotX: a Discord bot for server automation", url: "/blog/building-dexbotx-discord-bot" },
+    { label: "Explore my projects", url: "/projects" },
+    { label: "Santosh Poudel on GitHub", url: LINKS.github },
+    { label: "Santosh Poudel on YouTube", url: LINKS.youtube },
+  ] },
   { date: "2026-10-07", label: "7 Oct", slug: "future-of-artificial-intelligence", title: "The future of AI: useful assistants, better tools and new responsibilities", image: "/img/ai-future.svg", imageAlt: "Original illustration of a human working with an artificial intelligence assistant", topics: ["AI", "technology"], body: [
     "Artificial intelligence is moving from a novelty feature into everyday software. My view as a developer is that its most useful future is not about replacing every person, but helping people handle repetitive work, explore ideas and make better-informed decisions.",
   ], sections: [
@@ -444,7 +473,7 @@ export const posts: BlogPost[] = [
     { label: "Web design tips for beginners in Nepal", url: "/blog/web-design-tips-for-beginners-in-nepal" },
     { label: "What is VerifiAI and why I built it", url: "/blog/what-is-verifiai" },
   ] },
-  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", image: "/img/dexbotx-discord-automation.svg", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
+  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", image: "/img/dexbotx-discord-automation.png", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
     "DexBotX is a Discord bot project built around a practical idea: community teams should be able to handle common server tasks without juggling a separate tool for every job. It brings moderation, welcome flows, role automation, AI chat and creator notifications together with an admin dashboard.",
   ], sections: [
     { heading: "Start with the work community admins repeat", paragraphs: [
@@ -489,17 +518,19 @@ export const social = [
 // TODO: add the verified LinkedIn profile URL when provided.
 
 export const faq = [
-  { q: "Who is Santosh Poudel?", a: "Santosh Poudel is an AI developer from Nepal and the founder of VerifiAI, a platform that helps individuals and organizations identify AI-generated content, detect manipulated media and verify digital trust." },
-  { q: "What does Santosh Poudel work on?", a: "His work includes AI content detection, image verification, developer tools and digital platforms that make online content safer and easier to understand for creators, educators, journalists and businesses." },
+  { q: "Who is Santosh Poudel?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal. He builds SaaS products, AI tools, and Discord applications including DexBotX." },
+  { q: "What does Santosh Poudel do?", a: "He builds full-stack web products, SaaS services, AI tools such as VerifiAI, and Discord bots such as DexBotX. He is also learning blockchain development with Ethereum, Sui, and Solana." },
+  { q: "What is Santosh Poudel's GitHub?", a: "Find Santosh Poudel's code and projects on GitHub.", href: LINKS.github, linkText: "Visit GitHub" },
+  { q: "How can I contact Santosh Poudel?", a: "Email Santosh Poudel or connect through his public profiles.", href: `mailto:${CONTACT_EMAIL}`, linkText: CONTACT_EMAIL },
 ];
 
 export const websiteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE}/#website`,
-  url: `${SITE}/`,
-  name: "Santosh Poudel Portfolio",
-  alternateName: ["Santosh Poudel"],
+  url: SITE,
+  name: "Santosh Poudel",
+  alternateName: ["Santosh Poudel Portfolio", "santosh2.com.np"],
   inLanguage: "en",
   publisher: { "@id": `${SITE}/#person` },
 };
@@ -509,11 +540,13 @@ export const personLd = {
   "@type": "Person",
   "@id": `${SITE}/#person`,
   name: "Santosh Poudel",
-  url: `${SITE}/me`,
+  url: SITE,
   image: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
-  jobTitle: "Computer Engineer, AI Developer and Web Developer",
-  description: "Santosh Poudel is a computer engineer, AI developer and web developer from Nepal and the founder of VerifiAI.",
-  knowsAbout: ["Web development", "Artificial intelligence", "AI content tools", "Content authenticity", "Discord bot development", "Software product development"],
+  alternateName: "Santosh",
+  jobTitle: "Full-stack Web Developer and AI Developer",
+  description: "Santosh Poudel is a full-stack web and AI developer from Nepal who builds SaaS products, AI tools, and Discord bots, including VerifiAI and DexBotX.",
+  nationality: { "@type": "Country", name: "Nepal" },
+  knowsAbout: ["Web development", "Full-stack development", "SaaS development", "Artificial intelligence", "AI tools", "Discord bots", "Blockchain development", "Ethereum", "Sui", "Solana", "Next.js", "React"],
   address: { "@type": "PostalAddress", addressCountry: "NP" },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
@@ -534,7 +567,7 @@ export const verifiaiOrganizationLd = {
 };
 
 // Shared class strings
-export const S = "mx-auto max-w-[1400px] border-t border-line px-[clamp(18px,4vw,48px)] py-[clamp(80px,14vh,170px)]";
+export const S = "mx-auto max-w-[1400px] border-t border-line px-[clamp(18px,4vw,48px)] py-[clamp(80px,14vh,170px)] max-md:py-[clamp(36px,6vh,64px)]";
 export const LAB = "mb-7 flex items-center gap-3.5 font-semibold text-hot before:h-[1.5px] before:w-[46px] before:bg-hot before:content-['']";
 export const BIG = "font-display text-[clamp(1.7rem,4.6vw,4rem)] font-extrabold leading-[1.12] tracking-[-.025em]";
 

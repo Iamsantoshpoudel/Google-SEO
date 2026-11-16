@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Santosh Poudel Portfolio",
-    short_name: "Santosh Poudel",
+    name: "Santosh Poudel",
+    short_name: "Santosh",
     description: "AI developer and full stack developer from Nepal building practical software, products, and blog content.",
     start_url: "/",
     display: "standalone",

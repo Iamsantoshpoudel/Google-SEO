@@ -325,9 +325,9 @@ body::after { content: ""; position: fixed; inset: -60%; opacity: .07; pointer-e
 
 /* preloader */
 #pre { position: fixed; inset: 0; z-index: 300; background: var(--ink); color: var(--bg); display: grid; place-items: center;
-  clip-path: inset(0); transition: clip-path 1s cubic-bezier(.8, 0, .2, 1); animation: pfail 0s 5s forwards; }
+  opacity: 1; transition: opacity 1s ease; animation: pfail 0s 5s forwards; }
 html.preloader-seen #pre { display: none; }
-#pre.gone { clip-path: inset(0 0 100% 0); }
+#pre.gone { opacity: 0; pointer-events: none; }
 @keyframes pfail { to { visibility: hidden; } }
 #pre b { font: 800 clamp(5rem, 24vw, 17rem)/.9 var(--font-display); display: block; }
 #pre span { font-weight: 600; }

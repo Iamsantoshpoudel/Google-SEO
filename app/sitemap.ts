@@ -15,24 +15,27 @@ const sourceDates = {
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${SITE}/`,
+      url: SITE,
       lastModified: sourceDates.home,
       images: [
         `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
+        `${SITE}/img/santosh-poudel-og.jpg`,
         ...gallery.map((image) => `${SITE}${image.src}`),
       ],
     },
-    { url: `${SITE}/about`, lastModified: sourceDates.about },
-    { url: `${SITE}/me`, lastModified: sourceDates.profile },
+    { url: `${SITE}/about`, lastModified: sourceDates.about, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
+    { url: `${SITE}/me`, lastModified: sourceDates.profile, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
     { url: `${SITE}/projects`, lastModified: sourceDates.projects },
     ...featuredProjects.map((project) => ({
       url: `${SITE}/projects/${project.slug}`,
       lastModified: sourceDates.content,
+      images: [`${SITE}${project.image}`],
     })),
     { url: `${SITE}/blog`, lastModified: sourceDates.blog },
     ...posts.map((post) => ({
       url: `${SITE}/blog/${post.slug}`,
       lastModified: sourceDates.content,
+      images: [`${SITE}${post.image}`],
     })),
   ];
 }

@@ -52,21 +52,26 @@ export default function SessionRecommendations({ posts }: { posts: BlogPost[] })
         </div>
       </div>
       <ul className="grid gap-4 sm:grid-cols-3">
-        {recommendations.map((post) => (
-          <li key={post.slug} className="border border-line">
-            <a href={`/blog/${post.slug}`} className="block no-underline">
-              <Image
-                src={post.image}
-                alt={post.imageAlt}
-                width={600}
-                height={360}
-                sizes="(max-width: 640px) 100vw, 30vw"
-                className="aspect-[5/3] w-full object-cover"
-              />
-              <span className="block p-3 font-semibold leading-snug text-ink hover:text-hot">{post.title}</span>
-            </a>
-          </li>
-        ))}
+        {recommendations.map((post) => {
+          const isDexBotx = post.slug === "building-dexbotx-discord-bot";
+          const isPortraitImage = post.image.startsWith("/img/santosh-");
+
+          return (
+            <li key={post.slug} className="border border-line">
+              <a href={`/blog/${post.slug}`} className="block no-underline">
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt}
+                  width={isDexBotx ? 1885 : 600}
+                  height={isDexBotx ? 1078 : 360}
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  className={`w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[5/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+                />
+                <span className="block p-3 font-semibold leading-snug text-ink hover:text-hot">{post.title}</span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

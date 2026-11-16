@@ -14,17 +14,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/projects" },
   openGraph: {
     type: "website",
-    siteName: "Santosh Poudel Portfolio",
+    siteName: "Santosh Poudel",
+    locale: "en_US",
     url: `${SITE}/projects`,
     title,
     description,
-    images: [{ url: "/opengraph-image", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image"],
+    images: ["/img/santosh-poudel-og.jpg"],
   },
 };
 
@@ -44,6 +45,8 @@ export default function ProjectsPage() {
         description: project.description,
         url: `${SITE}/projects/${project.slug}`,
         image: `${SITE}${project.image}`,
+        author: { "@id": `${SITE}/#person` },
+        creator: { "@id": `${SITE}/#person` },
       },
     })),
   };

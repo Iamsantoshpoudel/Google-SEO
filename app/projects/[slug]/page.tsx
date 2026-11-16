@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
-import { featuredProjects, SITE } from "@/lib/data";
+import { featuredProjects, SITE, verifiaiOrganizationLd } from "@/lib/data";
 import { fitMetaDescription, serializeJsonLd } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -23,17 +23,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
       type: "website",
-      siteName: "Santosh Poudel Portfolio",
+      siteName: "Santosh Poudel",
+      locale: "en_US",
       title,
       description,
       url: `${SITE}/projects/${project.slug}`,
-      images: [{ url: `/projects/${project.slug}/opengraph-image`, alt: project.alt }],
+      images: [{ url: `/projects/${project.slug}/opengraph-image`, width: 1200, height: 630, alt: project.alt }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/projects/${project.slug}/opengraph-image`],
+      images: [{ url: `/projects/${project.slug}/opengraph-image`, alt: project.alt }],
     },
   };
 }
@@ -44,34 +45,25 @@ export default async function ProjectDetailPage({ params }: Params) {
 
   if (!project) notFound();
 
-  const projectLd = project.slug === "verifai" ? {
+  const projectLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${project.url}/#organization`,
+    "@type": "WebApplication",
     name: project.title,
     description: project.description,
-    url: project.url,
-    mainEntityOfPage: `${SITE}/projects/${project.slug}`,
-    image: `${SITE}${project.image}`,
-    founder: { "@id": `${SITE}/#person` },
-  } : {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: project.title,
-    description: project.description,
-    applicationCategory: "DeveloperApplication",
+    applicationCategory: project.slug === "verifai" ? "UtilitiesApplication" : "DeveloperApplication",
     operatingSystem: "Web",
     url: project.url,
     mainEntityOfPage: `${SITE}/projects/${project.slug}`,
     image: `${SITE}${project.image}`,
+    author: { "@id": `${SITE}/#person` },
     creator: { "@id": `${SITE}/#person` },
-    keywords: project.tech.join(", "),
+    keywords: project.tech,
     featureList: project.highlights,
   };
 
   return (
     <PageShell title={project.title} crumbs={[{ name: "Projects", path: "/projects" }, { name: project.title, path: `/projects/${project.slug}` }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(projectLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(project.slug === "verifai" ? [projectLd, verifiaiOrganizationLd] : projectLd) }} />
       <p className="max-w-[65ch] text-mute">{project.description}</p>
       <div className="mt-6 flex flex-wrap gap-3">
         <Link href={project.url} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-hot px-5 py-2.5 font-semibold text-white no-underline">Visit project</Link>

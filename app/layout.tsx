@@ -12,19 +12,21 @@ import { SITE, LINKS, social } from "@/lib/data";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
+    default: "Santosh Poudel | Full Stack & AI Developer from Nepal",
     template: "%s | Santosh Poudel",
   },
-  description:
-    "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
+  description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
   applicationName: "Santosh Poudel Portfolio",
   authors: [{ name: "Santosh Poudel" }],
   robots: { index: true, follow: true, "max-image-preview": "large" },
   manifest: "/site.webmanifest",
   icons: {
-    icon: [{ url: "/favicon.ico", type: "image/x-icon" }, "/icon.png"],
-    apple: "/apple-icon.png",
-    shortcut: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   alternates: { canonical: "/", types: { "application/rss+xml": `${SITE}/rss.xml` } },
   openGraph: {
@@ -37,13 +39,13 @@ export const metadata: Metadata = {
       "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
     firstName: "Santosh",
     lastName: "Poudel",
-    images: [{ url: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, AI developer and full stack developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
     description: "Portfolio, projects and blog of Santosh Poudel, an AI developer from Nepal.",
-    images: ["/img/santosh-poudel-web-developer-nepal.jpg"],
+    images: ["/img/santosh-poudel-og.jpg"],
   },
   other: { "geo.region": "NP", "geo.placename": "Nepal" },
 };
@@ -71,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <VisitTracker />
         <ServiceWorker />
         <Header />
-        <aside aria-label="Quick links" className="fixed right-0 top-1/2 z-[85] flex -translate-y-1/2 flex-col gap-0.5">
+        <aside aria-label="Quick links" className="fixed right-0 top-1/2 z-[85] hidden -translate-y-1/2 flex-col gap-0.5 md:flex">
           <a href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer"
             className="clip-tab bg-ink px-2.5 py-[18px] text-[.85rem] font-semibold text-bg no-underline transition-all [writing-mode:vertical-rl] hover:bg-hot hover:pr-[18px] hover:text-white">
             Visit VerifiAI
@@ -99,6 +101,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               })}
             </nav>
           </div>
+          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2">
+            <a href="/" className="hover:text-hot">Home</a>
+            <a href="/about" className="hover:text-hot">About</a>
+            <a href="/me" className="hover:text-hot">Profile</a>
+            <a href="/projects" className="hover:text-hot">Projects</a>
+            <a href="/blog" className="hover:text-hot">Blog</a>
+            <a href="/#find" className="hover:text-hot">Contact</a>
+          </nav>
           <div className="flex flex-wrap justify-between gap-3">
             <span>&copy; {new Date().getFullYear()} Santosh Poudel</span>
             <span>Made With ❤️</span>
