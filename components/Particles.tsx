@@ -15,21 +15,35 @@ export default function Particles() {
     const m = { x: -999, y: -999 };
     let W = 0, H = 0, raf = 0, col = "#6f86ff";
     let pts: P[] = [];
+    let visible = false;
 
     const size = () => {
       const d = devicePixelRatio || 1;
       W = cv.clientWidth; H = cv.clientHeight;
       cv.width = W * d; cv.height = H * d;
       x.setTransform(d, 0, 0, d, 0, 0);
-      const n = Math.min(110, Math.round((W * H) / 14000));
+      const n = Math.min(80, Math.round((W * H) / 14000));
       pts = Array.from({ length: n }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
       }));
       col = getComputedStyle(document.documentElement).getPropertyValue("--a").trim() || col;
+      if (reduce && visible) draw();
+    };
+
+    const stop = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    const start = () => {
+      if (!reduce && visible && document.visibilityState === "visible" && !raf) {
+        raf = requestAnimationFrame(draw);
+      }
     };
 
     const draw = () => {
+      raf = 0;
       x.clearRect(0, 0, W, H);
       x.fillStyle = col; x.strokeStyle = col;
       pts.forEach((p, i) => {
@@ -55,7 +69,7 @@ export default function Particles() {
           x.strokeStyle = col;
         }
       });
-      if (!reduce) raf = requestAnimationFrame(draw);
+      start();
     };
 
     const onMove = (e: PointerEvent) => {
@@ -66,12 +80,32 @@ export default function Particles() {
     parent.addEventListener("pointermove", onMove);
     addEventListener("resize", size);
     dark.addEventListener("change", size);
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") start();
+      else stop();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible) {
+          if (reduce) draw();
+          else start();
+        } else {
+          stop();
+        }
+      })
+      : undefined;
+    observer?.observe(cv);
+    if (!observer) visible = true;
     size(); draw();
     return () => {
-      cancelAnimationFrame(raf);
+      stop();
+      observer?.disconnect();
       parent.removeEventListener("pointermove", onMove);
       removeEventListener("resize", size);
       dark.removeEventListener("change", size);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);
 

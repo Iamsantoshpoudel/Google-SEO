@@ -53,6 +53,22 @@ export const featuredProjects = [
       "Focus on transparency and limitations",
       "Built for creators, educators, and teams evaluating digital trust",
     ],
+    sections: [
+      {
+        heading: "Review content with context",
+        paragraphs: [
+          "VerifiAI explores ways to assess AI-generated and manipulated digital content using source review and provenance context. The project is designed around the idea that a detector result is one signal to consider, not a substitute for checking where content came from.",
+          "A missing provenance record does not prove that content is false or AI-generated. Platform uploads can remove metadata, and many creators do not attach credentials.",
+        ],
+      },
+      {
+        heading: "Be clear about what detection can establish",
+        paragraphs: [
+          "AI detection can be uncertain. A tool's result should not be treated as conclusive proof of authorship, authenticity, or truth. Source context and other available evidence matter when evaluating digital content.",
+          "VerifiAI is an ongoing project founded by Santosh Poudel. Its project page documents the goals and limitations, while the separate product site describes the current product.",
+        ],
+      },
+    ],
   },
   {
     slug: "dexbotx",
@@ -98,9 +114,11 @@ type BlogSection = { heading: string; paragraphs: string[] };
 type BlogReference = { label: string; url: string };
 export type BlogPost = {
   date: string;
+  modified?: string;
   label: string;
   slug: string;
   title: string;
+  metaTitle?: string;
   image: string;
   imageAlt: string;
   topics: string[];
@@ -140,7 +158,7 @@ export const posts: BlogPost[] = [
     { label: "Santosh Poudel on GitHub", url: LINKS.github },
     { label: "Santosh Poudel on YouTube", url: LINKS.youtube },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "future-of-artificial-intelligence", title: "The future of AI: useful assistants, better tools and new responsibilities", image: "/img/ai-future.svg", imageAlt: "Original illustration of a human working with an artificial intelligence assistant", topics: ["AI", "technology"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "future-of-artificial-intelligence", title: "The future of AI: useful assistants, better tools and new responsibilities", metaTitle: "The Future of AI: Useful Tools", image: "/img/ai-future.svg", imageAlt: "Original illustration of a human working with an artificial intelligence assistant", topics: ["AI", "technology"], body: [
     "Artificial intelligence is moving from a novelty feature into everyday software. My view as a developer is that its most useful future is not about replacing every person, but helping people handle repetitive work, explore ideas and make better-informed decisions.",
   ], sections: [
     { heading: "AI will become part of ordinary workflows", paragraphs: [
@@ -182,7 +200,7 @@ export const posts: BlogPost[] = [
     { label: "How to check if text or an image is AI-generated", url: "/blog/how-to-check-if-text-or-image-is-ai-generated" },
     { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "future-of-blockchain-beyond-cryptocurrency", title: "The future of blockchain: practical uses beyond cryptocurrency", image: "/img/blockchain-future.svg", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "technology"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "future-of-blockchain-beyond-cryptocurrency", title: "The future of blockchain: practical uses beyond cryptocurrency", metaTitle: "The Future of Blockchain: Practical Uses", image: "/img/blockchain-future.svg", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "technology"], body: [
     "Blockchain is often discussed through cryptocurrency prices, but the underlying idea is a shared ledger that multiple participants can verify. Its future depends on whether that shared record solves a real coordination problem better than a conventional database.",
   ], sections: [
     { heading: "Where a shared ledger may help", paragraphs: [
@@ -223,7 +241,7 @@ export const posts: BlogPost[] = [
     { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
     { label: "The future of AI", url: "/blog/future-of-artificial-intelligence" },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "ai-blockchain-and-digital-content-provenance", title: "AI, blockchain and content provenance: what can actually be verified?", image: "/img/content-provenance.svg", imageAlt: "Original illustration showing a media file with a verifiable provenance trail", topics: ["AI", "blockchain", "VerifiAI"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "ai-blockchain-and-digital-content-provenance", title: "AI, blockchain and content provenance: what can actually be verified?", metaTitle: "AI, Blockchain & Content Provenance", image: "/img/content-provenance.svg", imageAlt: "Original illustration showing a media file with a verifiable provenance trail", topics: ["AI", "blockchain", "VerifiAI"], body: [
     "As AI-generated images and text become easier to make, people need better ways to understand where digital content came from. AI detection and blockchain are often proposed as solutions, but neither one alone proves who created a file or whether its claims are true.",
   ], sections: [
     { heading: "Detection is not the same as provenance", paragraphs: [
@@ -311,7 +329,7 @@ export const posts: BlogPost[] = [
     { label: "How to check if text or an image is AI-generated", url: "/blog/how-to-check-if-text-or-image-is-ai-generated" },
     { label: "VerifiAI", url: LINKS.verifiai },
   ] },
-  { date: "2026-09-29", label: "29 Sep", slug: "how-to-check-if-text-or-image-is-ai-generated", title: "How to check if text or an image is AI-generated", image: "/img/santosh-poudel-close-up.jpg", imageAlt: "Close-up portrait of web developer Santosh Poudel", topics: ["AI", "VerifiAI"], body: [
+  { date: "2026-09-29", label: "29 Sep", slug: "how-to-check-if-text-or-image-is-ai-generated", title: "How to check if text or an image is AI-generated", metaTitle: "How to Check Text or Images for AI", image: "/img/santosh-poudel-close-up.jpg", imageAlt: "Close-up portrait of web developer Santosh Poudel", topics: ["AI", "VerifiAI"], body: [
     "Look at the source first, then examine context and available provenance. A detector can be one signal, but its result is not proof of who created the content or whether it is true."
   ], sections: [
     { heading: "Start with the source and the claim", paragraphs: [
@@ -430,7 +448,7 @@ export const posts: BlogPost[] = [
     { label: "What is VerifiAI and why I built it", url: "/blog/what-is-verifiai" },
     { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
   ] },
-  { date: "2026-09-10", label: "10 Sep", slug: "starting-with-a-computer-engineering-diploma", title: "Starting with a computer engineering diploma", image: "/img/santosh-poudel-natural-light.jpg", imageAlt: "Santosh Poudel photographed in natural light", topics: ["computer engineering", "Nepal", "web development"], body: [
+  { date: "2026-09-10", label: "10 Sep", slug: "starting-with-a-computer-engineering-diploma", title: "Starting with a computer engineering diploma", metaTitle: "Computer Engineering Diploma Journey", image: "/img/santosh-poudel-natural-light.jpg", imageAlt: "Santosh Poudel photographed in natural light", topics: ["computer engineering", "Nepal", "web development"], body: [
     "A computer engineering diploma can combine theory with practical work across programming, electronics, networks and databases. Building small projects alongside coursework helps connect those subjects and makes it easier to see how technical ideas become working systems."
   ], sections: [
     { heading: "Start with fundamentals and curiosity", paragraphs: [
@@ -473,7 +491,7 @@ export const posts: BlogPost[] = [
     { label: "Web design tips for beginners in Nepal", url: "/blog/web-design-tips-for-beginners-in-nepal" },
     { label: "What is VerifiAI and why I built it", url: "/blog/what-is-verifiai" },
   ] },
-  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", image: "/img/dexbotx-discord-automation.png", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
+  { date: "2026-10-29", label: "29 Oct", slug: "building-dexbotx-discord-bot", title: "Building DexBotX: a Discord bot for server automation", metaTitle: "Building DexBotX: Discord Automation", image: "/img/dexbotx-discord-automation.png", imageAlt: "Illustration of DexBotX bringing Discord moderation, automation and notifications together", topics: ["DexBotX", "Discord", "automation", "web development"], body: [
     "DexBotX is a Discord bot project built around a practical idea: community teams should be able to handle common server tasks without juggling a separate tool for every job. It brings moderation, welcome flows, role automation, AI chat and creator notifications together with an admin dashboard.",
   ], sections: [
     { heading: "Start with the work community admins repeat", paragraphs: [
@@ -520,6 +538,10 @@ export const social = [
 export const faq = [
   { q: "Who is Santosh Poudel?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal. He builds SaaS products, AI tools, and Discord applications including DexBotX." },
   { q: "What does Santosh Poudel do?", a: "He builds full-stack web products, SaaS services, AI tools such as VerifiAI, and Discord bots such as DexBotX. He is also learning blockchain development with Ethereum, Sui, and Solana." },
+  { q: "Where is Santosh Poudel from?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal." },
+  { q: "Where does Santosh Poudel work?", a: "His published profile does not name a current employer. It describes his work building web products, SaaS services, AI tools, and Discord bots." },
+  { q: "What is VerifiAI?", a: "VerifiAI is a project founded by Santosh Poudel that explores ways to assess digital content using source context and provenance. Detector results are not conclusive proof of authorship or truth." },
+  { q: "What is DexBotX?", a: "DexBotX is a Discord bot project with moderation, welcome flows, role automation, AI chat, creator notifications, and an admin dashboard." },
   { q: "What is Santosh Poudel's GitHub?", a: "Find Santosh Poudel's code and projects on GitHub.", href: LINKS.github, linkText: "Visit GitHub" },
   { q: "How can I contact Santosh Poudel?", a: "Email Santosh Poudel or connect through his public profiles.", href: `mailto:${CONTACT_EMAIL}`, linkText: CONTACT_EMAIL },
 ];

@@ -5,7 +5,7 @@ import SessionRecommendations from "@/components/SessionRecommendations";
 import { posts, SITE } from "@/lib/data";
 import { fitMetaDescription, serializeJsonLd } from "@/lib/seo";
 
-const pageTitle = "Articles on AI, Web Development and VerifiAI";
+const pageTitle = "AI, Web Development & VerifiAI Articles";
 const title = `${pageTitle} | Santosh Poudel`;
 const description = fitMetaDescription("Read articles by Santosh Poudel, AI and web developer in Nepal, about artificial intelligence, VerifiAI, blockchain, content authenticity and web development.");
 

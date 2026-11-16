@@ -9,7 +9,6 @@ const sourceDates = {
   profile: statSync(join(process.cwd(), "app", "me", "page.tsx")).mtime,
   projects: statSync(join(process.cwd(), "app", "projects", "page.tsx")).mtime,
   blog: statSync(join(process.cwd(), "app", "blog", "page.tsx")).mtime,
-  content: statSync(join(process.cwd(), "lib", "data.ts")).mtime,
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -28,13 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/projects`, lastModified: sourceDates.projects },
     ...featuredProjects.map((project) => ({
       url: `${SITE}/projects/${project.slug}`,
-      lastModified: sourceDates.content,
       images: [`${SITE}${project.image}`],
     })),
     { url: `${SITE}/blog`, lastModified: sourceDates.blog },
     ...posts.map((post) => ({
       url: `${SITE}/blog/${post.slug}`,
-      lastModified: sourceDates.content,
+      ...(post.modified ? { lastModified: post.modified } : {}),
       images: [`${SITE}${post.image}`],
     })),
   ];

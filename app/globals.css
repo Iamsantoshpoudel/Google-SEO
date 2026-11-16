@@ -325,7 +325,7 @@ body::after { content: ""; position: fixed; inset: -60%; opacity: .07; pointer-e
 
 /* preloader */
 #pre { position: fixed; inset: 0; z-index: 300; background: var(--ink); color: var(--bg); display: grid; place-items: center;
-  opacity: 1; transition: opacity 1s ease; animation: pfail 0s 5s forwards; }
+  opacity: 1; transition: opacity .5s ease; animation: pfail 0s 5s forwards; }
 html.preloader-seen #pre { display: none; }
 #pre.gone { opacity: 0; pointer-events: none; }
 @keyframes pfail { to { visibility: hidden; } }

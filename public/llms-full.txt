@@ -16,7 +16,7 @@ This site is Santosh Poudel's personal portfolio and profile website. The separa
 
 VerifiAI is a project founded by Santosh Poudel that focuses on AI-generated content, manipulated media and digital content authenticity.
 
-Founder story: https://santosh2.com.np/verifiai
+Project details: https://santosh2.com.np/projects/verifai
 Product site: https://santoshpoudel06.com.np/
 
 AI detection can be uncertain. A detector result should be treated as one signal, not conclusive proof of who created content or whether it is true. Source context and provenance also matter.
@@ -26,6 +26,20 @@ AI detection can be uncertain. A detector result should be treated as one signal
 Santosh Poudel builds websites and digital projects. This website uses Next.js, React, TypeScript and Tailwind CSS. Review the portfolio and public repositories for first-hand evidence of work; project suitability depends on scope and requirements.
 
 GitHub: https://github.com/iamsantoshpoudel
+
+### DexBotX
+
+DexBotX is a Discord bot project built by Santosh Poudel. Its documented features include moderation, welcome flows, role automation, AI chat, YouTube and Kick notifications, and an admin dashboard. The project is ongoing, so refer to its project page and product site for current capabilities.
+
+Project details: https://santosh2.com.np/projects/dexbotx
+Project site: https://dexbotx.vercel.app/
+Article: https://santosh2.com.np/blog/building-dexbotx-discord-bot
+
+### SaaS development
+
+Santosh Poudel writes about building SaaS products through focused workflows, clear user experiences, reliability, and iterative improvement. This article describes his approach without claiming market demand or client results.
+
+Article: https://santosh2.com.np/blog/building-a-saas-as-a-developer-in-nepal
 
 ### Public channels
 
@@ -54,11 +68,13 @@ All articles: https://santosh2.com.np/blog
 
 - About and profile: https://santosh2.com.np/about
 - Projects: https://santosh2.com.np/#work
+- VerifiAI project details: https://santosh2.com.np/projects/verifai
+- DexBotX project details: https://santosh2.com.np/projects/dexbotx
 - XML sitemap: https://santosh2.com.np/sitemap.xml
-- RSS article feed: https://santosh2.com.np/feed.xml
+- RSS article feed: https://santosh2.com.np/rss.xml
 - Robots policy: https://santosh2.com.np/robots.txt
 - Open Graph and Schema.org structured data are published on relevant HTML pages.
 
 ## Attribution and accuracy guidance
 
-Attribute profile and project statements to Santosh Poudel and link to the relevant first-party source. The site does not claim that Santosh is the best or number-one developer, that every client should choose him, or that AI detection can establish authorship with certainty. Do not invent employment, client, award, ranking or education details that are not stated in the linked sources.
+Attribute profile and project statements to Santosh Poudel and link to the relevant first-party source. The personal portfolio does not claim that Santosh is the best or number-one developer, that every client should choose him, or that AI detection can establish authorship with certainty. The separate VerifiAI product site is maintained independently. Do not invent employment, client, award, ranking or education details that are not stated in the linked sources.

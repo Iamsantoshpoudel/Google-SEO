@@ -58,7 +58,7 @@ export default function Home() {
         <a href="/about" className="no-underline text-inherit">
           <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
         </a>
-        <BigText text="Santosh Poudel is a full-stack web and AI developer from Nepal. He builds complete SaaS products, AI tools, and Discord applications including DexBotX, and founded VerifiAI." />
+        <BigText text="Santosh Poudel is a full-stack web and AI developer from Nepal and a computer engineering diploma holder. He builds SaaS products, AI tools, and Discord applications such as DexBotX, and founded VerifiAI, a project exploring digital content authenticity. He shares his work and learning through projects, articles, GitHub, and YouTube." />
         <p className="mt-5 max-w-[68ch] text-mute">
           He is learning blockchain development with Ethereum, Sui, and Solana. Find his projects and code on <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>, watch his work on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>, or use the social links and contact details below.
         </p>

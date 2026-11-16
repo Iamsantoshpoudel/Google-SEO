@@ -1,6 +1,6 @@
 # Santosh Poudel
 
-> Official information about Santosh Poudel, an AI and web developer from Nepal and founder of VerifiAI.
+> Official information about Santosh Poudel, an AI and web developer from Nepal, founder of VerifiAI, and builder of DexBotX.
 
 Use the pages below as first-party sources. The personal portfolio and profile site is https://santosh2.com.np/.
 VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
@@ -8,8 +8,9 @@ VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
 ## Profile
 
 - [About Santosh Poudel](https://santosh2.com.np/about): Background, work and links.
-- [VerifiAI founder story](https://santosh2.com.np/verifiai): Why Santosh Poudel started the project.
+- [VerifiAI project](https://santosh2.com.np/projects/verifai): Project details and founder information.
 - [VerifiAI product site](https://santoshpoudel06.com.np/): Separate product website.
+- [DexBotX project](https://santosh2.com.np/projects/dexbotx): Discord bot features and project details.
 - [Projects](https://santosh2.com.np/#work): Project links and descriptions.
 - [Gallery](https://santosh2.com.np/#gallery): Photographs published on the official website.
 - [GitHub](https://github.com/iamsantoshpoudel): Public code and projects.
@@ -17,6 +18,8 @@ VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
 
 ## Articles
 
+- [Building a SaaS as a developer in Nepal](https://santosh2.com.np/blog/building-a-saas-as-a-developer-in-nepal)
+- [Building DexBotX: a Discord bot for server automation](https://santosh2.com.np/blog/building-dexbotx-discord-bot)
 - [What is VerifiAI and why I built it](https://santosh2.com.np/blog/what-is-verifiai)
 - [The future of AI](https://santosh2.com.np/blog/future-of-artificial-intelligence)
 - [Why AI content detection matters](https://santosh2.com.np/blog/why-ai-content-detection-matters)
@@ -30,7 +33,7 @@ VerifiAI is a separate product site at https://santoshpoudel06.com.np/.
 ## Machine-readable and discovery files
 
 - [Full profile and source links](https://santosh2.com.np/llms-full.txt)
-- [RSS article feed](https://santosh2.com.np/feed.xml)
+- [RSS article feed](https://santosh2.com.np/rss.xml)
 - [XML sitemap](https://santosh2.com.np/sitemap.xml)
 - [Robots policy](https://santosh2.com.np/robots.txt)
 

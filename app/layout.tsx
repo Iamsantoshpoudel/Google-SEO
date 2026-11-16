@@ -2,9 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
-import Effects from "@/components/Effects";
+import DeferredEffects from "@/components/DeferredEffects";
 import Header from "@/components/Header";
-import VisitTracker from "@/components/VisitTracker";
 import ServiceWorker from "@/components/ServiceWorker";
 import PageTransition from "@/components/PageTransition";
 import { SITE, LINKS, social } from "@/lib/data";
@@ -69,8 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body suppressHydrationWarning>
         <Preloader />
-        <Effects />
-        <VisitTracker />
+        <DeferredEffects />
         <ServiceWorker />
         <Header />
         <aside aria-label="Quick links" className="fixed right-0 top-1/2 z-[85] hidden -translate-y-1/2 flex-col gap-0.5 md:flex">

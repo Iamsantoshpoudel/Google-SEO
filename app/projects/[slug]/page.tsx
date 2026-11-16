@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
@@ -69,6 +70,17 @@ export default async function ProjectDetailPage({ params }: Params) {
         <Link href={project.url} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-hot px-5 py-2.5 font-semibold text-white no-underline">Visit project</Link>
         <Link href="/projects" className="inline-block rounded-full border border-line px-5 py-2.5 font-semibold text-ink no-underline">Back to projects</Link>
       </div>
+      <div className="relative mt-8 aspect-[4/3] w-full max-w-4xl overflow-hidden rounded-2xl border border-line bg-white/2">
+        <Image
+          src={project.image}
+          alt={project.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 896px"
+          priority
+          fetchPriority="high"
+          className="object-contain p-3"
+        />
+      </div>
       <section>
         <h2>About the project</h2>
         {project.sections?.map((section) => (
@@ -96,6 +108,11 @@ export default async function ProjectDetailPage({ params }: Params) {
           ))}
         </ul>
       </section>
+      {project.slug === "verifai" && (
+        <p className="text-mute">
+          Read <Link href="/blog/what-is-verifiai" className="text-hot underline underline-offset-4">why I built VerifiAI</Link> and <Link href="/blog/ai-blockchain-and-digital-content-provenance" className="text-hot underline underline-offset-4">how provenance relates to AI content</Link>.
+        </p>
+      )}
     </PageShell>
   );
 }

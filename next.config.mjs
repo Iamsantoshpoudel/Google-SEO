@@ -30,6 +30,7 @@ const nextConfig = {
       { source: "/blog/why-work-with-santosh-poudel-web-development", destination: "/about", statusCode: 301 },
       { source: "/verifiai", destination: "/projects/verifai", permanent: true },
       { source: "/verifyai", destination: "/projects/verifai", permanent: true },
+      { source: "/feed.xml", destination: "/rss.xml", statusCode: 301 },
     ];
   },
   async headers() {

@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
-  const title = `${post.title} | Santosh Poudel`;
+  const title = `${post.metaTitle ?? post.title} | Santosh Poudel`;
   const description = fitMetaDescription(post.body[0]);
   return {
-    title: post.title,
+    title: { absolute: title },
     description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title,
       description,
       publishedTime: post.date,
-      modifiedTime: post.date,
+      ...(post.modified ? { modifiedTime: post.modified } : {}),
       authors: ["Santosh Poudel"],
       url: `${SITE}/blog/${post.slug}`,
       images: [{ url: `/blog/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.imageAlt }],
@@ -50,7 +50,8 @@ export default async function Post({ params }: Params) {
     "@context": "https://schema.org", "@type": "BlogPosting",
     headline: post.title,
     description: fitMetaDescription(post.body[0]),
-    datePublished: post.date, dateModified: post.date,
+    datePublished: post.date,
+    ...(post.modified ? { dateModified: post.modified } : {}),
     author: {
       "@id": `${SITE}/#person`,
     },
