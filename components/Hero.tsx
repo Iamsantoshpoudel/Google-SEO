@@ -49,7 +49,18 @@ export default function Hero() {
             <path d="M18 150c4-40 26-52 42-52s38 12 42 52" fill="none" stroke="var(--a)" strokeWidth="2" />
           </svg>
         ) : (
-          <Image src="/img/santosh-poudel-web-developer-nepal.jpg" alt="Santosh Poudel, computer engineer and web developer from Nepal" width={600} height={800} sizes="(max-width: 767px) 34vw, (max-width: 1153px) 26vw, 300px" loading="eager" fetchPriority="high" priority onError={() => setBroken(true)} />
+          <Image
+            src="/img/santosh-poudel-web-developer-nepal.jpg"
+            alt="Santosh Poudel, computer engineer and web developer from Nepal"
+            title="Santosh Poudel, computer engineer and web developer from Nepal"
+            width={600}
+            height={800}
+            sizes="(max-width: 767px) 34vw, (max-width: 1153px) 26vw, 300px"
+            loading="eager"
+            fetchPriority="high"
+            priority
+            onError={() => setBroken(true)}
+          />
         )}
         <b />
       </figure>

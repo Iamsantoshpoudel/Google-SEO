@@ -84,6 +84,7 @@ export default function MePage() {
         <Image
           src="/img/santosh-poudel-web-developer-nepal.jpg"
           alt="Santosh Poudel, computer engineer, AI developer and web developer from Nepal"
+          title="Santosh Poudel, computer engineer, AI developer and web developer from Nepal"
           width={600}
           height={800}
           sizes="(max-width: 640px) 100vw, 300px"
@@ -132,6 +133,7 @@ export default function MePage() {
                 <Image
                   src={project.image}
                   alt={project.alt}
+                  title={project.title}
                   width={isDexBotx ? 1885 : 900}
                   height={isDexBotx ? 1078 : 560}
                   sizes="(max-width: 768px) 100vw, 420px"
@@ -182,6 +184,7 @@ export default function MePage() {
               <Image
                 src={image.src}
                 alt={image.alt}
+                title={image.cap}
                 width={600}
                 height={750}
                 sizes="(max-width: 639px) calc((100vw - 48px) / 2), (max-width: 900px) calc((100vw - 7vw - 24px) / 3), 260px"
@@ -211,6 +214,7 @@ export default function MePage() {
                   <Image
                     src={post.image}
                     alt={post.imageAlt}
+                    title={post.title}
                     width={isDexBotx ? 1885 : 600}
                     height={isDexBotx ? 1078 : 450}
                     sizes="(max-width: 640px) 100vw, 180px"
