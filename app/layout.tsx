@@ -38,13 +38,13 @@ export const metadata: Metadata = {
       "Santosh Poudel is an AI developer and full stack developer from Nepal building practical products, blogs, and digital tools.",
     firstName: "Santosh",
     lastName: "Poudel",
-    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og-image.png", width: 1200, height: 630, alt: "Santosh Poudel, full-stack, AI, and on-chain developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Santosh Poudel | AI Developer & Full Stack Developer from Nepal",
     description: "Portfolio, projects and blog of Santosh Poudel, an AI developer from Nepal.",
-    images: ["/img/santosh-poudel-og.jpg"],
+    images: ["/img/santosh-poudel-og-image.png"],
   },
   other: { "geo.region": "NP", "geo.placename": "Nepal" },
 };

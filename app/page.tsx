@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     url: SITE,
     title: "Santosh Poudel | Full Stack & AI Developer from Nepal",
     description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
-    images: [{ url: "/img/santosh-poudel-og.jpg", width: 1200, height: 630, alt: "Santosh Poudel, full-stack and AI developer from Nepal" }],
+    images: [{ url: "/img/santosh-poudel-og-image.png", width: 1200, height: 630, alt: "Santosh Poudel, full-stack, AI, and on-chain developer from Nepal" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Santosh Poudel | Full Stack & AI Developer from Nepal",
     description: "Santosh Poudel, full-stack & AI developer from Nepal, builds SaaS products and DexBotX (a Discord bot), learns blockchain and shares work on GitHub and YouTube.",
-    images: ["/img/santosh-poudel-og.jpg"],
+    images: ["/img/santosh-poudel-og-image.png"],
   },
 };
 
