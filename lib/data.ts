@@ -7,8 +7,8 @@ export const BIO_LONG = "Santosh Poudel (Santosh) is a full-stack web developer 
 export const LINKS = {
   verifiai: "https://santoshpoudel06.com.np",
   dexbotx: "https://dexbotx.vercel.app",
-  github: "https://github.com/iamsantoshpoudel",
-  facebook: "https://www.facebook.com/sant0shpoudel",
+  github: "https://github.com/santoshpoudelx",
+  facebook: "https://www.facebook.com/santoshpoudelx",
   youtube: "https://www.youtube.com/@dexgamex1",
 };
 

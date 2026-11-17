@@ -33,7 +33,7 @@ AI detection can be uncertain. A detector result should be treated as one signal
 
 Santosh Poudel builds websites and digital projects. This website uses Next.js, React, TypeScript and Tailwind CSS. Review the portfolio and public repositories for first-hand evidence of work; project suitability depends on scope and requirements.
 
-GitHub: https://github.com/iamsantoshpoudel
+GitHub: https://github.com/santoshpoudelx
 
 ### DexBotX
 
