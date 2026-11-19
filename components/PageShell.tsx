@@ -4,7 +4,17 @@ import { PAGE, SITE } from "@/lib/data";
 type Crumb = { name: string; path: string };
 
 /** Shared layout for inner pages, with a breadcrumb trail and BreadcrumbList JSON-LD */
-export default function PageShell({ title, crumbs, children }: { title: string; crumbs: Crumb[]; children: ReactNode }) {
+export default function PageShell({
+  title,
+  crumbs,
+  children,
+  wide = false,
+}: {
+  title: string;
+  crumbs: Crumb[];
+  children: ReactNode;
+  wide?: boolean;
+}) {
   const ld = {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: [{ name: "Home", path: "/" }, ...crumbs].map((c, i) => ({
@@ -12,7 +22,7 @@ export default function PageShell({ title, crumbs, children }: { title: string; 
     })),
   };
   return (
-    <main className={PAGE}>
+    <main className={`${PAGE} ${wide ? "max-w-[1400px]" : "max-w-[900px]"}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <nav aria-label="Breadcrumb" className="mb-6 text-[.92rem] text-mute">
         <a href="/" className="no-underline hover:text-hot">Home</a>

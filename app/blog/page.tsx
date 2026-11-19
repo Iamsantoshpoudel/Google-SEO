@@ -55,7 +55,7 @@ export default function Blog() {
     })),
   };
   return (
-    <PageShell title="Blog" crumbs={[{ name: "Blog", path: "/blog" }]}>
+    <PageShell wide title="Blog" crumbs={[{ name: "Blog", path: "/blog" }]}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(blogLd) }} />
       <SessionRecommendations posts={posts} />
       <ul className="grid gap-6">
@@ -65,7 +65,7 @@ export default function Blog() {
 
           return (
             <li key={p.slug} className="grid gap-5 border-b border-line pb-6 sm:grid-cols-[180px_1fr]">
-              <a href={`/blog/${p.slug}`} className={`block ${isDexBotx ? "aspect-[1885/1078]" : "aspect-[4/3]"} overflow-hidden`} aria-label={`Read ${p.title}`}>
+              <a href={`/blog/${p.slug}`} className={`block ${isDexBotx ? "aspect-[1885/1078]" : "aspect-[4/3]"} overflow-hidden rounded-lg`} aria-label={`Read ${p.title}`}>
                 <Image
                   src={p.image}
                   alt={p.imageAlt}

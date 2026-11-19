@@ -5,7 +5,7 @@ import Gallery from "@/components/Gallery";
 import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
-import { BIO_LONG, BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
+import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -67,17 +67,19 @@ export default function Home() {
         <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
           {faq.map((f) => (
             <div key={f.q} className="rv-c">
-              <h3 className="mb-3.5 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">{f.q}</h3>
-              <p className="text-mute">
-                {f.a} {f.href && <a className={LINK} href={f.href}>{f.linkText}</a>}
-              </p>
+              <dl>
+                <dt className="mb-3.5 text-[clamp(1.4rem,2.6vw,2.1rem)] font-semibold leading-[1.05] text-ink">{f.q}</dt>
+                <dd className="text-mute">
+                  {f.a} {f.href && <a className={LINK} href={f.href}>{f.linkText}</a>}
+                </dd>
+              </dl>
             </div>
           ))}
         </Reveal>
       </section>
 
       <Reveal id="verifiai" className={S}>
-        <Scramble as="h2" className={LAB}>VerifiAI</Scramble>
+        <Scramble as="h2" className={LAB}>VerifiAI and content authenticity</Scramble>
         <p className={`${BIG} max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
         <div className="mt-[34px] max-w-[62ch] text-mute [&>p+p]:mt-3.5">
           <p className="rv-c">I founded VerifiAI to explore ways of checking digital content as AI-generated media becomes more common. I am developing the project with a focus on making these checks practical and clear about their limits.</p>
@@ -124,21 +126,6 @@ export default function Home() {
         </ul>
       </Reveal>
 
-      <section aria-labelledby="santosh-profile" className={`${S} pt-0!`}>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <article className=" p-5 md:p-7">
-            <h3 className="text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh Poudel?</h3>
-            <p className="mt-4 max-w-[70ch] text-mute">{BIO_LONG}</p>
-          </article>
-          <article className=" p-5 md:p-7">
-            <h3 className="text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.05]">Who is Santosh, the developer from Nepal?</h3>
-            <p className="mt-4 max-w-[70ch] text-mute">
-              Santosh is Santosh Poudel, a Nepal-based full-stack web developer and AI developer. He builds SaaS products, web applications, and Discord bots, including DexBotX. He founded VerifiAI and is learning Ethereum, Sui, and Solana. His public portfolio includes his projects and writing, and his code is available through <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>.
-            </p>
-            <p className="mt-3 max-w-[70ch] text-mute">This profile is about Santosh Poudel, the Nepal-based developer described here, not other people who share the first name Santosh.</p>
-          </article>
-        </div>
-      </section>
     </main>
   );
 }

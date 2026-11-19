@@ -90,9 +90,9 @@ export default function Header() {
       <nav aria-label="Main" className={`floating-nav ${compact ? "is-compact" : "is-expanded"}`}>
         <a href="/" aria-label="Santosh Poudel home" className="nav-avatar">
           <Image
-            src="/img/santosh-poudel-web-developer-nepal.jpg"
-            alt="Santosh Poudel"
-            title="Santosh Poudel"
+            src="/icon-192.png"
+            alt="Santosh Poudel logo"
+            title="Santosh Poudel logo"
             width={36}
             height={36}
             sizes="(max-width: 767px) 24px, 36px"

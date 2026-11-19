@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="mx-auto grid min-h-[80svh] max-w-[900px] content-center px-[clamp(18px,4vw,48px)] py-32">
+    <main className="mx-auto grid min-h-[80svh] max-w-[900px] content-center justify-items-center px-[clamp(18px,4vw,48px)] py-32 text-center">
       <div className="not-found-float mb-4 select-none font-display text-[clamp(7rem,30vw,16rem)] font-extrabold leading-[.8] tracking-[-.08em] text-hot" aria-hidden="true">
         404
       </div>
@@ -20,7 +20,7 @@ export default function NotFound() {
       <p className="mt-5 max-w-[52ch] text-mute">
         We checked behind the pixels. No page. Maybe it went out for coffee and forgot to leave a forwarding address.
       </p>
-      <div className="mt-8 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link href="/" className="clip-notch bg-hot px-6 py-3 font-semibold text-white no-underline transition-transform hover:-translate-y-1">
           Back to home
         </Link>

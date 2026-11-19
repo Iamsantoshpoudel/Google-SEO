@@ -27,7 +27,6 @@ export const gallery = [
 
 export const profileGallery = [
   ...gallery,
-  { src: "/img/santosh-poudel-web-developer-nepal.jpg", alt: "Santosh Poudel, web developer from Nepal", cap: "Web developer portrait" },
   { src: "/img/santosh-poudel-developer.jpg", alt: "Santosh Poudel in a computer engineering college uniform", cap: "Engineering student" },
   { src: "/img/santosh-poudel-ai-developer-verifiai-founder.jpg", alt: "Santosh Poudel outdoors, AI developer and VerifiAI founder", cap: "VerifiAI founder" },
   { src: "/img/santosh-poudel-close-up.png", alt: "Stylized digital illustration of Santosh Poudel", cap: "Illustrated portrait" },
@@ -159,7 +158,462 @@ export type BlogPost = {
 };
 
 export const posts: BlogPost[] = [
-  { date: "2026-11-16", label: "16 Nov", slug: "learning-ethereum-sui-solana-from-nepal", title: "Learning Ethereum, Sui and Solana as a developer from Nepal", metaTitle: "Learning Ethereum, Sui & Solana in Nepal", image: "/img/blockchain-future.svg", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "Ethereum", "Sui", "Solana", "Nepal"], body: [
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "gta-6-launch-day-confirmed-details",
+    title: "GTA 6 Launch Day: Release Date, Platforms and Confirmed Details",
+    metaTitle: "GTA 6 Release Date and Confirmed Details",
+    image: "/img/gta-6-launch-day.jpg",
+    imageAlt: "Original illustration of a neon city, road and car for a GTA VI launch-day explainer",
+    topics: ["GTA 6", "Grand Theft Auto VI", "Rockstar Games", "video games"],
+    body: [
+      "Rockstar's official Grand Theft Auto VI page lists November 19, 2026 as the release date and PlayStation 5 and Xbox Series X|S as platforms. This launch-day guide separates those confirmed details from speculation about gameplay, editions and future platforms.",
+    ],
+    sections: [
+      {
+        heading: "What Rockstar has confirmed",
+        paragraphs: [
+          "The official page places the story in Vice City and the wider state of Leonida, and introduces Jason and Lucia as its central characters. It describes a criminal conspiracy and a relationship at the center of the story, but it does not confirm every plot detail circulating online.",
+          "Rockstar's page is the best place to check for updated release information, trailers and platform details. Retailer listings and social posts can be useful leads, but they should not replace a publisher announcement.",
+        ],
+      },
+      {
+        heading: "Platforms and release timing",
+        paragraphs: [
+          "The platform list on Rockstar's page names PlayStation 5 and Xbox Series X|S. It does not list a PC release date, so a PC launch timeline should not be presented as confirmed unless Rockstar publishes one.",
+          "Release timing can vary by region and storefront. Players should check their own platform's store and the publisher's current page for local availability, editions and download information.",
+        ],
+      },
+      {
+        heading: "Why the launch attracts so much attention",
+        paragraphs: [
+          "A large game release is also a software, distribution and community event. Players follow official trailers, platform compatibility, accessibility information and updates while creators and developers discuss how the game is made and experienced.",
+          "Those conversations are most useful when they distinguish a verified feature from a fan theory. That habit applies to technology news more broadly: trace a claim to the organization that can confirm it.",
+        ],
+      },
+      {
+        heading: "Avoid launch-day scams",
+        paragraphs: [
+          "Use official stores and publisher links when checking pre-orders, updates or support information. Be cautious with unsolicited downloads, account-recovery offers and giveaways that ask for a password, payment details or a one-time code.",
+          "This article reports the details on Rockstar's page; it is not a review based on playing the game. I will update factual release information if the publisher changes it.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Grand Theft Auto VI official page — Rockstar Games", url: "https://www.rockstargames.com/VI" },
+    ],
+    related: [
+      { label: "Future of AI: useful tools and responsibilities", url: "/blog/future-of-artificial-intelligence" },
+      { label: "Browse all articles", url: "/blog" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "anthropic-ipo-what-it-means-for-ai",
+    title: "Anthropic IPO 2026: What a Record AI Listing Signals",
+    metaTitle: "Anthropic IPO 2026: AI Market Context",
+    image: "/img/anthropic-ipo-ai-markets.png",
+    imageAlt: "Original illustration of an AI network and rising market chart for an Anthropic IPO explainer",
+    topics: ["Anthropic IPO", "artificial intelligence", "AI business", "technology"],
+    body: [
+      "Anthropic's IPO is one of 2026's biggest AI business stories. CNN reported on November 18 that the company priced 980 million shares at $83 each and was scheduled to begin trading on Nasdaq as ANT on November 19; an offer price is not a promise of future performance.",
+    ],
+    sections: [
+      {
+        heading: "What the reported offer tells us",
+        paragraphs: [
+          "The reported share count and offer price describe the terms announced ahead of trading. CNN also reported that the offering would raise $81.3 billion before any additional share-sale options, making it a notable public-market event for the AI sector.",
+          "Those numbers should be read with their date and source attached. IPO terms, share counts and market prices can change, and the price after trading begins is determined by the market rather than by a headline.",
+        ],
+      },
+      {
+        heading: "Why an AI company going public matters",
+        paragraphs: [
+          "A public listing can give investors more regular financial disclosures than were available while a company was private. For technology readers, that makes it easier to follow how revenue, infrastructure spending and operating costs develop over time.",
+          "It also puts a spotlight on the economics behind frontier AI: expensive computing capacity must support products customers are willing to pay for. A large valuation alone does not demonstrate that those products will become profitable.",
+        ],
+      },
+      {
+        heading: "Questions worth following",
+        paragraphs: [
+          "Useful questions include how the company reports recurring revenue, how much it spends to train and serve models, whether customers renew, and how competition affects prices. These indicators help explain the business more clearly than a single first-day price move.",
+          "The same questions apply to any AI product: identify the user problem, the cost of delivering the service, and the evidence that people continue to find it valuable.",
+        ],
+      },
+      {
+        heading: "Not investment advice",
+        paragraphs: [
+          "This is a technology and business explainer, not a recommendation to buy or sell a security. Readers considering financial decisions should consult current regulatory filings and qualified financial professionals rather than relying on a news summary.",
+          "The figures above are attributed to CNN's November 18 report, published before the scheduled trading date. Check later company filings and market reporting for any subsequent updates.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Anthropic's Wall Street debut — CNN, November 18, 2026", url: "https://www.cnn.com/2026/11/18/investing/anthropic-ipo-wall-street-ai" },
+      { label: "Anthropic company news", url: "https://www.anthropic.com/news" },
+    ],
+    related: [
+      { label: "How VerifiAI approaches AI-generated content detection", url: "/blog/how-verifiai-approaches-ai-content-detection" },
+      { label: "The future of AI: useful assistants and new responsibilities", url: "/blog/future-of-artificial-intelligence" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "blockchain-in-nepal-beyond-crypto",
+    title: "Blockchain in Nepal: Use Cases Beyond Cryptocurrency",
+    metaTitle: "Blockchain in Nepal: Uses, Risks and Rules",
+    image: "/img/blockchain-nepal-use-cases.png",
+    imageAlt: "Original illustration of connected ledger blocks against a Himalayan landscape",
+    topics: ["blockchain in Nepal", "cryptocurrency", "distributed ledger", "technology"],
+    body: [
+      "Blockchain and cryptocurrency are related but not interchangeable. This Nepal-focused explainer looks at what a shared ledger can do, where a conventional database may be better, and why financial activity must be checked against current local rules.",
+    ],
+    sections: [
+      {
+        heading: "Separate the ledger from the token",
+        paragraphs: [
+          "A blockchain is a way for a network to maintain an ordered record of transactions or state changes. A cryptocurrency is a digital asset that may use a blockchain; building or studying ledger software does not require promoting or trading that asset.",
+          "That distinction matters when evaluating a pitch. Ask what information is shared, who needs to verify it, and why a signed database record or an established service would not solve the same problem more simply.",
+        ],
+      },
+      {
+        heading: "Possible uses and real limitations",
+        paragraphs: [
+          "Shared records can be worth exploring when several independent organizations need to verify the same history. Examples to evaluate include document attestations, supply-chain events or audit trails, but naming a use case does not prove that a blockchain deployment is necessary or operating in Nepal.",
+          "A ledger cannot make false input true, guarantee that a person controls an identity, or prevent every software bug. Privacy, transaction fees, governance, recovery and the ability to correct mistakes all need to be considered before a product is built.",
+        ],
+      },
+      {
+        heading: "Check Nepal's financial rules separately",
+        paragraphs: [
+          "Nepal Rastra Bank's published 2022 notice describes virtual-currency and cryptocurrency transactions as illegal. That notice concerns financial activity; it should not be treated as a general explanation of every software or research project that uses distributed-ledger ideas.",
+          "Rules can change and this article is not legal advice. Before handling tokens, payments or investment offers, check the latest notices from Nepal Rastra Bank and consult a qualified local professional.",
+        ],
+      },
+      {
+        heading: "A measured way to learn",
+        paragraphs: [
+          "Start with network, wallet, transaction and smart-contract fundamentals, then use a development network for experiments. Ethereum's developer documentation is one starting point for understanding the components without assuming that every application needs a chain.",
+          "I am learning about blockchain ecosystems from Nepal, so I prefer small, verifiable exercises and clear statements about their limits over claims that a technology will solve every trust problem.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Rastra Bank notice on virtual currency and cryptocurrency", url: "https://www.nrb.org.np/contents/uploads/2022/08/FXMD-Notice-2_207980_Cryptocurrecy.pdf" },
+      { label: "Ethereum developer documentation", url: "https://ethereum.org/en/developers/docs/" },
+    ],
+    related: [
+      { label: "Learning Ethereum, Sui and Solana as a developer from Nepal", url: "/blog/learning-ethereum-sui-solana-from-nepal" },
+      { label: "The future of blockchain beyond cryptocurrency", url: "/blog/future-of-blockchain-beyond-cryptocurrency" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "nepal-digital-payments-2026-qr-wallets",
+    title: "Nepal's Digital Payments in 2026: QR, Wallets and Trust",
+    metaTitle: "Digital Payments in Nepal: QR, Wallets and Trust",
+    image: "/img/nepal-digital-payments-2026.png",
+    imageAlt: "Original illustration of a smartphone scanning a QR code for a digital payment",
+    topics: ["digital payments Nepal", "QR payments", "mobile wallets", "fintech"],
+    body: [
+      "Digital payments in Nepal are an active policy and product topic: Nepal Rastra Bank publishes payment-system indicators and recent notices through its Payment Systems Department. Here is how to evaluate QR and wallet experiences through usability, safety and reliable data.",
+    ],
+    sections: [
+      {
+        heading: "Use current indicators, not anecdotes",
+        paragraphs: [
+          "The central bank's Payment Systems Department publishes periodic indicators, including a Bhadra 2083 report in October 2026. Those official series are a better place to verify transaction trends than a social post or a single shop's experience.",
+          "Payment metrics can count different things: transactions, values, active accounts or installed terminals. A useful comparison names the measure, reporting period and source instead of combining unlike totals.",
+        ],
+      },
+      {
+        heading: "Make the payment flow understandable",
+        paragraphs: [
+          "A good QR payment flow should show the recipient and amount clearly before a customer confirms. The receipt should make it easy to understand whether the transfer completed, is pending or needs help from the provider.",
+          "Businesses benefit when a digital option works alongside clear instructions and a practical fallback. Payment technology should reduce friction without making it harder for customers to ask questions or resolve a mistake.",
+        ],
+      },
+      {
+        heading: "Protect accounts and customers",
+        paragraphs: [
+          "Check the merchant name and amount before confirming, and avoid scanning a replacement QR code unless the business verifies it. Never share a password, PIN or one-time code with someone who contacts you unexpectedly.",
+          "Use services licensed for the activity in question and follow the provider's current support and dispute process. This article is general information, not financial or regulatory advice.",
+        ],
+      },
+      {
+        heading: "What builders can learn",
+        paragraphs: [
+          "For product teams, trust is part of the interface: show meaningful confirmation, avoid ambiguous payment states, and make customer support discoverable. These details matter as much as the code that connects an app to a payment rail.",
+          "I follow Nepal's fintech development as a software builder because it shows how local products must balance convenience, reliability and clear user protection.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Rastra Bank Payment Systems Department and indicators", url: "https://www.nrb.org.np/psd/" },
+      { label: "Payment Systems Indicators of 2083 Bhadra", url: "https://www.nrb.org.np/contents/uploads/2026/10/PS-Bhadra-2083_.pdf" },
+    ],
+    related: [
+      { label: "Building a SaaS as a developer in Nepal", url: "/blog/building-a-saas-as-a-developer-in-nepal" },
+      { label: "Building trusted fintech in Nepal", url: "/blog/nepal-fintech-innovation-2026" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "nepal-ai-tourism-digital-resilience",
+    title: "AI and Digital Tourism in Nepal: Useful Tools, Real Safety",
+    metaTitle: "AI and Digital Tourism in Nepal",
+    image: "/img/nepal-ai-tourism-2026.png",
+    imageAlt: "Original illustration of a visitor using a digital guide among Himalayan peaks",
+    topics: ["AI tourism Nepal", "digital tourism", "tourism safety", "artificial intelligence"],
+    body: [
+      "Nepal Tourism Board's 2026 World Tourism Day program put digital transformation and AI at the center of tourism discussions. The Board highlighted verified visitor information, early warnings and coordination as practical priorities for a resilient travel experience.",
+    ],
+    sections: [
+      {
+        heading: "A current Nepal tourism priority",
+        paragraphs: [
+          "The September 2026 program used the theme \"Digital Agenda and AI to Redesign Tourism.\" The Nepal Tourism Board connected digital tools with visitor communication and preparedness, particularly after floods affected tourism infrastructure in the Bhote Koshi area.",
+          "This is an official policy and industry discussion, not evidence that every destination already has an AI service or real-time alert system. Visitors should still rely on current information from local authorities and tourism operators.",
+        ],
+      },
+      {
+        heading: "Where digital tools can help",
+        paragraphs: [
+          "Well-maintained digital services can make route information, opening hours, transport updates and emergency contacts easier to find. Translation and itinerary tools may help visitors plan, but they need reliable source data and clear dates.",
+          "For safety, a useful system should communicate uncertainty, update delays and official instructions in a language travelers can understand. A chatbot is not a substitute for emergency services or local guides.",
+        ],
+      },
+      {
+        heading: "Keep people and communities in the loop",
+        paragraphs: [
+          "Tourism depends on residents, guides, transport workers and small businesses as much as on websites. Digital products should make local knowledge easier to reach and avoid presenting a community as a static attraction or a single data point.",
+          "Nepal's terrain and weather can change quickly. Preparedness requires coordination between institutions and local people, with digital channels supporting rather than replacing that work.",
+        ],
+      },
+      {
+        heading: "A product-design lesson from Nepal",
+        paragraphs: [
+          "For developers, the opportunity is to solve a specific information problem: help a visitor find a verified update, understand a route change or contact the right service. Good source attribution and a clear last-updated time are more useful than an AI label by itself.",
+          "This is the kind of practical technology question I follow as a web and AI developer from Nepal: build tools around dependable information, state their limits and keep people responsible for important decisions.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Tourism Board: World Tourism Day and digital tourism resilience", url: "https://trade.ntb.gov.np/nepal-celebrates-47th-world-tourism-day-highlighting-digital-transformation-and-tourism-resilience/" },
+    ],
+    related: [
+      { label: "How VerifiAI approaches AI-generated content detection", url: "/blog/how-verifiai-approaches-ai-content-detection" },
+      { label: "Nepal Wellness Year 2027", url: "/blog/nepal-wellness-year-2027-tourism" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "nepal-wellness-year-2027-tourism",
+    title: "Nepal Wellness Year 2027: Turning a Campaign Into Better Travel",
+    metaTitle: "Nepal Wellness Year 2027: Tourism Guide",
+    image: "/img/nepal-wellness-tourism-2027.png",
+    imageAlt: "Original illustration of a sunrise over the Himalayas and a person practicing meditation",
+    topics: ["Nepal Wellness Year 2027", "Nepal tourism", "sustainable tourism", "wellness travel"],
+    body: [
+      "Nepal Tourism Board highlighted Nepal Wellness Year 2027 during the country's participation at WTM London in November 2026. The campaign connects wellness, adventure, culture and sustainable travel; its value will depend on visitor experiences and local communities, not promotion alone.",
+    ],
+    sections: [
+      {
+        heading: "What the campaign is promoting",
+        paragraphs: [
+          "The Nepal Tourism Board described wellness, yoga, meditation and spiritual rejuvenation alongside Himalayan trekking, cultural heritage, wildlife and community-based tourism. The message positions wellness as part of a wider range of travel experiences rather than a replacement for them.",
+          "The Board also used WTM London to build international travel-trade relationships. That event is a promotional milestone, not a guarantee of future visitor numbers or a complete measure of local tourism outcomes.",
+        ],
+      },
+      {
+        heading: "Make the promise match the experience",
+        paragraphs: [
+          "Travelers need clear details about location, access, season, services and responsible visitor behavior. Operators should describe what is actually included and avoid presenting a short activity as a medical treatment or making unsupported health claims.",
+          "A sustainable offer should account for local livelihoods, environmental limits and cultural context. Communities should have a meaningful role in deciding how visitors engage with places and traditions.",
+        ],
+      },
+      {
+        heading: "Digital discovery should stay accurate",
+        paragraphs: [
+          "Search listings, maps and booking pages can help travelers compare routes and services, but outdated hours or copied descriptions create real costs. Providers should keep practical details current and point to official guidance when conditions change.",
+          "Digital marketing can introduce a destination; reliable transport, respectful hosting and transparent information shape what visitors experience after arrival.",
+        ],
+      },
+      {
+        heading: "A developing tourism story",
+        paragraphs: [
+          "Nepal Wellness Year 2027 is an upcoming national campaign, so its program and results may evolve. Travelers and businesses should check updated guidance from Nepal Tourism Board and local providers as the year approaches.",
+          "As a developer from Nepal, I find this shift interesting because tourism is also an information-design challenge: make local experiences discoverable without losing the detail and human relationships that make them meaningful.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Tourism Board: WTM London 2026 and Nepal Wellness Year 2027", url: "https://trade.ntb.gov.np/culture-and-sustainable-tourism-at-wtm-london-2026/" },
+    ],
+    related: [
+      { label: "AI and digital tourism in Nepal", url: "/blog/nepal-ai-tourism-digital-resilience" },
+      { label: "Pokhara's direct Dubai connection", url: "/blog/pokhara-dubai-direct-flight-nepal" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "pokhara-dubai-direct-flight-nepal",
+    title: "Pokhara to Dubai: What a Direct Flight Could Change",
+    metaTitle: "Pokhara to Dubai Direct Flight: Nepal Travel",
+    image: "/img/pokhara-dubai-direct-flight.png",
+    imageAlt: "Original illustration of a flight route linking Himalayan peaks with a modern city skyline",
+    topics: ["Pokhara Dubai flight", "Nepal tourism", "air connectivity", "Pokhara"],
+    body: [
+      "Nepal Tourism Board reported that flydubai began a daily scheduled Dubai–Pokhara–Dubai service on September 23, 2026. The route is a notable connectivity story for Pokhara, while schedules and onward connections should always be checked with the airline.",
+    ],
+    sections: [
+      {
+        heading: "What changed in September 2026",
+        paragraphs: [
+          "The Nepal Tourism Board reported the inaugural service at Pokhara International Airport and described Dubai as a major aviation hub. It also noted the flydubai and Emirates codeshare partnership as a way to connect onward to other destinations.",
+          "An inaugural flight is a dated event, not a promise that every future departure will run on the same schedule. Travelers should verify current routes, operating days, fares and connection rules directly before making plans.",
+        ],
+      },
+      {
+        heading: "Why connectivity matters to local tourism",
+        paragraphs: [
+          "A direct international connection can make a destination easier to consider, but flights are only one part of a visitor's journey. Ground transport, accommodation, accurate attraction information and access to local services also affect whether a trip works smoothly.",
+          "For Pokhara businesses, clear digital information can help turn interest into a well-planned visit. Reliable hours, current transport details and honest descriptions are more useful than broad claims about what a route will deliver.",
+        ],
+      },
+      {
+        heading: "Plan with up-to-date information",
+        paragraphs: [
+          "Flight operations and codeshare arrangements can change. Check the airline's booking system, confirm baggage and transit terms, and allow time for connections rather than relying on a promotional announcement alone.",
+          "Visitors should also consult current local advisories for road conditions and weather, especially when planning onward travel into mountain areas.",
+        ],
+      },
+      {
+        heading: "A digital opportunity for Nepal",
+        paragraphs: [
+          "New routes create a useful test for tourism websites: can a traveler quickly find accurate arrival, transfer and destination information? The best answer combines official sources with practical details from providers on the ground.",
+          "I follow developments like this as a Nepal-based developer because better digital experiences can help local destinations communicate clearly while leaving the actual travel experience in the hands of local people.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Tourism Board: Pokhara connects directly to Dubai", url: "https://trade.ntb.gov.np/pokhara-connects-directly-to-dubai/" },
+    ],
+    related: [
+      { label: "Nepal Wellness Year 2027", url: "/blog/nepal-wellness-year-2027-tourism" },
+      { label: "AI and digital tourism in Nepal", url: "/blog/nepal-ai-tourism-digital-resilience" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "nepal-hydropower-digital-grid",
+    title: "Nepal's Hydropower Story Needs a Smarter Grid",
+    metaTitle: "Nepal Hydropower Exports and the Digital Grid",
+    image: "/img/nepal-hydropower-digital-grid.png",
+    imageAlt: "Original illustration of a Himalayan hydropower dam connected to a data and transmission network",
+    topics: ["Nepal hydropower", "electricity exports", "energy data", "digital infrastructure"],
+    body: [
+      "Nepal's hydropower discussion is also a grid and information challenge. The Nepal Electricity Authority publishes demand, supply and export snapshots; understanding the energy system means looking at how those changing flows are measured and coordinated, not only how much a plant can generate.",
+    ],
+    sections: [
+      {
+        heading: "Generation is only one part of the system",
+        paragraphs: [
+          "Electricity has to be balanced across producers, transmission lines and demand. Hydropower output varies with water availability, while consumers need a dependable supply throughout the year.",
+          "The Nepal Electricity Authority's public energy dashboard makes demand and export measures visible. Such snapshots change over time, so readers should use the current dashboard rather than repeat a number without its date and unit.",
+        ],
+      },
+      {
+        heading: "Why data quality matters",
+        paragraphs: [
+          "Planning depends on measurements that are timely, comparable and clearly defined. Operators need to distinguish installed capacity from energy produced, and domestic demand from electricity moved across a border.",
+          "Digital systems can help organize forecasts, equipment status and operational reporting, but they cannot replace transmission capacity, maintenance, policy decisions or coordination with neighboring grids.",
+        ],
+      },
+      {
+        heading: "Consider the full development question",
+        paragraphs: [
+          "A responsible energy conversation includes reliability, affordability, environmental and community impacts, and the infrastructure required to deliver power. Export opportunities are one part of that conversation, not an automatic benefit for every project.",
+          "Public dashboards are useful starting points, but project-level decisions need current technical, financial and environmental information from the responsible authorities.",
+        ],
+      },
+      {
+        heading: "Where software builders fit",
+        paragraphs: [
+          "Energy technology has ordinary software problems with high consequences: reliable data collection, access control, monitoring, clear incident reporting and resilient communications. Small improvements in these workflows can be more useful than adding a fashionable technology without a defined need.",
+          "I am interested in how Nepal's software community can contribute to practical infrastructure tools while being careful not to claim expertise in power engineering without the relevant evidence.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Electricity Authority", url: "https://nea.org.np/en" },
+    ],
+    related: [
+      { label: "Digital payments and trusted fintech in Nepal", url: "/blog/nepal-digital-payments-2026-qr-wallets" },
+      { label: "Building a SaaS as a developer in Nepal", url: "/blog/building-a-saas-as-a-developer-in-nepal" },
+    ],
+  },
+  {
+    date: "2026-11-19",
+    label: "19 Nov",
+    slug: "nepal-fintech-innovation-2026",
+    title: "Nepal Fintech Innovation in 2026: Build Trust Before Features",
+    metaTitle: "Nepal Fintech Innovation: Trust Before Features",
+    image: "/img/nepal-fintech-innovation-2026.png",
+    imageAlt: "Original illustration of a mobile finance interface connected to a secure fintech network",
+    topics: ["Nepal fintech", "fintech innovation", "digital finance", "financial technology"],
+    body: [
+      "Nepal Rastra Bank's Payment Systems Department published information about its 2026 Fintech Innovation Showcase and a Digital Finance Innovation Hub impact report. These current initiatives make a useful starting point for discussing how financial products can innovate while keeping trust and user protection central.",
+    ],
+    sections: [
+      {
+        heading: "Innovation needs evidence",
+        paragraphs: [
+          "A showcase can introduce new ideas, but a product still has to demonstrate that it solves a real user problem. Builders should explain who the service is for, how it works, what data it needs and what happens when something goes wrong.",
+          "The central bank's published materials are useful context for Nepal's fintech landscape. For the latest programs and payment indicators, consult the Payment Systems Department directly rather than relying on an old event announcement.",
+        ],
+      },
+      {
+        heading: "Trust belongs in the product design",
+        paragraphs: [
+          "People need to understand fees, permissions, payment status and support options before relying on a financial app. Plain-language confirmations and a workable dispute process are core product features, not finishing touches.",
+          "Security and privacy also have to be considered early. Collect only information needed for the service, protect account recovery, and make it clear which organization is responsible for a customer's data and funds.",
+        ],
+      },
+      {
+        heading: "Build for the local context",
+        paragraphs: [
+          "A product designed for Nepal should account for local languages, device and network conditions, customer support expectations and the rules that apply to its financial activity. Copying a feature from another market does not guarantee that it will work well here.",
+          "Financial products are regulated. Teams should confirm requirements with the relevant authorities and qualified professionals before launching a service or making claims about licensing.",
+        ],
+      },
+      {
+        heading: "A practical developer checklist",
+        paragraphs: [
+          "Before adding a feature, test whether users can complete the main task, understand the result and recover from common errors. Measure reliability and support outcomes alongside growth.",
+          "As a web developer from Nepal, I see fintech as a strong example of software where clarity matters as much as implementation. Trust grows when a product is useful, predictable and honest about its limits.",
+        ],
+      },
+    ],
+    references: [
+      { label: "Nepal Rastra Bank Payment Systems Department", url: "https://www.nrb.org.np/psd/" },
+      { label: "Digital Finance Innovation Hub impact report", url: "https://www.nrb.org.np/psd/digital-finance-innovation-hub-difi-hub-impact-report/" },
+      { label: "Nepal Rastra Bank Fintech Innovation Showcase 2026 notice", url: "https://www.nrb.org.np/contents/uploads/2026/10/Nepal-Rastra-Bank_Event-Flyer.pdf" },
+    ],
+    related: [
+      { label: "Digital payments in Nepal: QR, wallets and trust", url: "/blog/nepal-digital-payments-2026-qr-wallets" },
+      { label: "Building a SaaS as a developer in Nepal", url: "/blog/building-a-saas-as-a-developer-in-nepal" },
+    ],
+  },
+  { date: "2026-11-16", label: "16 Nov", slug: "learning-ethereum-sui-solana-from-nepal", title: "Learning Ethereum, Sui and Solana as a developer from Nepal", metaTitle: "Learning Ethereum, Sui & Solana in Nepal", image: "/img/blockchain-future.png", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "Ethereum", "Sui", "Solana", "Nepal"], body: [
     "I am learning about Ethereum, Sui, and Solana as part of my wider interest in software development. This is a learning journey, not a claim of professional blockchain experience or a list of completed deployments. I want to understand what each ecosystem is designed to do before deciding whether a blockchain is the right tool for a particular problem.",
   ], sections: [
     { heading: "Start with the fundamentals", paragraphs: [
@@ -240,7 +694,7 @@ export const posts: BlogPost[] = [
     { label: "Santosh Poudel on GitHub", url: LINKS.github },
     { label: "Santosh Poudel on YouTube", url: LINKS.youtube },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "future-of-artificial-intelligence", title: "The future of AI: useful assistants, better tools and new responsibilities", metaTitle: "The Future of AI: Useful Tools", image: "/img/ai-future.svg", imageAlt: "Original illustration of a human working with an artificial intelligence assistant", topics: ["AI", "technology"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "future-of-artificial-intelligence", title: "The future of AI: useful assistants, better tools and new responsibilities", metaTitle: "The Future of AI: Useful Tools", image: "/img/ai-future.png", imageAlt: "Original illustration of a human working with an artificial intelligence assistant", topics: ["AI", "technology"], body: [
     "Artificial intelligence is moving from a novelty feature into everyday software. My view as a developer is that its most useful future is not about replacing every person, but helping people handle repetitive work, explore ideas and make better-informed decisions.",
   ], sections: [
     { heading: "AI will become part of ordinary workflows", paragraphs: [
@@ -282,7 +736,7 @@ export const posts: BlogPost[] = [
     { label: "How to check if text or an image is AI-generated", url: "/blog/how-to-check-if-text-or-image-is-ai-generated" },
     { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "future-of-blockchain-beyond-cryptocurrency", title: "The future of blockchain: practical uses beyond cryptocurrency", metaTitle: "The Future of Blockchain: Practical Uses", image: "/img/blockchain-future.svg", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "technology"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "future-of-blockchain-beyond-cryptocurrency", title: "The future of blockchain: practical uses beyond cryptocurrency", metaTitle: "The Future of Blockchain: Practical Uses", image: "/img/blockchain-future.png", imageAlt: "Original illustration of connected blocks in a distributed ledger", topics: ["blockchain", "technology"], body: [
     "Blockchain is often discussed through cryptocurrency prices, but the underlying idea is a shared ledger that multiple participants can verify. Its future depends on whether that shared record solves a real coordination problem better than a conventional database.",
   ], sections: [
     { heading: "Where a shared ledger may help", paragraphs: [
@@ -323,7 +777,7 @@ export const posts: BlogPost[] = [
     { label: "AI, blockchain and content provenance", url: "/blog/ai-blockchain-and-digital-content-provenance" },
     { label: "The future of AI", url: "/blog/future-of-artificial-intelligence" },
   ] },
-  { date: "2026-10-07", label: "7 Oct", slug: "ai-blockchain-and-digital-content-provenance", title: "AI, blockchain and content provenance: what can actually be verified?", metaTitle: "AI, Blockchain & Content Provenance", image: "/img/content-provenance.svg", imageAlt: "Original illustration showing a media file with a verifiable provenance trail", topics: ["AI", "blockchain", "VerifiAI"], body: [
+  { date: "2026-10-07", label: "7 Oct", slug: "ai-blockchain-and-digital-content-provenance", title: "AI, blockchain and content provenance: what can actually be verified?", metaTitle: "AI, Blockchain & Content Provenance", image: "/img/content-provenance.png", imageAlt: "Original illustration showing a media file with a verifiable provenance trail", topics: ["AI", "blockchain", "VerifiAI"], body: [
     "As AI-generated images and text become easier to make, people need better ways to understand where digital content came from. AI detection and blockchain are often proposed as solutions, but neither one alone proves who created a file or whether its claims are true.",
   ], sections: [
     { heading: "Detection is not the same as provenance", paragraphs: [
@@ -677,5 +1131,5 @@ export const S = "mx-auto max-w-[1400px] border-t border-line px-[clamp(18px,4vw
 export const LAB = "mb-7 flex items-center gap-3.5 font-semibold text-hot before:h-[1.5px] before:w-[46px] before:bg-hot before:content-['']";
 export const BIG = "font-display text-[clamp(1.7rem,4.6vw,4rem)] font-extrabold leading-[1.12] tracking-[-.025em]";
 
-export const PAGE = "mx-auto max-w-[900px] px-[clamp(18px,4vw,48px)] pb-24 pt-32";
+export const PAGE = "mx-auto w-full px-[clamp(18px,4vw,48px)] pb-24 pt-32";
 export const LINK = "text-hot underline underline-offset-4";

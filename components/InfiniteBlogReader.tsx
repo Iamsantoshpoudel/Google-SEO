@@ -86,8 +86,8 @@ export default function InfiniteBlogReader({
               width={isDexBotx ? 1885 : 1200}
               height={isDexBotx ? 1078 : 900}
               priority={index === 0}
-              sizes="(max-width: 900px) 100vw, 900px"
-              className={`my-5 w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[4/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+              sizes="(max-width: 768px) 100vw, 768px"
+              className={`mx-auto my-5 w-full max-w-3xl rounded-lg ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[4/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
             />
             <div className="grid gap-5">
               {post.body.map((paragraph, paragraphIndex) => <p key={`intro-${paragraphIndex}`}>{paragraph}</p>)}

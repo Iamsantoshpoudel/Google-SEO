@@ -3,7 +3,16 @@ const PAGES = `pages-${V}`;
 const ASSETS = `assets-${V}`;
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(PAGES).then((c) => c.add("/offline")).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(PAGES)
+      .then(async (cache) => {
+        if (await cache.match("/offline")) return;
+        const response = await fetch("/offline");
+        if (!response.ok) throw new Error(`Failed to cache offline page: ${response.status}`);
+        await cache.put("/offline", response);
+      })
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener("activate", (e) => {

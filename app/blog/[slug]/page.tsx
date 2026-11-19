@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: { absolute: title },
     description,
+    keywords: post.topics,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
@@ -30,13 +31,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       ...(post.modified ? { modifiedTime: post.modified } : {}),
       authors: ["Santosh Poudel"],
       url: `${SITE}/blog/${post.slug}`,
-      images: [{ url: `/blog/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.imageAlt }],
+      images: [{ url: post.image, alt: post.imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [{ url: `/blog/${post.slug}/opengraph-image`, alt: post.imageAlt }],
+      images: [{ url: post.image, alt: post.imageAlt }],
     },
   };
 }
@@ -65,7 +66,7 @@ export default async function Post({ params }: Params) {
   };
 
   return (
-    <PageShell title={post.title} crumbs={[{ name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]}>
+    <PageShell wide title={post.title} crumbs={[{ name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
       <InfiniteBlogReader posts={posts} initialSlug={post.slug} />
     </PageShell>

@@ -77,7 +77,7 @@ export default function MePage() {
   };
 
   return (
-    <PageShell title="Santosh Poudel" crumbs={[{ name: "Me", path: "/me" }]}>
+    <PageShell wide title="Santosh Poudel" crumbs={[{ name: "Me", path: "/me" }]}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([personArticlesLd, profileLd, projectsLd]) }} />
 
       <section className="grid items-center gap-8 sm:grid-cols-[minmax(190px,300px)_1fr]">
@@ -88,7 +88,7 @@ export default function MePage() {
           width={600}
           height={800}
           sizes="(max-width: 640px) 100vw, 300px"
-          className="aspect-[3/4] w-full object-cover"
+          className="aspect-[3/4] w-full rounded-lg object-cover"
           loading="eager"
           priority
         />
@@ -122,23 +122,25 @@ export default function MePage() {
         </div>
       </section>
 
-      <section id="projects" className="p-5">
+      <section id="projects" className="px-0 py-5 sm:p-5">
         <div className="grid gap-5 md:grid-cols-2">
           {featuredProjects.map((project) => {
             const isDexBotx = project.slug === "dexbotx";
             const isPortraitImage = project.image.startsWith("/img/santosh-");
 
             return (
-              <article key={project.slug} className="overflow-hidden border border-line">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  title={project.title}
-                  width={isDexBotx ? 1885 : 900}
-                  height={isDexBotx ? 1078 : 560}
-                  sizes="(max-width: 768px) 100vw, 420px"
-                  className={`w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[16/10] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
-                />
+              <article key={project.slug} className="overflow-hidden rounded-lg border border-line">
+                <figure className="mx-auto w-full max-w-lg  p-3">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    title={project.title}
+                    width={isDexBotx ? 1885 : 900}
+                    height={isDexBotx ? 1078 : 560}
+                    sizes="(max-width: 767px) 90vw, (max-width: 1140px) 45vw, 512px"
+                    className={`w-full rounded-md ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[16/10] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+                  />
+                </figure>
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase text-hot">{project.kicker}</p>
                   <h3 className="mt-2 text-2xl leading-tight text-ink">{project.title}</h3>
@@ -156,17 +158,19 @@ export default function MePage() {
         </div>
       </section>
 
-      <section>
-        <h2>Background</h2>
-        <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Nepal and share my work with an international online audience.</p>
-        <p className="max-w-[68ch]">This portfolio is built with Next.js, React, TypeScript and Tailwind CSS. Its project pages describe my work on AI content tools and Discord automation, while the <Link href="/blog" className={LINK}>blog</Link> covers web development, artificial intelligence, digital content authenticity and related technology topics.</p>
-      </section>
+      <div className="grid items-start gap-8 lg:grid-cols-2">
+        <section>
+          <h2>Background</h2>
+          <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Nepal and share my work with an international online audience.</p>
+          <p className="max-w-[68ch]">This portfolio is built with Next.js, React, TypeScript and Tailwind CSS. Its project pages describe my work on AI content tools and Discord automation, while the <Link href="/blog" className={LINK}>blog</Link> covers web development, artificial intelligence, digital content authenticity and related technology topics.</p>
+        </section>
 
-      <section>
-        <h2>How I approach building software</h2>
-        <p className="max-w-[68ch]">I start by identifying the task a product should help someone complete. From there, I work toward a clear interface and a focused feature set, then refine the implementation as I learn more about the problem. My projects are practical learning as well as product work: I document what they do, the ideas behind them and the limitations that matter.</p>
-        <p className="max-w-[68ch]">For AI-related work, I care about presenting outputs with context rather than treating an automated result as certainty. For community software, I focus on bringing recurring tasks such as moderation, onboarding and notifications into manageable workflows. These interests shape the products and articles published on this site.</p>
-      </section>
+        <section>
+          <h2>How I approach building software</h2>
+          <p className="max-w-[68ch]">I start by identifying the task a product should help someone complete. From there, I work toward a clear interface and a focused feature set, then refine the implementation as I learn more about the problem. My projects are practical learning as well as product work: I document what they do, the ideas behind them and the limitations that matter.</p>
+          <p className="max-w-[68ch]">For AI-related work, I care about presenting outputs with context rather than treating an automated result as certainty. For community software, I focus on bringing recurring tasks such as moderation, onboarding and notifications into manageable workflows. These interests shape the products and articles published on this site.</p>
+        </section>
+      </div>
 
       <section>
         <h2>Find me online</h2>
@@ -178,16 +182,16 @@ export default function MePage() {
           <li><a className={LINK} href={LINKS.dexbotx} target="_blank" rel="noopener noreferrer">DexBotX</a></li>
           <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
         </ul>
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4" aria-label="Photo gallery of Santosh Poudel">
+        <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4" aria-label="Photo gallery of Santosh Poudel">
           {profileGallery.map((image) => (
-            <figure key={`${image.src}-${image.cap}`} className="overflow-hidden border border-line">
+            <figure key={`${image.src}-${image.cap}`} className="mx-auto w-full overflow-hidden rounded-lg border border-line bg-white/2 sm:max-w-xs">
               <Image
                 src={image.src}
                 alt={image.alt}
                 title={image.cap}
                 width={600}
                 height={750}
-                sizes="(max-width: 639px) calc((100vw - 48px) / 2), (max-width: 900px) calc((100vw - 7vw - 24px) / 3), 260px"
+                sizes="(max-width: 639px) calc((100vw - 48px) / 2), (max-width: 900px) calc((100vw - 7vw - 24px) / 3), 320px"
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover"
               />
@@ -210,7 +214,7 @@ export default function MePage() {
 
             return (
               <li key={post.slug} className="grid gap-5 border-b border-line pb-6 sm:grid-cols-[180px_1fr]">
-                <Link href={`/blog/${post.slug}`} className={`block ${isDexBotx ? "aspect-[1885/1078]" : "aspect-[4/3]"} overflow-hidden`} aria-label={`Read ${post.title}`}>
+                <Link href={`/blog/${post.slug}`} className={`block ${isDexBotx ? "aspect-[1885/1078]" : "aspect-[4/3]"} overflow-hidden rounded-lg`} aria-label={`Read ${post.title}`}>
                   <Image
                     src={post.image}
                     alt={post.imageAlt}

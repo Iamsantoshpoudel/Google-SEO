@@ -57,15 +57,15 @@ export default function SessionRecommendations({ posts }: { posts: BlogPost[] })
           const isPortraitImage = post.image.startsWith("/img/santosh-");
 
           return (
-            <li key={post.slug} className="border border-line">
+            <li key={post.slug} className="overflow-hidden rounded-lg border border-line">
               <a href={`/blog/${post.slug}`} className="block no-underline">
                 <Image
                   src={post.image}
                   alt={post.imageAlt}
                   width={isDexBotx ? 1885 : 600}
                   height={isDexBotx ? 1078 : 360}
-                  sizes="(max-width: 640px) 100vw, 30vw"
-                  className={`w-full ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[5/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1066px) 30vw, 320px"
+                  className={`w-full sm:mx-auto sm:max-w-xs ${isDexBotx ? "aspect-[1885/1078] bg-[#1c1c1c] object-contain" : "aspect-[5/3] object-cover"} ${isPortraitImage ? "object-top" : ""}`}
                 />
                 <span className="block p-3 font-semibold leading-snug text-ink hover:text-hot">{post.title}</span>
               </a>

@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...gallery.map((image) => `${SITE}${image.src}`),
       ],
     },
-    { url: `${SITE}/about`, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
     { url: `${SITE}/me`, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
     { url: `${SITE}/privacy-policy` },
     { url: `${SITE}/projects` },

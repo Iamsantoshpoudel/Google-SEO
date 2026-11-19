@@ -9,7 +9,7 @@ Installable PWA with offline support (service worker and offline page)
 Anonymous visitor counting with Firebase Firestore (date and country only, no IP addresses)
 Public live dashboard at /dashboard (visitors per day, by country, totals)
 Cookie banner to accept or decline visit counting
-SEO: metadata, Open Graph, JSON-LD (Person, ProfilePage, FAQ), sitemap.xml, robots.txt
+SEO: metadata, Open Graph, JSON-LD (Person, ProfilePage, FAQ), sitemap.xml, robots.txt with Content Signals
 Tech stack
 
 Next.js 16.4.6 (App Router), React 19, TypeScript 5.6, Tailwind CSS 4, Firebase 12 (Firestore), next/font (Syne, Manrope)

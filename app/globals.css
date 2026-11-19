@@ -246,13 +246,6 @@
   ::selection { background: var(--b); color: #fff; }
 }
 
-/* cursor */
-.cur { position: fixed; left: -50px; top: -50px; width: 34px; height: 34px; border: 1.5px solid var(--b); border-radius: 50%;
-  pointer-events: none; z-index: 95; transform: translate(-50%, -50%); mix-blend-mode: difference;
-  transition: width .25s, height .25s, background .25s; }
-.cur.h { width: 70px; height: 70px; background: rgba(255, 92, 120, .25); }
-@media (hover: none) { .cur { display: none; } }
-
 /* hero */
 .hero-line { translate: var(--hx, 0px) 0; display: block; overflow: hidden; }
 .hero-i { display: block; font-style: normal; }
@@ -276,7 +269,7 @@
 .frame::before, .frame::after { content: ""; position: absolute; width: 26px; height: 26px; border: 2px solid var(--b); z-index: 3; }
 .frame::before { top: -8px; left: -8px; border-right: 0; border-bottom: 0; }
 .frame::after { bottom: -8px; right: -8px; border-left: 0; border-top: 0; }
-.frame b { position: absolute; left: 0; right: 0; height: 2px; background: var(--b); box-shadow: 0 0 14px var(--b); z-index: 3;
+.frame .scan-line { position: absolute; left: 0; right: 0; height: 2px; background: var(--b); box-shadow: 0 0 14px var(--b); z-index: 3;
   animation: scan 3.2s ease-in-out infinite alternate; }
 @keyframes scan { from { top: 4%; } to { top: 94%; } }
 

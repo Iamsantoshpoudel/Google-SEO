@@ -62,7 +62,7 @@ export default function Hero() {
             onError={() => setBroken(true)}
           />
         )}
-        <b />
+        <span className="scan-line" aria-hidden="true" />
       </figure>
 
       <h1 ref={h1} className="relative -ml-[.04em] text-[clamp(3.6rem,15.5vw,14rem)] uppercase md:max-w-[68%] md:text-[clamp(3.6rem,12vw,12rem)]">
