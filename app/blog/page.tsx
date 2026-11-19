@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageShell from "@/components/PageShell";
 import SessionRecommendations from "@/components/SessionRecommendations";
-import { posts, SITE } from "@/lib/data";
+import { BLOG_CONTENT_LAST_MODIFIED, posts, SITE } from "@/lib/data";
 import { fitMetaDescription, serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "AI, Web Development & VerifiAI Articles";
@@ -40,6 +40,7 @@ export default function Blog() {
     "@id": `${SITE}/blog#blog`,
     name: "Santosh Poudel's Blog",
     url: `${SITE}/blog`,
+    ...(BLOG_CONTENT_LAST_MODIFIED ? { dateModified: BLOG_CONTENT_LAST_MODIFIED } : {}),
     author: { "@id": `${SITE}/#person` },
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",

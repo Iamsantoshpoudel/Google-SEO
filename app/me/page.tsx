@@ -162,7 +162,7 @@ export default function MePage() {
       <div className="grid items-start gap-8 lg:grid-cols-2">
         <section>
           <h2>Background</h2>
-          <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Nepal and share my work with an international online audience.</p>
+          <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Kathmandu, Nepal and share my work with an international online audience.</p>
           <p className="max-w-[68ch]">This portfolio is built with Next.js, React, TypeScript and Tailwind CSS. Its project pages describe my work on AI content tools and Discord automation, while the <Link href="/blog" className={LINK}>blog</Link> covers web development, artificial intelligence, digital content authenticity and related technology topics.</p>
         </section>
 
@@ -179,6 +179,7 @@ export default function MePage() {
           <li><a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a></li>
           <li><a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a></li>
           <li><a className={LINK} href={LINKS.facebook} target="_blank" rel="me noopener noreferrer">Facebook</a></li>
+          <li><a className={LINK} href={LINKS.brave} target="_blank" rel="me noopener noreferrer">Web3</a></li>
           <li><a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a></li>
           <li><a className={LINK} href={LINKS.dexbotx} target="_blank" rel="noopener noreferrer">DexBotX</a></li>
           <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>

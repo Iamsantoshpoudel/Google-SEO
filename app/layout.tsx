@@ -65,6 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="me" href={LINKS.github} />
         <link rel="me" href={LINKS.youtube} />
         <link rel="me" href={LINKS.facebook} />
+        <link rel="me" href={LINKS.brave} />
       </head>
       <body suppressHydrationWarning>
         <Preloader />

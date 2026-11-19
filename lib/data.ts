@@ -1,5 +1,9 @@
 export const SITE = "https://santosh2.com.np";
 export const SEO_CONTENT_LAST_MODIFIED = "2026-11-19";
+export const PRIVACY_POLICY_LAST_MODIFIED = {
+  date: "2026-11-16",
+  label: "November 16, 2026",
+} as const;
 // TODO: move this contact address to the santosh2.com.np domain when one is available.
 export const CONTACT_EMAIL = "hi@santoshpoudel06.com.np";
 export const BIO_SHORT = "Santosh Poudel (Santosh) is a Nepal-based full-stack web and AI developer building SaaS products, web applications, Discord bots, and AI tools while learning blockchain development.";
@@ -11,6 +15,7 @@ export const LINKS = {
   github: "https://github.com/santoshpoudelx",
   facebook: "https://www.facebook.com/santoshpoudelx",
   youtube: "https://www.youtube.com/@dexgamex1",
+  brave: "https://santoshpoudel.brave",
 };
 
 export const nav = [
@@ -43,6 +48,7 @@ export const projects = [
 export const featuredProjects = [
   {
     slug: "verifai",
+    modified: SEO_CONTENT_LAST_MODIFIED,
     title: "VerifiAI",
     kicker: "AI detection and trust tooling",
     description: "VerifiAI explores how people can assess AI-generated content more responsibly by combining source review, provenance context, and careful product design.",
@@ -88,6 +94,7 @@ export const featuredProjects = [
   },
   {
     slug: "dexbotx",
+    modified: SEO_CONTENT_LAST_MODIFIED,
     title: "DexBotX Discord Bot",
     kicker: "Discord automation and moderation",
     description: "DexBotX is a Discord bot project that brings moderation, welcome flows, role automation, AI chat, and social notifications together with an admin dashboard for managing server tools.",
@@ -1068,7 +1075,13 @@ export const social = [
   { label: "GitHub", href: LINKS.github },
   { label: "Facebook", href: LINKS.facebook },
   { label: "YouTube", href: LINKS.youtube },
+  { label: "Web3", href: LINKS.brave },
 ];
+
+export const BLOG_CONTENT_LAST_MODIFIED = posts
+  .map(({ date, modified }) => modified ?? date)
+  .sort()
+  .at(-1);
 
 // TODO: add the verified LinkedIn profile URL when provided.
 
@@ -1076,12 +1089,11 @@ export const faq = [
   { q: "Who is Santosh Poudel?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal. He builds SaaS products, AI tools, and Discord applications including DexBotX." },
   { q: "What does Santosh Poudel do?", a: "He builds full-stack web products, SaaS services, AI tools such as VerifiAI, and Discord bots such as DexBotX. He is also learning blockchain development with Ethereum, Sui, and Solana." },
   { q: "Where is Santosh Poudel from?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal." },
-  { q: "Where does Santosh Poudel live?", a: "Santosh Poudel is based in Nepal." },
+  { q: "Where does Santosh Poudel live?", a: "Santosh Poudel is based in Kathmandu, Nepal." },
   { q: "Where does Santosh Poudel work?", a: "His published profile does not name a current employer. It describes his work building web products, SaaS services, AI tools, and Discord bots." },
   { q: "What is VerifiAI?", a: "VerifiAI is a project founded by Santosh Poudel that explores ways to assess digital content using source context and provenance. Detector results are not conclusive proof of authorship or truth." },
   { q: "What is DexBotX?", a: "DexBotX is a Discord bot project with moderation, welcome flows, role automation, AI chat, creator notifications, and an admin dashboard." },
   { q: "What is Santosh Poudel's GitHub?", a: "Find Santosh Poudel's code and projects on GitHub.", href: LINKS.github, linkText: "Visit GitHub" },
-  { q: "How can I contact Santosh Poudel?", a: "Email Santosh Poudel or connect through his public profiles.", href: `mailto:${CONTACT_EMAIL}`, linkText: CONTACT_EMAIL },
 ];
 
 export const websiteLd = {
@@ -1113,14 +1125,15 @@ export const personLd = {
     "Santosh Podul",
     "Santosh Poudell",
     "Santosh Pouydal",
-    "Santosh Powdel",
+    "Santos Powdel",
+    "Santosh Paudyal",
   ],
   jobTitle: "Full-stack Web Developer and AI Developer",
   description: BIO_LONG,
   nationality: { "@type": "Country", name: "Nepal" },
+  homeLocation: { "@type": "Place", name: "Kathmandu, Nepal" },
   knowsAbout: ["Web development", "Full-stack development", "SaaS development", "Artificial intelligence", "AI tools", "Discord bots", "Blockchain development", "Ethereum", "Sui", "Solana", "Next.js", "React"],
-  // TODO: add a city once confirmed.
-  address: { "@type": "PostalAddress", addressCountry: "NP" },
+  address: { "@type": "PostalAddress", addressLocality: "Kathmandu", addressCountry: "NP" },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     credentialCategory: "Diploma",
@@ -1129,7 +1142,7 @@ export const personLd = {
   // TODO: add the educational institution to alumniOf when its name is confirmed.
   // TODO: add an employer to worksFor when confirmed.
   // TODO: add other verified profile URLs to sameAs when provided.
-  sameAs: [LINKS.github, LINKS.youtube, LINKS.facebook, LINKS.verifiai],
+  sameAs: [LINKS.github, LINKS.youtube, LINKS.facebook, LINKS.verifiai, LINKS.brave],
 };
 
 export const verifiaiOrganizationLd = {

@@ -58,6 +58,7 @@ export default async function ProjectDetailPage({ params }: Params) {
     url: project.url,
     mainEntityOfPage: `${SITE}/projects/${project.slug}`,
     image: `${SITE}${project.image}`,
+    dateModified: project.modified,
     author: { "@id": `${SITE}/#person` },
     creator: { "@id": `${SITE}/#person` },
     keywords: project.tech,

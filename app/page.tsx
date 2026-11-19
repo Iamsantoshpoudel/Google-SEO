@@ -60,13 +60,7 @@ export default function Home() {
         <a href="/me" className="no-underline text-inherit">
           <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
         </a>
-        <p className="max-w-[68ch] text-mute">
-          Santosh Poudel is a computer engineer, AI developer and web developer from Nepal who builds SaaS products, AI tools, and Discord applications such as DexBotX.
-        </p>
         <BigText text="Santosh Poudel is a full-stack web and AI developer from Nepal and a computer engineering diploma holder. He builds SaaS products, AI tools, and Discord applications such as DexBotX, and founded VerifiAI, a project exploring digital content authenticity. He shares his work and learning through projects, articles, GitHub, and YouTube." />
-        <p className="mt-5 max-w-[68ch] text-mute">
-          People also search for Santosh Poudel using spellings such as Santosh Paudel or Santosh Poudle.
-        </p>
         <p className="mt-5 max-w-[68ch] text-mute">
           He is learning blockchain development with Ethereum, Sui, and Solana. Find his projects and code on <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>, watch his work on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>, or use the social links and contact details below.
         </p>
@@ -88,7 +82,7 @@ export default function Home() {
 
       <Reveal id="verifiai" className={S}>
         <Scramble as="h2" className={LAB}>VerifiAI and content authenticity</Scramble>
-        <p className={`${BIG} max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
+        <p className={`${BIG} rv-c max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
         <div className="mt-[34px] max-w-[62ch] text-mute [&>p+p]:mt-3.5">
           <p className="rv-c">I founded VerifiAI to explore ways of checking digital content as AI-generated media becomes more common. I am developing the project with a focus on making these checks practical and clear about their limits.</p>
           <p className="rv-c">Visit <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>, the separate product site, or explore <a className={LINK} href="/me">my profile and projects</a>.</p>
