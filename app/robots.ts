@@ -23,6 +23,7 @@ export default function robots(): MetadataRoute.Robots {
           "Googlebot-Image",
         ],
         allow: "/",
+        other: { "Content-Signal": "ai-train=yes, search=yes, ai-input=yes" },
       },
     ],
     sitemap: `${SITE}/sitemap.xml`,

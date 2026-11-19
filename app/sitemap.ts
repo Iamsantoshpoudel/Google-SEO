@@ -12,7 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...gallery.map((image) => `${SITE}${image.src}`),
       ],
     },
-    { url: `${SITE}/me`, images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`] },
+    {
+      url: `${SITE}/me`,
+      lastModified: SEO_CONTENT_LAST_MODIFIED,
+      images: [`${SITE}/img/santosh-poudel-web-developer-nepal.jpg`],
+    },
     { url: `${SITE}/privacy-policy` },
     { url: `${SITE}/projects` },
     ...featuredProjects.map((project) => ({

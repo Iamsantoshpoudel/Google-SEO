@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE, SEO_CONTENT_LAST_MODIFIED } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "AI Developer and Web Developer in Nepal";
@@ -43,6 +43,7 @@ export default function MePage() {
     name: "Santosh Poudel's personal profile",
     mainEntity: { "@id": `${SITE}/#person` },
     primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
+    dateModified: SEO_CONTENT_LAST_MODIFIED,
   };
   const projectsLd = {
     "@context": "https://schema.org",
@@ -94,7 +95,7 @@ export default function MePage() {
         />
         <div>
           <p className="mb-3 text-sm font-semibold uppercase text-hot">Computer Engineer · AI Developer · Web Developer</p>
-          <p className="text-[1.15rem] leading-relaxed text-ink">I am Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. I build websites, web applications and practical software products, with interests in artificial intelligence, digital content authenticity and online community tools.</p>
+          <p className="text-[1.15rem] leading-relaxed text-ink">Santosh Poudel is a computer engineer, AI developer and web developer from Nepal who builds SaaS products, AI tools, and Discord applications such as DexBotX.</p>
           <p className="mt-4">I founded VerifiAI, a project exploring tools for assessing digital content, and I build DexBotX, a Discord bot for moderation, automation and community updates. I document my projects and learning here through detailed project pages and articles.</p>
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
             <a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>Contact me</a>
