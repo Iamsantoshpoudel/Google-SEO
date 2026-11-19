@@ -5,7 +5,7 @@ import Gallery from "@/components/Gallery";
 import ProjectRow from "@/components/ProjectRow";
 import Reveal from "@/components/Reveal";
 import Scramble from "@/components/Scramble";
-import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd } from "@/lib/data";
+import { BIG, LAB, SITE, LINKS, S, CONTACT_EMAIL, LINK, faq, posts, projects, social, websiteLd, personLd, verifiaiOrganizationLd, SEO_CONTENT_LAST_MODIFIED } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -40,6 +40,7 @@ export default function Home() {
     name: "Santosh Poudel",
     mainEntity: { "@id": `${SITE}/#person` },
     primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
+    dateModified: SEO_CONTENT_LAST_MODIFIED,
   };
   const faqLd = {
     "@context": "https://schema.org",
@@ -47,7 +48,7 @@ export default function Home() {
     mainEntity: faq.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
+      acceptedAnswer: { "@type": "Answer", text: item.href ? `${item.a} ${item.linkText}` : item.a },
     })),
   };
   return (
@@ -56,7 +57,7 @@ export default function Home() {
       <Hero />
 
       <section id="about" className={S}>
-        <a href="/about" className="no-underline text-inherit">
+        <a href="/me" className="no-underline text-inherit">
           <Scramble as="h2" className={LAB}>About Santosh Poudel</Scramble>
         </a>
         <BigText text="Santosh Poudel is a full-stack web and AI developer from Nepal and a computer engineering diploma holder. He builds SaaS products, AI tools, and Discord applications such as DexBotX, and founded VerifiAI, a project exploring digital content authenticity. He shares his work and learning through projects, articles, GitHub, and YouTube." />
@@ -64,7 +65,8 @@ export default function Home() {
           He is learning blockchain development with Ethereum, Sui, and Solana. Find his projects and code on <a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a>, watch his work on <a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a>, or use the social links and contact details below.
         </p>
         <p className="mt-5"><a className={LINK} href="/me">Read my personal profile</a></p>
-        <Reveal as="div" className="mt-[60px] grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
+        <Scramble as="h2" className={`${LAB} mt-[60px]`}>Frequently asked questions</Scramble>
+        <Reveal as="div" className="mt-5 grid grid-cols-1 gap-[clamp(24px,5vw,80px)] md:grid-cols-2">
           {faq.map((f) => (
             <div key={f.q} className="rv-c">
               <dl>
@@ -80,7 +82,7 @@ export default function Home() {
 
       <Reveal id="verifiai" className={S}>
         <Scramble as="h2" className={LAB}>VerifiAI and content authenticity</Scramble>
-        <p className={`${BIG} max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
+        <p className={`${BIG} rv-c max-w-[26ch]`}>Making it easier to tell human work from AI-made content.</p>
         <div className="mt-[34px] max-w-[62ch] text-mute [&>p+p]:mt-3.5">
           <p className="rv-c">I founded VerifiAI to explore ways of checking digital content as AI-generated media becomes more common. I am developing the project with a focus on making these checks practical and clear about their limits.</p>
           <p className="rv-c">Visit <a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a>, the separate product site, or explore <a className={LINK} href="/me">my profile and projects</a>.</p>

@@ -60,10 +60,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
         <link rel="me" href={LINKS.github} />
         <link rel="me" href={LINKS.youtube} />
         <link rel="me" href={LINKS.facebook} />
+        <link rel="me" href={LINKS.brave} />
       </head>
       <body suppressHydrationWarning>
         <Preloader />
@@ -100,8 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
           <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2">
             <a href="/" className="hover:text-hot">Home</a>
-            <a href="/about" className="hover:text-hot">About</a>
-            <a href="/me" className="hover:text-hot">Profile</a>
+            <a href="/me" className="hover:text-hot">About / Profile</a>
             <a href="/projects" className="hover:text-hot">Projects</a>
             <a href="/blog" className="hover:text-hot">Blog</a>
             <a href="/#find" className="hover:text-hot">Contact</a>

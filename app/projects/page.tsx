@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import { featuredProjects, LINK, posts, SITE } from "@/lib/data";
+import { featuredProjects, LINK, posts, SITE, SEO_CONTENT_LAST_MODIFIED } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "AI Projects";
@@ -38,6 +38,7 @@ export default function ProjectsPage() {
   const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": `${SITE}/projects#featured-projects`,
     name: "Featured projects by Santosh Poudel",
     itemListElement: featuredProjects.map((project, index) => ({
       "@type": "ListItem",
@@ -56,10 +57,19 @@ export default function ProjectsPage() {
       },
     })),
   };
+  const projectsPageLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE}/projects#page`,
+    url: `${SITE}/projects`,
+    name: title,
+    dateModified: SEO_CONTENT_LAST_MODIFIED,
+    mainEntity: { "@id": `${SITE}/projects#featured-projects` },
+  };
 
   return (
     <PageShell wide title="Projects by Santosh Poudel" crumbs={[{ name: "Projects", path: "/projects" }]}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd([projectsPageLd, itemListLd]) }} />
       <p className="max-w-[60ch] text-mute">
         These are the projects I am actively building or documenting as part of my work in AI tools, automation, and practical web products.
       </p>

@@ -35,13 +35,13 @@ export default function Preloader() {
     let t2: ReturnType<typeof setTimeout> | undefined;
     const t0 = performance.now();
     const f = (t: number) => {
-      const p = Math.min(1, (t - t0) / 950);
+      const p = Math.min(1, (t - t0) / 500);
       setN(Math.round((1 - Math.pow(1 - p, 3)) * 99));
       if (p < 1) raf = requestAnimationFrame(f);
       else {
         document.body.classList.add("ready");
         setGone(true);
-        t2 = setTimeout(() => setRemoved(true), 500);
+        t2 = setTimeout(() => setRemoved(true), 200);
       }
     };
     raf = requestAnimationFrame(f);

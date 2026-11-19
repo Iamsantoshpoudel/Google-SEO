@@ -139,6 +139,14 @@ export default function Header() {
             </svg>
             <span className="nav-contact-label">Contact</span>
           </a>
+          <a
+            href={LINKS.dexbotx}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-contact nav-mobile-dexbotx"
+          >
+            DexBotX
+          </a>
           <button
             type="button"
             className="nav-menu-button"

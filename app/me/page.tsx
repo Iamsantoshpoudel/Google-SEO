@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, featuredProjects, LINK, LINKS, personLd, posts, profileGallery, SITE, SEO_CONTENT_LAST_MODIFIED } from "@/lib/data";
 import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "AI Developer and Web Developer in Nepal";
@@ -43,6 +43,7 @@ export default function MePage() {
     name: "Santosh Poudel's personal profile",
     mainEntity: { "@id": `${SITE}/#person` },
     primaryImageOfPage: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
+    dateModified: SEO_CONTENT_LAST_MODIFIED,
   };
   const projectsLd = {
     "@context": "https://schema.org",
@@ -94,7 +95,7 @@ export default function MePage() {
         />
         <div>
           <p className="mb-3 text-sm font-semibold uppercase text-hot">Computer Engineer · AI Developer · Web Developer</p>
-          <p className="text-[1.15rem] leading-relaxed text-ink">I am Santosh Poudel, a computer engineer, AI developer and web developer from Nepal. I build websites, web applications and practical software products, with interests in artificial intelligence, digital content authenticity and online community tools.</p>
+          <p className="text-[1.15rem] leading-relaxed text-ink">Santosh Poudel is a computer engineer, AI developer and web developer from Nepal who builds SaaS products, AI tools, and Discord applications such as DexBotX.</p>
           <p className="mt-4">I founded VerifiAI, a project exploring tools for assessing digital content, and I build DexBotX, a Discord bot for moderation, automation and community updates. I document my projects and learning here through detailed project pages and articles.</p>
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
             <a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>Contact me</a>
@@ -161,7 +162,7 @@ export default function MePage() {
       <div className="grid items-start gap-8 lg:grid-cols-2">
         <section>
           <h2>Background</h2>
-          <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Nepal and share my work with an international online audience.</p>
+          <p className="max-w-[68ch]">I completed a diploma in computer engineering, which gave me a foundation in computing and software development. I continue to build on that foundation through hands-on projects, studying how products work and improving them through iteration. I am based in Kathmandu, Nepal and share my work with an international online audience.</p>
           <p className="max-w-[68ch]">This portfolio is built with Next.js, React, TypeScript and Tailwind CSS. Its project pages describe my work on AI content tools and Discord automation, while the <Link href="/blog" className={LINK}>blog</Link> covers web development, artificial intelligence, digital content authenticity and related technology topics.</p>
         </section>
 
@@ -178,6 +179,7 @@ export default function MePage() {
           <li><a className={LINK} href={LINKS.github} target="_blank" rel="me noopener noreferrer">GitHub</a></li>
           <li><a className={LINK} href={LINKS.youtube} target="_blank" rel="me noopener noreferrer">YouTube</a></li>
           <li><a className={LINK} href={LINKS.facebook} target="_blank" rel="me noopener noreferrer">Facebook</a></li>
+          <li><a className={LINK} href={LINKS.brave} target="_blank" rel="me noopener noreferrer">Web3</a></li>
           <li><a className={LINK} href={LINKS.verifiai} target="_blank" rel="me noopener noreferrer">VerifiAI</a></li>
           <li><a className={LINK} href={LINKS.dexbotx} target="_blank" rel="noopener noreferrer">DexBotX</a></li>
           <li><a className={LINK} href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>

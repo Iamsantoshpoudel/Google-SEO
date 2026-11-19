@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, LINK, SITE } from "@/lib/data";
+import { CONTACT_EMAIL, LINK, PRIVACY_POLICY_LAST_MODIFIED, SITE } from "@/lib/data";
+import { serializeJsonLd } from "@/lib/seo";
 
 const pageTitle = "Privacy Policy";
 const title = `${pageTitle} | Santosh Poudel`;
@@ -30,9 +31,19 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  const pageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE}/privacy-policy#page`,
+    url: `${SITE}/privacy-policy`,
+    name: title,
+    dateModified: PRIVACY_POLICY_LAST_MODIFIED.date,
+  };
+
   return (
     <PageShell title={pageTitle} crumbs={[{ name: pageTitle, path: "/privacy-policy" }]}>
-      <p>Last updated: <time dateTime="2026-11-16">November 16, 2026</time></p>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(pageLd) }} />
+      <p>Last updated: <time dateTime={PRIVACY_POLICY_LAST_MODIFIED.date}>{PRIVACY_POLICY_LAST_MODIFIED.label}</time></p>
 
       <section>
         <h2>About this policy</h2>

@@ -107,6 +107,7 @@
   white-space: nowrap;
 }
 .nav-contact:hover { background: #858fff; color: #fff; }
+.nav-mobile-dexbotx { display: none; }
 .nav-contact-icon { display: none; width: 20px; height: 20px; flex: 0 0 20px; }
 .nav-menu-button { display: none; }
 .floating-nav.is-compact .nav-links { gap: 0; }
@@ -148,18 +149,20 @@
     min-height: 48px;
     padding: 4px 6px;
     gap: 6px;
-    background: rgba(17, 35, 91, .96);
+    background: rgba(17, 35, 91, .78);
     box-shadow: 0 8px 22px rgba(5, 12, 46, .28);
   }
   .floating-nav .nav-links { flex: 0 0 auto; gap: 0; margin-right: auto; }
   .floating-nav .nav-link:nth-child(n + 2) { display: none; }
+  .floating-nav .nav-link[href="/me"] { display: none; }
   .floating-nav .nav-link { width: 36px; min-width: 36px; gap: 0; padding: 0; }
   .floating-nav .nav-link svg { display: block; }
   .floating-nav .nav-link-label { max-width: 0; opacity: 0; }
   .floating-nav .nav-link .sr-only { display: block; }
   .floating-nav .nav-actions { gap: 4px; }
-  .floating-nav .nav-contact {
-    width: auto;
+  .floating-nav .nav-contact { display: none; }
+  .floating-nav .nav-mobile-dexbotx {
+    display: flex;
     min-width: 56px;
     min-height: 32px;
     padding: 0 12px;
@@ -167,9 +170,6 @@
     color: #eceff8;
     font-size: .76rem;
   }
-  .floating-nav .nav-contact:hover { background: rgba(255, 255, 255, .18); color: #fff; }
-  .floating-nav .nav-contact-icon { display: none; }
-  .floating-nav .nav-contact-label { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; white-space: nowrap; }
   .floating-nav .nav-github,
   .floating-nav .nav-actions > button { display: none; }
   .nav-menu-button {
@@ -285,7 +285,7 @@
 .rv.in .rv-c:nth-child(4) { transition-delay: .24s; }
 .rv.in .rv-c:nth-child(5) { transition-delay: .32s; }
 
-.big-w { opacity: .14; filter: blur(8px); transition: opacity .4s, filter .5s; }
+.big-w { opacity: .65; filter: blur(8px); transition: opacity .4s, filter .5s; }
 .big-w.on { opacity: 1; filter: blur(0); }
 
 /* project rows */
@@ -321,7 +321,7 @@ body::after { content: ""; position: fixed; inset: -60%; opacity: .07; pointer-e
 
 /* preloader */
 #pre { position: fixed; inset: 0; z-index: 300; background: var(--ink); color: var(--bg); display: grid; place-items: center;
-  opacity: 1; transition: opacity .5s ease; animation: pfail 0s 5s forwards; }
+  opacity: 1; transition: opacity .2s ease; animation: pfail 0s 5s forwards; }
 html.preloader-seen #pre { display: none; }
 #pre.gone { opacity: 0; pointer-events: none; }
 @keyframes pfail { to { visibility: hidden; } }
