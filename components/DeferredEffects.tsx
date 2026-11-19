@@ -13,6 +13,7 @@ export default function DeferredEffects() {
     let cancelled = false;
     let idleHandle: number | undefined;
     let timeoutHandle: number | undefined;
+    let trackerTimeoutHandle: number | undefined;
 
     const loadTracker = async () => {
       try {
@@ -26,7 +27,7 @@ export default function DeferredEffects() {
     const loadEnhancements = () => {
       if (cancelled) return;
       setReady(true);
-      void loadTracker();
+      trackerTimeoutHandle = window.setTimeout(() => void loadTracker(), 10_000);
     };
 
     if (typeof window.requestIdleCallback === "function") {
@@ -39,6 +40,7 @@ export default function DeferredEffects() {
       cancelled = true;
       if (idleHandle !== undefined) window.cancelIdleCallback(idleHandle);
       if (timeoutHandle !== undefined) window.clearTimeout(timeoutHandle);
+      if (trackerTimeoutHandle !== undefined) window.clearTimeout(trackerTimeoutHandle);
     };
   }, []);
 
