@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { featuredProjects, gallery, posts, SITE } from "@/lib/data";
+import { featuredProjects, gallery, posts, SITE, SEO_CONTENT_LAST_MODIFIED } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE,
+      lastModified: SEO_CONTENT_LAST_MODIFIED,
       images: [
         `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
         `${SITE}/img/santosh-poudel-og.jpg`,

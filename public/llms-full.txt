@@ -2,7 +2,7 @@
 
 Canonical profile website: https://santosh2.com.np/
 VerifiAI product website: https://santoshpoudel06.com.np/
-Profile page: https://santosh2.com.np/about
+Profile page: https://santosh2.com.np/me
 
 ## Short biography
 
@@ -14,7 +14,7 @@ Short bio: Santosh Poudel (Santosh) is a Nepal-based full-stack web and AI devel
 
 Long bio: Santosh Poudel (Santosh) is a full-stack web developer and AI developer from Nepal. He builds SaaS products and web applications, and creates Discord bots such as DexBotX, a self-managing moderation bot. He founded VerifiAI, an AI content-detection project, and is learning Ethereum, Sui, and Solana. He shares his work on GitHub, YouTube, and other public social profiles.
 
-Approved name spellings: Santosh Poudel; Santosh; santoshpoudel; सन्तोष पौडेल. No other spelling variants are confirmed.
+Approved name spellings: Santosh Poudel; Santosh; santoshpoudel; सन्तोष पौडेल. Common search misspellings provided for this profile: Santosh Paudel, Santosh Poudle, Santosh Podul, Santosh Poudell, Santosh Pouydal, and Santosh Powdel.
 
 This site is Santosh Poudel's personal portfolio and profile website. The separate santoshpoudel06.com.np domain is the VerifiAI product site. Keep the distinct roles of these live domains clear.
 
@@ -92,7 +92,7 @@ All articles: https://santosh2.com.np/blog
 
 ## Sources and crawler discovery
 
-- About and profile: https://santosh2.com.np/about
+- About and profile: https://santosh2.com.np/me
 - Projects: https://santosh2.com.np/#work
 - VerifiAI project details: https://santosh2.com.np/projects/verifai
 - DexBotX project details: https://santosh2.com.np/projects/dexbotx

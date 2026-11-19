@@ -1,4 +1,5 @@
 export const SITE = "https://santosh2.com.np";
+export const SEO_CONTENT_LAST_MODIFIED = "2026-11-19";
 // TODO: move this contact address to the santosh2.com.np domain when one is available.
 export const CONTACT_EMAIL = "hi@santoshpoudel06.com.np";
 export const BIO_SHORT = "Santosh Poudel (Santosh) is a Nepal-based full-stack web and AI developer building SaaS products, web applications, Discord bots, and AI tools while learning blockchain development.";
@@ -1075,6 +1076,7 @@ export const faq = [
   { q: "Who is Santosh Poudel?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal. He builds SaaS products, AI tools, and Discord applications including DexBotX." },
   { q: "What does Santosh Poudel do?", a: "He builds full-stack web products, SaaS services, AI tools such as VerifiAI, and Discord bots such as DexBotX. He is also learning blockchain development with Ethereum, Sui, and Solana." },
   { q: "Where is Santosh Poudel from?", a: "Santosh Poudel is a full-stack web and AI developer from Nepal." },
+  { q: "Where does Santosh Poudel live?", a: "Santosh Poudel is based in Nepal." },
   { q: "Where does Santosh Poudel work?", a: "His published profile does not name a current employer. It describes his work building web products, SaaS services, AI tools, and Discord bots." },
   { q: "What is VerifiAI?", a: "VerifiAI is a project founded by Santosh Poudel that explores ways to assess digital content using source context and provenance. Detector results are not conclusive proof of authorship or truth." },
   { q: "What is DexBotX?", a: "DexBotX is a Discord bot project with moderation, welcome flows, role automation, AI chat, creator notifications, and an admin dashboard." },
@@ -1102,11 +1104,22 @@ export const personLd = {
   familyName: "Poudel",
   url: SITE,
   image: `${SITE}/img/santosh-poudel-web-developer-nepal.jpg`,
-  alternateName: ["Santosh", "Santosh Poudel", "santoshpoudel", "सन्तोष पौडेल"],
+  alternateName: [
+    "Santosh",
+    "santoshpoudel",
+    "सन्तोष पौडेल",
+    "Santosh Paudel",
+    "Santosh Poudle",
+    "Santosh Podul",
+    "Santosh Poudell",
+    "Santosh Pouydal",
+    "Santosh Powdel",
+  ],
   jobTitle: "Full-stack Web Developer and AI Developer",
   description: BIO_LONG,
   nationality: { "@type": "Country", name: "Nepal" },
   knowsAbout: ["Web development", "Full-stack development", "SaaS development", "Artificial intelligence", "AI tools", "Discord bots", "Blockchain development", "Ethereum", "Sui", "Solana", "Next.js", "React"],
+  // TODO: add a city once confirmed.
   address: { "@type": "PostalAddress", addressCountry: "NP" },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
@@ -1114,7 +1127,9 @@ export const personLd = {
     name: "Computer Engineering diploma",
   },
   // TODO: add the educational institution to alumniOf when its name is confirmed.
-  sameAs: [LINKS.github, LINKS.youtube, LINKS.facebook],
+  // TODO: add an employer to worksFor when confirmed.
+  // TODO: add other verified profile URLs to sameAs when provided.
+  sameAs: [LINKS.github, LINKS.youtube, LINKS.facebook, LINKS.verifiai],
 };
 
 export const verifiaiOrganizationLd = {

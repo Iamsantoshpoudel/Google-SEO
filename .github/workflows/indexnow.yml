@@ -1,0 +1,29 @@
+name: Notify search engines with IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26.x
+
+      - name: Allow the site deployment to finish
+        run: sleep 60
+
+      - name: Submit sitemap URLs
+        run: node scripts/notify-indexnow.mjs
