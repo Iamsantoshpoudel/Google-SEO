@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
@@ -60,7 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('preloader-shown')==='1')document.documentElement.classList.add('preloader-seen')}catch(e){}" }} />
         <link rel="me" href={LINKS.github} />
         <link rel="me" href={LINKS.youtube} />
